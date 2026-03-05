@@ -3,21 +3,8 @@ using UnityEngine;
 public class Money : MonoBehaviour
 {
     [Header("--------VARIABLES--------")]
-    public static float money
-    {
-        get
-        {
-            return instance._money;
-        }
-        set
-        {
-            instance._money = value;
-        }
-
-    }
-    [SerializeField] float _money;
-    public static Money instance;
-
+    public static float money = 10;
+    
 
 
     void Start()
@@ -29,5 +16,11 @@ public class Money : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void MoneyGenerator()
+    {
+        money = money + 1;
+        print(money);
     }
 }
