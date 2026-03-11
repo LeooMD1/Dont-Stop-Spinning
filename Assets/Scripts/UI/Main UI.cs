@@ -7,10 +7,18 @@ public class MainUI : MonoBehaviour
     public static float Money;
     
     #region Scene loaders
+    
+    //if Not in casino
     public void CasinoLoad()
     {
         print("casinooo");
         SceneManager.LoadScene("CasinoArea");
+    }
+
+    //if In Casino
+    public void SlotMachineLoad()
+    {
+        SceneManager.LoadScene("SlotMachine");
     }
 
     public void WorkLoad()
@@ -27,11 +35,6 @@ public class MainUI : MonoBehaviour
     #endregion
 
     #region Money Things
-
-    public void DisplayMoney()
-    {
-        print(Money);
-    }
 
     public void IncreaseMoney(float amt)
     {
