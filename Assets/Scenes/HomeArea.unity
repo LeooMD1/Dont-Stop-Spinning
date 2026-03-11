@@ -1108,6 +1108,14 @@ PrefabInstance:
       propertyPath: mainUI
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8665052886440023999, guid: 6b1ccfd03e7eecb42bcf4d8da717f982, type: 3}
+      propertyPath: fonts.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8665052886440023999, guid: 6b1ccfd03e7eecb42bcf4d8da717f982, type: 3}
+      propertyPath: 'fonts.Array.data[0]'
+      value: 
+      objectReference: {fileID: 12800000, guid: 701e687de49b19d46bd9248e28056f1c, type: 3}
     - target: {fileID: 8667766794577649712, guid: 6b1ccfd03e7eecb42bcf4d8da717f982, type: 3}
       propertyPath: m_Name
       value: MoneyText

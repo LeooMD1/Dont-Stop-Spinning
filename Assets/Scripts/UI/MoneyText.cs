@@ -4,6 +4,7 @@ using TMPro;
 public class MoneyText : MonoBehaviour
 {
     public MainUI mainUI;
+    public Font[] fonts;
     
     private TextMeshProUGUI moneyText;
 
@@ -11,6 +12,11 @@ public class MoneyText : MonoBehaviour
     void Start()
     {
         moneyText = GetComponent<TextMeshProUGUI>();
+
+        for (int i = 0; i < fonts.Length; i++)
+        {
+            fonts[i].material.mainTexture.filterMode = FilterMode.Point;
+        }
     }
 
     // Update is called once per frame
