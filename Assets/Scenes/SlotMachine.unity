@@ -547,6 +547,7 @@ GameObject:
   - component: {fileID: 278822905}
   - component: {fileID: 278822907}
   - component: {fileID: 278822906}
+  - component: {fileID: 278822908}
   m_Layer: 5
   m_Name: Fruits
   m_TagString: Untagged
@@ -570,7 +571,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 15, y: -322.99997}
+  m_AnchoredPosition: {x: 15, y: -71}
   m_SizeDelta: {x: 195.5962, y: 233.6288}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &278822906
@@ -611,6 +612,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 278822904}
   m_CullTransparentMesh: 1
+--- !u!114 &278822908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278822904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f85301c5708679c4cb66d48826d0c21f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 1233723109}
+  rowStopped: 0
+  stoppedSlot: 
 --- !u!1 &297680158
 GameObject:
   m_ObjectHideFlags: 0
@@ -888,6 +904,7 @@ GameObject:
   - component: {fileID: 763503768}
   - component: {fileID: 763503770}
   - component: {fileID: 763503769}
+  - component: {fileID: 763503771}
   m_Layer: 5
   m_Name: Fruits
   m_TagString: Untagged
@@ -911,7 +928,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 13, y: -322.99997}
+  m_AnchoredPosition: {x: 13, y: 18}
   m_SizeDelta: {x: 195.5962, y: 233.6288}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &763503769
@@ -952,6 +969,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 763503767}
   m_CullTransparentMesh: 1
+--- !u!114 &763503771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763503767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f85301c5708679c4cb66d48826d0c21f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 1233723109}
+  rowStopped: 0
+  stoppedSlot: 
 --- !u!1 &961158453
 GameObject:
   m_ObjectHideFlags: 0
@@ -1613,6 +1645,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1122057537 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4131588488572123531, guid: 6b1ccfd03e7eecb42bcf4d8da717f982, type: 3}
+  m_PrefabInstance: {fileID: 993976309}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1164034396
 GameObject:
   m_ObjectHideFlags: 0
@@ -1624,6 +1667,7 @@ GameObject:
   - component: {fileID: 1164034397}
   - component: {fileID: 1164034399}
   - component: {fileID: 1164034398}
+  - component: {fileID: 1164034400}
   m_Layer: 5
   m_Name: Fruits
   m_TagString: Untagged
@@ -1647,7 +1691,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 14, y: -322.99997}
+  m_AnchoredPosition: {x: 14, y: -234}
   m_SizeDelta: {x: 195.5962, y: 233.6288}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1164034398
@@ -1688,6 +1732,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1164034396}
   m_CullTransparentMesh: 1
+--- !u!114 &1164034400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1164034396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f85301c5708679c4cb66d48826d0c21f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 1233723109}
+  rowStopped: 0
+  stoppedSlot: 
 --- !u!1 &1233723107
 GameObject:
   m_ObjectHideFlags: 0
@@ -1700,6 +1759,7 @@ GameObject:
   - component: {fileID: 1233723111}
   - component: {fileID: 1233723110}
   - component: {fileID: 1233723109}
+  - component: {fileID: 1233723112}
   m_Layer: 5
   m_Name: Spin
   m_TagString: Untagged
@@ -1821,6 +1881,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1233723107}
   m_CullTransparentMesh: 1
+--- !u!114 &1233723112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233723107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 372e320aa5a1b664789139177d8b9039, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prizeText: {fileID: 1122057537}
+  rows:
+  - {fileID: 1741277836}
+  - {fileID: 1164034400}
+  - {fileID: 1584175574}
+  - {fileID: 278822908}
+  - {fileID: 763503771}
 --- !u!1 &1266498418
 GameObject:
   m_ObjectHideFlags: 0
@@ -2424,6 +2503,7 @@ GameObject:
   - component: {fileID: 1584175571}
   - component: {fileID: 1584175573}
   - component: {fileID: 1584175572}
+  - component: {fileID: 1584175574}
   m_Layer: 5
   m_Name: Fruits
   m_TagString: Untagged
@@ -2447,7 +2527,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 14, y: -322.99997}
+  m_AnchoredPosition: {x: 14, y: -156}
   m_SizeDelta: {x: 195.5962, y: 233.6288}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1584175572
@@ -2488,6 +2568,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1584175570}
   m_CullTransparentMesh: 1
+--- !u!114 &1584175574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584175570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f85301c5708679c4cb66d48826d0c21f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 1233723109}
+  rowStopped: 0
+  stoppedSlot: 
 --- !u!1 &1673502998
 GameObject:
   m_ObjectHideFlags: 0
@@ -2590,6 +2685,7 @@ GameObject:
   - component: {fileID: 1741277833}
   - component: {fileID: 1741277835}
   - component: {fileID: 1741277834}
+  - component: {fileID: 1741277836}
   m_Layer: 5
   m_Name: Fruits
   m_TagString: Untagged
@@ -2613,7 +2709,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 20, y: 371.92}
+  m_AnchoredPosition: {x: 20, y: -330}
   m_SizeDelta: {x: 195.5962, y: 233.6288}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1741277834
@@ -2654,6 +2750,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1741277832}
   m_CullTransparentMesh: 1
+--- !u!114 &1741277836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741277832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f85301c5708679c4cb66d48826d0c21f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 1233723109}
+  rowStopped: 0
+  stoppedSlot: 
 --- !u!1 &2106669536
 GameObject:
   m_ObjectHideFlags: 0

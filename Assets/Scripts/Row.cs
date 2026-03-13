@@ -31,10 +31,10 @@ public class Row : MonoBehaviour
 
         for (int i = 0; i < 30; i++)
         {
-            if (transform.position.y <= -330)
-                transform.position = new Vector2(transform.position.x, 372);
+            if (transform.localPosition.y >= 330)
+                transform.localPosition = new Vector2(transform.localPosition.x, -330);
 
-            transform.position += new Vector3(0, Time.deltaTime * 1000, 0);
+            transform.localPosition += new Vector3(0, Time.deltaTime * 1000, 0);
 
             yield return new WaitForEndOfFrame();
         }
