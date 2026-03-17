@@ -16,7 +16,7 @@ public class SlotMachine : MonoBehaviour
     [SerializeField]
     private Row[] rows;
 
-    private float prizeValue;
+    public float prizeValue;
 
     private bool resultsChecked = false;
     #endregion
@@ -34,13 +34,22 @@ public class SlotMachine : MonoBehaviour
         {
             CheckResults();
             prizeText.enabled = true;
-            prizeText.text = "$" + prizeValue;
         }
+        
+        prizeText.text = "$" + (prizeValue.ToString());
+
+        if (prizeValue < 0)
+            prizeText.color = Color.red;
+        else if (prizeValue > 0)
+            prizeText.color = Color.green;
+        else
+            prizeText.color = Color.gray;
     }
 
     private void CheckResults()
     {
         if (rows[0].stoppedSlot == "Cherry"
+            && rows[1].stoppedSlot == "Cherry"
             && rows[2].stoppedSlot == "Cherry"
             && rows[3].stoppedSlot == "Cherry"
             && rows[4].stoppedSlot == "Cherry")
