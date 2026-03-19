@@ -48,123 +48,123 @@ public class SlotMachine : MonoBehaviour
 
     private void CheckResults()
     {
-        if (rows[0].stoppedSlot == "Cherry"
-            && rows[1].stoppedSlot == "Cherry"
-            && rows[2].stoppedSlot == "Cherry"
-            && rows[3].stoppedSlot == "Cherry"
-            && rows[4].stoppedSlot == "Cherry")
+        if (rows[0].targetItem == "Cherry"
+            && rows[1].targetItem == "Cherry"
+            && rows[2].targetItem == "Cherry"
+            && rows[3].targetItem == "Cherry"
+            && rows[4].targetItem == "Cherry")
 
             prizeValue = 500;
 
-        else if (rows[0].stoppedSlot == "Banana"
-            && rows[1].stoppedSlot == "Banana"
-            && rows[2].stoppedSlot == "Banana"
-            && rows[3].stoppedSlot == "Banana"
-            && rows[4].stoppedSlot == "Banana")
+        else if (rows[0].targetItem == "Banana"
+            && rows[1].targetItem == "Banana"
+            && rows[2].targetItem == "Banana"
+            && rows[3].targetItem == "Banana"
+            && rows[4].targetItem == "Banana")
 
             prizeValue = 250;
 
-        else if (rows[0].stoppedSlot == "Kiwi"
-            && rows[1].stoppedSlot == "Kiwi"
-            && rows[2].stoppedSlot == "Kiwi"
-            && rows[3].stoppedSlot == "Kiwi"
-            && rows[4].stoppedSlot == "Kiwi")
+        else if (rows[0].targetItem == "Kiwi"
+            && rows[1].targetItem == "Kiwi"
+            && rows[2].targetItem == "Kiwi"
+            && rows[3].targetItem == "Kiwi"
+            && rows[4].targetItem == "Kiwi")
 
             prizeValue = 800;
 
-        else if (rows[0].stoppedSlot == "Orange"
-            && rows[1].stoppedSlot == "Orange"
-            && rows[2].stoppedSlot == "Orange"
-            && rows[3].stoppedSlot == "Orange"
-            && rows[4].stoppedSlot == "Orange")
+        else if (rows[0].targetItem == "Orange"
+            && rows[1].targetItem == "Orange"
+            && rows[2].targetItem == "Orange"
+            && rows[3].targetItem == "Orange"
+            && rows[4].targetItem == "Orange")
 
             prizeValue = 100;
 
-        else if (rows[0].stoppedSlot == "Grape"
-            && rows[1].stoppedSlot == "Grape"
-            && rows[2].stoppedSlot == "Grape"
-            && rows[3].stoppedSlot == "Grape"
-            && rows[4].stoppedSlot == "Grape")
+        else if (rows[0].targetItem == "Grape"
+            && rows[1].targetItem == "Grape"
+            && rows[2].targetItem == "Grape"
+            && rows[3].targetItem == "Grape"
+            && rows[4].targetItem == "Grape")
 
             prizeValue = 75;
 
-        else if (rows[0].stoppedSlot == "Mango"
-            && rows[1].stoppedSlot == "Mango"
-            && rows[2].stoppedSlot == "Mango"
-            && rows[3].stoppedSlot == "Mango"
-            && rows[4].stoppedSlot == "Mango")
+        else if (rows[0].targetItem == "Mango"
+            && rows[1].targetItem == "Mango"
+            && rows[2].targetItem == "Mango"
+            && rows[3].targetItem == "Mango"
+            && rows[4].targetItem == "Mango")
 
             prizeValue = 400;
 
-        else if (rows[0].stoppedSlot == "7"
-            && rows[1].stoppedSlot == "7"
-            && rows[2].stoppedSlot == "7"
-            && rows[3].stoppedSlot == "7"
-            && rows[4].stoppedSlot == "7")
+        else if (rows[0].targetItem == "7"
+            && rows[1].targetItem == "7"
+            && rows[2].targetItem == "7"
+            && rows[3].targetItem == "7"
+            && rows[4].targetItem == "7")
 
             prizeValue = 1500;
 
-        else if (rows[0].stoppedSlot == "6"
-            && rows[1].stoppedSlot == "6"
-            && rows[2].stoppedSlot == "6"
-            && rows[3].stoppedSlot == "6"
-            && rows[4].stoppedSlot == "6")
+        else if (rows[0].targetItem == "6"
+            && rows[1].targetItem == "6"
+            && rows[2].targetItem == "6"
+            && rows[3].targetItem == "6"
+            && rows[4].targetItem == "6")
 
             prizeValue = -1750;
 
         else if (
-            (rows[0].stoppedSlot == "Cherry") &&
-            (rows[2].stoppedSlot == "Cherry") &&
-            (rows[4].stoppedSlot == "Cherry"))
+            (rows[0].targetItem == "Cherry") &&
+            (rows[2].targetItem == "Cherry") &&
+            (rows[4].targetItem == "Cherry"))
 
             prizeValue = 250;
 
         else if (
-            (rows[0].stoppedSlot == "Banana") &&
-            (rows[2].stoppedSlot == "Banana") &&
-            (rows[4].stoppedSlot == "Banana"))
+            (rows[0].targetItem == "Banana") &&
+            (rows[2].targetItem == "Banana") &&
+            (rows[4].targetItem == "Banana"))
 
             prizeValue = 50;
 
         else if (
-            (rows[0].stoppedSlot == "Kiwi") &&
-            (rows[2].stoppedSlot == "Kiwi") &&
-            (rows[4].stoppedSlot == "Kiwi"))
+            (rows[0].targetItem == "Kiwi") &&
+            (rows[2].targetItem == "Kiwi") &&
+            (rows[4].targetItem == "Kiwi"))
 
             prizeValue = 400;
 
         else if (
-            (rows[0].stoppedSlot == "Orange") &&
-            (rows[2].stoppedSlot == "Orange") &&
-            (rows[4].stoppedSlot == "Orange"))
+            (rows[0].targetItem == "Orange") &&
+            (rows[2].targetItem == "Orange") &&
+            (rows[4].targetItem == "Orange"))
 
             prizeValue = 50;
 
         else if (
-            (rows[0].stoppedSlot == "Grape") &&
-            (rows[2].stoppedSlot == "Grape") &&
-            (rows[4].stoppedSlot == "Grape"))
+            (rows[0].targetItem == "Grape") &&
+            (rows[2].targetItem == "Grape") &&
+            (rows[4].targetItem == "Grape"))
 
             prizeValue = 50;
 
         else if (
-            (rows[0].stoppedSlot == "Mango") &&
-            (rows[2].stoppedSlot == "Mango") &&
-            (rows[4].stoppedSlot == "Mango"))
+            (rows[0].targetItem == "Mango") &&
+            (rows[2].targetItem == "Mango") &&
+            (rows[4].targetItem == "Mango"))
 
             prizeValue = 200;
 
         else if (
-            (rows[0].stoppedSlot == "7") &&
-            (rows[2].stoppedSlot == "7") &&
-            (rows[4].stoppedSlot == "7"))
+            (rows[0].targetItem == "7") &&
+            (rows[2].targetItem == "7") &&
+            (rows[4].targetItem == "7"))
 
             prizeValue = 750;
 
         else if (
-            (rows[0].stoppedSlot == "6") &&
-            (rows[2].stoppedSlot == "6") &&
-            (rows[4].stoppedSlot == "6"))
+            (rows[0].targetItem == "6") &&
+            (rows[2].targetItem == "6") &&
+            (rows[4].targetItem == "6"))
 
             prizeValue = -800;
 

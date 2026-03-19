@@ -7,8 +7,10 @@ using Random = UnityEngine.Random;
 
 public class Row : MonoBehaviour
 {
+    public MainUI mainUI;
+    
     private float randomValue;
-    private float timeInterval;
+    public float timeInterval;
     public Button button;
 
     [SerializeField]
@@ -20,7 +22,7 @@ public class Row : MonoBehaviour
         {"Banana", -230f},
         {"Kiwi", -155f},
         {"Orange", -70f},
-        {"Grape", -25f},
+        {"Grape", 25f},
         {"Mango", 110f},
         {"7", 210f},
         {"6", 290f},
@@ -36,7 +38,6 @@ public class Row : MonoBehaviour
 
     public bool rowStopped;
     public bool canSpin;
-    public string stoppedSlot;
 
     private void Start()
     {
@@ -49,7 +50,7 @@ public class Row : MonoBehaviour
     {
         if (canSpin)
         {
-            stoppedSlot = "";
+            MainUI.Money -= 10;
             targetItem = itemPos.Keys.ToList()[Random.Range(0, itemPos.Count - 1)];
             print(offset1);
 
@@ -61,7 +62,7 @@ public class Row : MonoBehaviour
     {
         anim.SetTrigger("startSpin");
 
-        yield return new WaitForSeconds(timeInterval);
+        yield return new WaitForSeconds(2.5f);
 
         anim.SetTrigger("endSpin");
 
