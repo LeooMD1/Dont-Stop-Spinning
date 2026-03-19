@@ -548,6 +548,7 @@ GameObject:
   - component: {fileID: 278822907}
   - component: {fileID: 278822906}
   - component: {fileID: 278822908}
+  - component: {fileID: 278822909}
   m_Layer: 5
   m_Name: Fruits
   m_TagString: Untagged
@@ -625,8 +626,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 1233723109}
+  anim: {fileID: 0}
+  minYPos: -340
+  maxYPos: 333
+  offset1: 0
+  offset2: 0
+  targetItem: 
   rowStopped: 0
+  canSpin: 0
   stoppedSlot: 
+--- !u!95 &278822909
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278822904}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: abb08fdbd904f9345a2fcaf5d10553e7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &297680158
 GameObject:
   m_ObjectHideFlags: 0
@@ -905,6 +935,7 @@ GameObject:
   - component: {fileID: 763503770}
   - component: {fileID: 763503769}
   - component: {fileID: 763503771}
+  - component: {fileID: 763503772}
   m_Layer: 5
   m_Name: Fruits
   m_TagString: Untagged
@@ -982,8 +1013,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 1233723109}
+  anim: {fileID: 0}
+  minYPos: -340
+  maxYPos: 333
+  offset1: 0
+  offset2: 0
+  targetItem: 
   rowStopped: 0
+  canSpin: 0
   stoppedSlot: 
+--- !u!95 &763503772
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763503767}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: abb08fdbd904f9345a2fcaf5d10553e7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &961158453
 GameObject:
   m_ObjectHideFlags: 0
@@ -1524,6 +1584,7 @@ GameObject:
   - component: {fileID: 1164034399}
   - component: {fileID: 1164034398}
   - component: {fileID: 1164034400}
+  - component: {fileID: 1164034401}
   m_Layer: 5
   m_Name: Fruits
   m_TagString: Untagged
@@ -1601,8 +1662,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 1233723109}
+  anim: {fileID: 0}
+  minYPos: -340
+  maxYPos: 333
+  offset1: 0
+  offset2: 0
+  targetItem: 
   rowStopped: 0
+  canSpin: 0
   stoppedSlot: 
+--- !u!95 &1164034401
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1164034396}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: abb08fdbd904f9345a2fcaf5d10553e7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1233723107
 GameObject:
   m_ObjectHideFlags: 0
@@ -2059,7 +2149,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 8192
   m_textAlignment: 65535
@@ -2499,6 +2589,7 @@ GameObject:
   - component: {fileID: 1584175573}
   - component: {fileID: 1584175572}
   - component: {fileID: 1584175574}
+  - component: {fileID: 1584175575}
   m_Layer: 5
   m_Name: Fruits
   m_TagString: Untagged
@@ -2576,8 +2667,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 1233723109}
+  anim: {fileID: 0}
+  minYPos: -340
+  maxYPos: 333
+  offset1: 0
+  offset2: 0
+  targetItem: 
   rowStopped: 0
+  canSpin: 0
   stoppedSlot: 
+--- !u!95 &1584175575
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584175570}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: abb08fdbd904f9345a2fcaf5d10553e7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1673502998
 GameObject:
   m_ObjectHideFlags: 0
@@ -2681,6 +2801,7 @@ GameObject:
   - component: {fileID: 1741277835}
   - component: {fileID: 1741277834}
   - component: {fileID: 1741277836}
+  - component: {fileID: 1741277837}
   m_Layer: 5
   m_Name: Fruits
   m_TagString: Untagged
@@ -2704,7 +2825,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 20, y: -330}
+  m_AnchoredPosition: {x: 20, y: 333}
   m_SizeDelta: {x: 195.5962, y: 233.6288}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1741277834
@@ -2758,8 +2879,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 1233723109}
+  anim: {fileID: 0}
+  minYPos: -340
+  maxYPos: 333
+  offset1: 0
+  offset2: 0
+  targetItem: 
   rowStopped: 0
+  canSpin: 0
   stoppedSlot: 
+--- !u!95 &1741277837
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741277832}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: abb08fdbd904f9345a2fcaf5d10553e7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2106669536
 GameObject:
   m_ObjectHideFlags: 0

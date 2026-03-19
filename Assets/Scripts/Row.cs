@@ -1,7 +1,9 @@
 using System.Collections;
-using Unity.VisualScripting;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class Row : MonoBehaviour
 {
@@ -9,84 +11,76 @@ public class Row : MonoBehaviour
     private float timeInterval;
     public Button button;
 
+    [SerializeField]
+    private Animator anim;
+
+    //float[] itemPositions = { -330f, -230f, -155f, -70f, 25f, 110f, 210f, 290f };
+    Dictionary<string, float> itemPos = new(){
+        {"Cherry", -330f},
+        {"Banana", -230f},
+        {"Kiwi", -155f},
+        {"Orange", -70f},
+        {"Grape", -25f},
+        {"Mango", 110f},
+        {"7", 210f},
+        {"6", 290f},
+
+    };
+
+    public float minYPos = -340f;
+    public float maxYPos = 333f;
+
+    public float offset1;
+    public float offset2;
+    public string targetItem;
+
     public bool rowStopped;
+    public bool canSpin;
     public string stoppedSlot;
 
     private void Start()
     {
         rowStopped = true;
         button.onClick.AddListener(OnClick);
+        anim = GetComponent<Animator>();
     }
 
     void OnClick()
     {
-        stoppedSlot = "";
-        StartCoroutine(Rotate());
+        if (canSpin)
+        {
+            stoppedSlot = "";
+            targetItem = itemPos.Keys.ToList()[Random.Range(0, itemPos.Count - 1)];
+            print(offset1);
+
+            StartCoroutine(animStuff());
+        }
     }
 
-    IEnumerator Rotate()
+    private IEnumerator animStuff()
     {
-        yield return null;
-        rowStopped = false;
+        anim.SetTrigger("startSpin");
 
-        for (int i = 0; i < 30; i++)
-        {
-            if (transform.localPosition.y >= 330)
-                transform.localPosition = new Vector2(transform.localPosition.x, -330);
+        yield return new WaitForSeconds(timeInterval);
 
-            transform.localPosition += new Vector3(0, Time.fixedDeltaTime * 1000, 0);
+        anim.SetTrigger("endSpin");
 
-            yield return new WaitForSeconds(timeInterval);
-        }
-
-        randomValue = Random.Range(60, 100);
-
-        switch (randomValue % 3)
-        {
-            case 1:
-                randomValue += 20;
-                break;
-            case 2:
-                randomValue += 10;
-                break;
-        }
-
-        for (int i = 0; i < randomValue; i++)
-        {
-            if (transform.localPosition.y >= 330)
-                transform.localPosition = new Vector2(transform.localPosition.x, -330);
-
-            transform.localPosition += new Vector3(0, 10, 0);
-
-            if (i > Mathf.RoundToInt(randomValue * 0.25f))
-                timeInterval = 0.05f;
-            if (i > Mathf.RoundToInt(randomValue * 0.5f))
-                timeInterval = 0.1f;
-            if (i > Mathf.RoundToInt(randomValue * 0.75f))
-                timeInterval = 0.15f;
-            if (i > Mathf.RoundToInt(randomValue * 0.95f))
-                timeInterval = 0.2f;
-
-            yield return new WaitForSeconds(timeInterval);
-        }
-
-        if (transform.localPosition.y == -330)
-            stoppedSlot = "Cherry";
-        else if (transform.localPosition.y == -230)
-            stoppedSlot = "Banana";
-        else if (transform.localPosition.y == -155)
-            stoppedSlot = "Kiwi";
-        else if (transform.localPosition.y == -70)
-            stoppedSlot = "Orange";
-        else if (transform.localPosition.y == 25)
-            stoppedSlot = "Grape";
-        else if (transform.localPosition.y == 110)
-            stoppedSlot = "Mango";
-        else if (transform.localPosition.y == 210)
-            stoppedSlot = "7";
-        else if (transform.localPosition.y == 290)
-            stoppedSlot = "6";
-
-        rowStopped = true;
     }
-} 
+
+    public void SetOffs1()
+    {
+        offset1 = itemPos[targetItem];
+        print("set offset");
+    }
+
+    private void Update()
+    {
+        transform.localPosition = new(transform.localPosition.x, Wrap(offset1 + offset2, minYPos, maxYPos), transform.localPosition.z);
+        
+    }
+
+    float Wrap(float value, float min, float max)
+    {
+        return (value - min) % (max - min) + min;
+    }
+}   
