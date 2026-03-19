@@ -627,16 +627,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f85301c5708679c4cb66d48826d0c21f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainUI: {fileID: 0}
   timeInterval: 0
   button: {fileID: 1233723109}
   anim: {fileID: 0}
   minYPos: -340
   maxYPos: 333
+  RNG: 0
   offset1: 0
   offset2: 0
   targetItem: 
-  rowStopped: 0
   canSpin: 0
 --- !u!95 &278822909
 Animator:
@@ -1467,16 +1466,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f85301c5708679c4cb66d48826d0c21f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainUI: {fileID: 0}
   timeInterval: 0
   button: {fileID: 1233723109}
   anim: {fileID: 0}
   minYPos: -340
   maxYPos: 333
+  RNG: 0
   offset1: 0
   offset2: 0
   targetItem: 
-  rowStopped: 0
   canSpin: 0
 --- !u!95 &763503772
 Animator:
@@ -2119,16 +2117,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f85301c5708679c4cb66d48826d0c21f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainUI: {fileID: 0}
   timeInterval: 0
   button: {fileID: 1233723109}
   anim: {fileID: 0}
   minYPos: -340
   maxYPos: 333
+  RNG: 0
   offset1: 0
   offset2: 0
   targetItem: 
-  rowStopped: 0
   canSpin: 0
 --- !u!95 &1164034401
 Animator:
@@ -2294,6 +2291,7 @@ MonoBehaviour:
   - {fileID: 278822908}
   - {fileID: 763503771}
   prizeValue: 0
+  resultsChecked: 0
 --- !u!1 &1266498418
 GameObject:
   m_ObjectHideFlags: 0
@@ -3190,16 +3188,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f85301c5708679c4cb66d48826d0c21f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainUI: {fileID: 0}
   timeInterval: 0
   button: {fileID: 1233723109}
   anim: {fileID: 0}
   minYPos: -340
   maxYPos: 333
+  RNG: 0
   offset1: 0
   offset2: 0
   targetItem: 
-  rowStopped: 0
   canSpin: 0
 --- !u!95 &1584175575
 Animator:
@@ -3405,16 +3402,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f85301c5708679c4cb66d48826d0c21f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainUI: {fileID: 0}
   timeInterval: 15
   button: {fileID: 1233723109}
   anim: {fileID: 0}
   minYPos: -340
   maxYPos: 333
+  RNG: 0
   offset1: 0
   offset2: 0
   targetItem: 
-  rowStopped: 0
   canSpin: 0
 --- !u!95 &1741277837
 Animator:

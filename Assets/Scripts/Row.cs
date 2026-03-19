@@ -6,9 +6,7 @@ using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class Row : MonoBehaviour
-{
-    public MainUI mainUI;
-    
+{   
     private float randomValue;
     public float timeInterval;
     public Button button;
@@ -32,16 +30,16 @@ public class Row : MonoBehaviour
     public float minYPos = -340f;
     public float maxYPos = 333f;
 
+    public float RNG;
+
     public float offset1;
     public float offset2;
     public string targetItem;
 
-    public bool rowStopped;
     public bool canSpin;
 
     private void Start()
     {
-        rowStopped = true;
         button.onClick.AddListener(OnClick);
         anim = GetComponent<Animator>();
     }
@@ -50,8 +48,18 @@ public class Row : MonoBehaviour
     {
         if (canSpin)
         {
-            MainUI.Money -= 10;
-            targetItem = itemPos.Keys.ToList()[Random.Range(0, itemPos.Count - 1)];
+            MainUI.Money = MainUI.Money - 10f;
+            RNG = Random.Range(0, 100);
+            
+            if (RNG <= 70)
+                targetItem = new string[] { "Cherry", "Banana", "Orange" }[Random.Range(0, 2)];
+
+            else if (RNG > 70 && RNG <= 90)
+                targetItem = new string[] { "Kiwi", "Grape", "Mango" }[Random.Range(0, 2)];
+
+            else
+                targetItem = new string[] { "7", "6" }[Random.Range(0, 1)];
+
             print(offset1);
 
             StartCoroutine(animStuff());
@@ -69,7 +77,7 @@ public class Row : MonoBehaviour
     }
 
     public void SetOffs1()
-    {
+    {   
         offset1 = itemPos[targetItem];
         print("set offset");
     }

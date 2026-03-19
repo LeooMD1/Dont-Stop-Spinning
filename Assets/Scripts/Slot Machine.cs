@@ -18,25 +18,26 @@ public class SlotMachine : MonoBehaviour
 
     public float prizeValue;
 
-    private bool resultsChecked = false;
+    public bool resultsChecked = false;
     #endregion
 
     private void Update()
     {
-        if (!rows[0].rowStopped && !rows[1].rowStopped && !rows[2].rowStopped && !rows[3].rowStopped && !rows[4].rowStopped && !resultsChecked)
+        if (!rows[0].canSpin && !rows[1].canSpin && !rows[2].canSpin && !rows[3].canSpin && !rows[4].canSpin && resultsChecked)
         {
             prizeValue = 0;
             prizeText.enabled = false;
             resultsChecked = false;
         }
 
-        if (rows[0].rowStopped && rows[1].rowStopped && rows[2].rowStopped && rows[3].rowStopped && rows[4].rowStopped && !resultsChecked)
+        if (rows[0].canSpin && rows[1].canSpin && rows[2].canSpin && rows[3].canSpin && rows[4].canSpin && !resultsChecked)
         {
             CheckResults();
             prizeText.enabled = true;
         }
         
         prizeText.text = "$" + (prizeValue.ToString());
+        
 
         if (prizeValue < 0)
             prizeText.color = Color.red;
@@ -168,6 +169,63 @@ public class SlotMachine : MonoBehaviour
 
             prizeValue = -800;
 
-        resultsChecked = true;      
+        else if (
+            (rows[1].targetItem == "Cherry") &&
+            (rows[2].targetItem == "Cherry") &&
+            (rows[3].targetItem == "Cherry"))
+
+            prizeValue = 250;
+
+        else if (
+            (rows[1].targetItem == "Banana") &&
+            (rows[2].targetItem == "Banana") &&
+            (rows[3].targetItem == "Banana"))
+
+            prizeValue = 50;
+
+        else if (
+            (rows[1].targetItem == "Kiwi") &&
+            (rows[2].targetItem == "Kiwi") &&
+            (rows[3].targetItem == "Kiwi"))
+
+            prizeValue = 400;
+
+        else if (
+            (rows[1].targetItem == "Orange") &&
+            (rows[2].targetItem == "Orange") &&
+            (rows[3].targetItem == "Orange"))
+
+            prizeValue = 50;
+
+        else if (
+           (rows[1].targetItem == "Grape") &&
+           (rows[2].targetItem == "Grape") &&
+           (rows[3].targetItem == "Grape"))
+
+            prizeValue = 50;
+
+        else if (
+            (rows[1].targetItem == "Mango") &&
+            (rows[2].targetItem == "Mango") &&
+            (rows[3].targetItem == "Mango"))
+
+            prizeValue = 200;
+
+        else if (
+           (rows[1].targetItem == "7") &&
+           (rows[2].targetItem == "7") &&
+           (rows[3].targetItem == "7"))
+
+            prizeValue = 750;
+
+        else if (
+            (rows[1].targetItem == "6") &&
+            (rows[2].targetItem == "6") &&
+            (rows[3].targetItem == "6"))
+
+            prizeValue = -800;
+
+        resultsChecked = true;
+        MainUI.Money = MainUI.Money + prizeValue;
     }
 }
