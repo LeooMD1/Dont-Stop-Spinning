@@ -845,6 +845,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 116171137}
     m_Modifications:
+    - target: {fileID: 151985599243539459, guid: aa88519a43ea18348ade50983eae6caf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1375591176643353700, guid: aa88519a43ea18348ade50983eae6caf, type: 3}
       propertyPath: m_Name
       value: Map
@@ -993,6 +997,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 116171133}
+    - target: {fileID: 8649240978689890255, guid: aa88519a43ea18348ade50983eae6caf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8823249074786634870, guid: aa88519a43ea18348ade50983eae6caf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

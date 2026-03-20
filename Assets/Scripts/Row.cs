@@ -48,17 +48,18 @@ public class Row : MonoBehaviour
     {
         if (canSpin)
         {
-            MainUI.Money = MainUI.Money - 10f;
+            //this is the base RNG without any Items
+            MainUI.Money -= 1f;
             RNG = Random.Range(0, 100);
             
             if (RNG <= 70)
-                targetItem = new string[] { "Cherry", "Banana", "Orange" }[Random.Range(0, 2)];
+                targetItem = new string[] { "Cherry", "Banana", "Orange"}[Random.Range(0, 3)];
 
             else if (RNG > 70 && RNG <= 90)
-                targetItem = new string[] { "Kiwi", "Grape", "Mango" }[Random.Range(0, 2)];
+                targetItem = new string[] { "Kiwi", "Grape", "Mango", "6" }[Random.Range(0, 4)];
 
             else
-                targetItem = new string[] { "7", "6" }[Random.Range(0, 1)];
+                targetItem = new string[] {"7", "6"}[Random.Range(0, 2)];
 
             print(offset1);
 
@@ -84,6 +85,7 @@ public class Row : MonoBehaviour
 
     private void Update()
     {
+        
         transform.localPosition = new(transform.localPosition.x, Wrap(offset1 + offset2, minYPos, maxYPos), transform.localPosition.z);
         
     }
