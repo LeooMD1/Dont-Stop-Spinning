@@ -17,6 +17,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/JobArea.unity
     guid: c429b01f6c8e47d4fae311d064f05a95
+  - enabled: 1
+    path: Assets/Scenes/InPersonJob.unity
+    guid: 3d7ab89570fa19245b9f2bc2b87d9aba
+  - enabled: 1
+    path: Assets/Scenes/OnlineJob.unity
+    guid: 4dc8f54a3d1f5b2489594e2e85029a4e
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

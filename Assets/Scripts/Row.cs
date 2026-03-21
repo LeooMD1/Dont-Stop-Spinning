@@ -50,6 +50,7 @@ public class Row : MonoBehaviour
         {
             //this is the base RNG without any Items
             MainUI.Money -= 1f;
+            MainUI.Energy -= 0.2f;
             RNG = Random.Range(0, 100);
             
             if (RNG <= 70)
