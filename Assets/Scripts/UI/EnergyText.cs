@@ -23,7 +23,7 @@ public class EnergyText : MonoBehaviour
     void Update()
     {
         //Mathf.RoundToInt(MainUI.Energy);
-        Mathf.FloorToInt(MainUI.Energy);
-        energyText.text = (MainUI.Energy.ToString());
+        
+        energyText.text = (Mathf.RoundToInt(MainUI.Energy).ToString());
     }
 }

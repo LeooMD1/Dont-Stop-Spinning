@@ -29,7 +29,7 @@ public class Row : MonoBehaviour
 
     public float minYPos = -340f;
     public float maxYPos = 333f;
-
+    
     public float RNG;
 
     public float offset1;
@@ -40,6 +40,8 @@ public class Row : MonoBehaviour
 
     private void Start()
     {
+        offset1 = -330f;
+
         button.onClick.AddListener(OnClick);
         anim = GetComponent<Animator>();
     }
@@ -49,7 +51,7 @@ public class Row : MonoBehaviour
         if (canSpin)
         {
             //this is the base RNG without any Items
-            MainUI.Money -= 1f;
+            MainUI.Money -= 3f;
             MainUI.Energy -= 0.2f;
             RNG = Random.Range(0, 100);
             
