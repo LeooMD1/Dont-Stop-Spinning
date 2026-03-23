@@ -10,9 +10,13 @@ public class PlateDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     private BoxCollider2D Collider;
     [SerializeField] private BoxCollider2D sinkCol;
     [SerializeField] private BoxCollider2D spongeCol;
+    [SerializeField] private BoxCollider2D cleanPlateCheckCol;
 
     public bool inSink;
-    private bool isCleaned;
+
+    [SerializeField] private Sprite cleanPlate;
+    [SerializeField] private Sprite currentSprite;
+    [SerializeField] private Sprite[] dirtyPlates;
 
 
 
@@ -22,6 +26,9 @@ public class PlateDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         Image = GetComponent<Image>();
         Collider = GetComponent<BoxCollider2D>();
         inSink = false;
+
+        currentSprite = dirtyPlates[Random.Range(0, dirtyPlates.Length)];
+        Image.sprite = currentSprite;
     }
 
     void Update()
@@ -53,5 +60,10 @@ public class PlateDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
         else 
             inSink = false;
+
+        if (Physics2D.IsTouching(Collider, cleanPlateCheckCol) && Image.sprite == cleanPlate)
+        {
+            transform.localPosition = new(-280, -95f, transform.localPosition.z);
+        }
     }
 }
