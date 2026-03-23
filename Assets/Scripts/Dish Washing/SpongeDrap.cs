@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -7,18 +8,16 @@ public class SpongeDrap : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     private RectTransform rectTransform;
     private Image Image;
 
-    private BoxCollider2D Collider;
-    [SerializeField] private BoxCollider2D sinkCol;
+    private BoxCollider2D spongeCol;
 
-    private bool inSink;
-    private bool isCleaned;
+    [SerializeField] private BoxCollider2D plateCol;
+    public PlateDrag plateDrag;
 
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
         Image = GetComponent<Image>();
-        Collider = GetComponent<BoxCollider2D>();
-        inSink = false;
+        spongeCol = GetComponent<BoxCollider2D>();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -29,10 +28,17 @@ public class SpongeDrap : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     public void OnDrag(PointerEventData eventData)
     {
         transform.position = eventData.position; // follow the mouse
+        if (Physics2D.IsTouching(spongeCol, plateCol) && plateDrag.inSink)
+            StartCoroutine(WashDish());
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        transform.localPosition = new(300, 35, transform.localPosition.z);
+        //transform.localPosition = new(300, 35, transform.localPosition.z);
+    }
+
+    private IEnumerator WashDish()
+    {
+        return null;
     }
 }

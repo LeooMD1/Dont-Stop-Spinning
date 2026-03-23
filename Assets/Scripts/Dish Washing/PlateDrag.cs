@@ -2,19 +2,19 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class PlateDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     private RectTransform rectTransform;
     private Image Image;
     
     private BoxCollider2D Collider;
     [SerializeField] private BoxCollider2D sinkCol;
+    [SerializeField] private BoxCollider2D spongeCol;
 
-    private bool inSink;
+    public bool inSink;
     private bool isCleaned;
 
-    public float timeDuration;
-    public float timeCooldown;
+
 
     void Start()
     {
@@ -26,7 +26,7 @@ public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
     void Update()
     {
-        timeDuration = Time.deltaTime;
+        
         
     }
     
@@ -50,11 +50,8 @@ public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
             print("Sink Teleport works");
             inSink = true;
         }
+
+        else 
+            inSink = false;
     }
-
-    private void InSink()
-    {
-
-    }
-
 }
