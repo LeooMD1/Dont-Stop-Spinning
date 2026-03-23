@@ -6,17 +6,20 @@ public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 {
     private RectTransform rectTransform;
     private Image Image;
+    
     private BoxCollider2D Collider;
     [SerializeField]
     private BoxCollider2D sinkCol;
 
-    
+    private bool inSink;
+    private bool isCleaned;
 
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
         Image = GetComponent<Image>();
         Collider = GetComponent<BoxCollider2D>();
+        inSink = false;
     }
     
     public void OnBeginDrag(PointerEventData eventData)
@@ -36,10 +39,13 @@ public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         if (Physics2D.IsTouching(Collider, sinkCol))
         {
             transform.localPosition = new(0, -98.1f, transform.localPosition.z);
-            print("yoyoyoyoyoyoy");
+            print("Sink Teleport works");
+            inSink = true;
         }
+    }
 
-
+    private void InSink()
+    {
 
     }
 
