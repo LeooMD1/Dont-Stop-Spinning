@@ -31,6 +31,7 @@ public class Row : MonoBehaviour
     public float maxYPos = 333f;
     
     public float RNG;
+    private static float numberOfSpins;
 
     public float offset1;
     public float offset2;
@@ -54,15 +55,34 @@ public class Row : MonoBehaviour
             MainUI.Money -= 3f;
             MainUI.Energy -= 0.2f;
             RNG = Random.Range(0, 100);
-            
-            if (RNG <= 70)
-                targetItem = new string[] { "Cherry", "Banana", "Orange"}[Random.Range(0, 3)];
+            numberOfSpins += 1;
+            print(numberOfSpins);
 
-            else if (RNG > 70 && RNG <= 90)
-                targetItem = new string[] { "Kiwi", "Grape", "Mango", "6" }[Random.Range(0, 4)];
+            if (numberOfSpins <= 5)
+            {
+                targetItem = new string[] { "Kiwi", "Banana" }[Random.Range(0, 1)];
+            }
+
+            else if (numberOfSpins >= 145 && numberOfSpins <= 150)
+            {
+                targetItem = new string[] { "6", "Banana" }[Random.Range(0, 1)];
+                print("holy debt");
+            }
 
             else
-                targetItem = new string[] {"7", "6"}[Random.Range(0, 2)];
+            {
+                if (RNG <= 70)
+                    targetItem = new string[] { "Cherry", "Banana", "Orange", "6" }[Random.Range(0, 4)];
+
+                else if (RNG > 70 && RNG <= 90)
+                    targetItem = new string[] { "Kiwi", "Grape", "Mango", "6" }[Random.Range(0, 4)];
+
+                else
+                    targetItem = new string[] { "7", "6" }[Random.Range(0, 2)];
+            }
+            
+            
+            
 
             print(offset1);
 
