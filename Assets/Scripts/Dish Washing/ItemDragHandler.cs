@@ -8,11 +8,13 @@ public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     private Image Image;
     
     private BoxCollider2D Collider;
-    [SerializeField]
-    private BoxCollider2D sinkCol;
+    [SerializeField] private BoxCollider2D sinkCol;
 
     private bool inSink;
     private bool isCleaned;
+
+    public float timeDuration;
+    public float timeCooldown;
 
     void Start()
     {
@@ -20,6 +22,12 @@ public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         Image = GetComponent<Image>();
         Collider = GetComponent<BoxCollider2D>();
         inSink = false;
+    }
+
+    void Update()
+    {
+        timeDuration = Time.deltaTime;
+        
     }
     
     public void OnBeginDrag(PointerEventData eventData)
