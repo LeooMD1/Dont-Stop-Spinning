@@ -12,7 +12,10 @@ public class PlateDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     [SerializeField] private BoxCollider2D spongeCol;
     [SerializeField] private BoxCollider2D cleanPlateCheckCol;
 
+    [SerializeField] private Transform Background;
+
     public bool inSink;
+    private Vector3 plateStartPos;
 
     [SerializeField] private Sprite cleanPlate;
     [SerializeField] private Sprite currentSprite;
@@ -29,6 +32,8 @@ public class PlateDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
         currentSprite = dirtyPlates[Random.Range(0, dirtyPlates.Length)];
         Image.sprite = currentSprite;
+
+        plateStartPos = new Vector3(300, -80, 0);
     }
 
     void Update()
@@ -56,6 +61,14 @@ public class PlateDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             transform.localPosition = new(0, -98.1f, transform.localPosition.z);
             print("Sink Teleport works");
             inSink = true;
+
+            GameObject newPlate = Instantiate(gameObject, Background);
+            newPlate.transform.localPosition = plateStartPos;
+
+            if (inSink)
+            {
+                newPlate.transform.localPosition = new(300, -80, transform.localPosition.z); ;
+            }
         }
 
         else 

@@ -43,7 +43,7 @@ public class SoapDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     {
         transform.position = eventData.position;
 
-        if (Physics2D.IsTouching(Collider, spongeCol) && Image.sprite == Sponge)
+        if (Physics2D.IsTouching(Collider, spongeCol) && spongeImage.sprite == Sponge)
         {
             anim.SetTrigger("Soaped");
             spongeImage.sprite = cleanSponge;
