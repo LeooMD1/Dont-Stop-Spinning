@@ -655,6 +655,7 @@ GameObject:
   - component: {fileID: 777620014}
   - component: {fileID: 777620013}
   - component: {fileID: 777620012}
+  - component: {fileID: 777620017}
   m_Layer: 5
   m_Name: Soap
   m_TagString: Untagged
@@ -814,6 +815,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 777620010}
   m_CullTransparentMesh: 1
+--- !u!114 &777620017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777620010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c3c32c7d0253e84aa715fcbb30d6a04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spongeImage: {fileID: 552411896}
+  spongeCol: {fileID: 552411895}
+  cleanSponge: {fileID: 21300000, guid: 9df7bd1339e3fa645be32514daa3ff14, type: 3}
+  Sponge: {fileID: 21300000, guid: e68721a66bd092f4a895f60434a55b0c, type: 3}
 --- !u!1 &830374181
 GameObject:
   m_ObjectHideFlags: 0
