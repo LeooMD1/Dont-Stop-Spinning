@@ -41,17 +41,13 @@ public class PlateDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         Image.sprite = currentSprite;
 
         plateStartPos = new Vector3(300, -80, 0);
+
+        prizeReward.color = Color.green;
     }
 
     void Update()
     {
-        if (plateCleaned)
-        {
-            prizeReward.enabled = true;
-        }
-
-        else
-            prizeReward.enabled = false;
+        
     }
     
     public void OnBeginDrag(PointerEventData eventData)
@@ -109,9 +105,12 @@ public class PlateDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     private IEnumerator DestroyPlate()
     {
         prizeValue = 5;
-        prizeReward.text = "$" + (prizeValue.ToString());
+        prizeReward.text = "+$" + (prizeValue.ToString());
+        prizeReward.enabled = true;
         yield return new WaitForSeconds(3);
 
+        MainUI.Money += prizeValue;
+        prizeReward.enabled = false;
         plateAnim.SetTrigger("plateDestroy");
         yield return new WaitForSeconds(2);
         Destroy(gameObject);
