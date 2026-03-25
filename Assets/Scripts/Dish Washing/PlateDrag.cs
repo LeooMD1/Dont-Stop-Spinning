@@ -1,20 +1,26 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlateDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     private RectTransform rectTransform;
     private Image Image;
+    private Animator plateAnim;
+    [SerializeField] private TextMeshProUGUI prizeReward;
+    private float prizeValue;
     
     private BoxCollider2D Collider;
     [SerializeField] private BoxCollider2D sinkCol;
     [SerializeField] private BoxCollider2D spongeCol;
     [SerializeField] private BoxCollider2D cleanPlateCheckCol;
 
-    [SerializeField] private Transform Background;
+    [SerializeField] private Transform PlateStuff;
 
     public bool inSink;
+    public bool plateCleaned;
     private Vector3 plateStartPos;
 
     [SerializeField] private Sprite cleanPlate;
@@ -28,6 +34,7 @@ public class PlateDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         rectTransform = GetComponent<RectTransform>();
         Image = GetComponent<Image>();
         Collider = GetComponent<BoxCollider2D>();
+        plateAnim = GetComponent<Animator>();
         inSink = false;
 
         currentSprite = dirtyPlates[Random.Range(0, dirtyPlates.Length)];
@@ -38,17 +45,24 @@ public class PlateDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     void Update()
     {
-        
-        
+        if (plateCleaned)
+        {
+            prizeReward.enabled = true;
+        }
+
+        else
+            prizeReward.enabled = false;
     }
     
     public void OnBeginDrag(PointerEventData eventData)
     {
+        if (!plateCleaned)
         Image.color = new Color32(255, 255, 255, 170);
     }
 
     public void OnDrag(PointerEventData eventData)
     {
+        if (!plateCleaned)
         transform.position = eventData.position; // follow the mouse
     }
 
@@ -62,21 +76,44 @@ public class PlateDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             print("Sink Teleport works");
             inSink = true;
 
-            GameObject newPlate = Instantiate(gameObject, Background);
-            newPlate.transform.localPosition = plateStartPos;
+            
 
-            if (inSink)
-            {
-                newPlate.transform.localPosition = new(300, -80, transform.localPosition.z); ;
-            }
         }
-
+        
         else 
             inSink = false;
 
         if (Physics2D.IsTouching(Collider, cleanPlateCheckCol) && Image.sprite == cleanPlate)
         {
+            if (!plateCleaned)
+            {
+                GameObject newPlate = Instantiate(gameObject, PlateStuff);
+                newPlate.transform.localPosition = plateStartPos;
+                newPlate.transform.localPosition = new(300, -80, transform.localPosition.z);
+                spongeCol.gameObject.GetComponent<SpongeDrap>().plateCol = newPlate.GetComponent<BoxCollider2D>();
+                spongeCol.gameObject.GetComponent<SpongeDrap>().plateDrag = newPlate.GetComponent<PlateDrag>();
+                spongeCol.gameObject.GetComponent<SpongeDrap>().plateImage = newPlate.GetComponent<Image>();
+            }
+
             transform.localPosition = new(-280, -95f, transform.localPosition.z);
+            plateCleaned = true;
+
+            if (plateCleaned)
+                StartCoroutine(DestroyPlate());
         }
+
+        else
+            plateCleaned = false;
+    }
+
+    private IEnumerator DestroyPlate()
+    {
+        prizeValue = 5;
+        prizeReward.text = "$" + (prizeValue.ToString());
+        yield return new WaitForSeconds(3);
+
+        plateAnim.SetTrigger("plateDestroy");
+        yield return new WaitForSeconds(2);
+        Destroy(gameObject);
     }
 }

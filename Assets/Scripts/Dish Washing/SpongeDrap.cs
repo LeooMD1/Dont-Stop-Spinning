@@ -8,7 +8,7 @@ public class SpongeDrap : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     private RectTransform rectTransform;
     private Image Image;
 
-    [SerializeField] Image plateImage;
+    [SerializeField] public Image plateImage;
 
     private BoxCollider2D spongeCol;
 
@@ -19,8 +19,9 @@ public class SpongeDrap : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     [SerializeField] private Sprite Sponge;
 
     [SerializeField] private Animator soapAnim;
+    
 
-    [SerializeField] private BoxCollider2D plateCol;
+    [SerializeField] public BoxCollider2D plateCol;
     [SerializeField] private BoxCollider2D soapCol;
     public PlateDrag plateDrag;
 
