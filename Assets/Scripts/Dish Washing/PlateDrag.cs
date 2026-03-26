@@ -10,7 +10,9 @@ public class PlateDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     private Image Image;
     private Animator plateAnim;
     [SerializeField] private TextMeshProUGUI prizeReward;
+    [SerializeField] private TextMeshProUGUI energyDisplay;
     private float prizeValue;
+    private float energyUsed;
     
     private BoxCollider2D Collider;
     [SerializeField] private BoxCollider2D sinkCol;
@@ -52,13 +54,13 @@ public class PlateDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     
     public void OnBeginDrag(PointerEventData eventData)
     {
-        if (!plateCleaned)
+        if (!plateCleaned && MainUI.Energy > 0)
         Image.color = new Color32(255, 255, 255, 170);
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        if (!plateCleaned)
+        if (!plateCleaned && MainUI.Energy > 0)
         transform.position = eventData.position; // follow the mouse
     }
 
@@ -107,10 +109,19 @@ public class PlateDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         prizeValue = 5;
         prizeReward.text = "+$" + (prizeValue.ToString());
         prizeReward.enabled = true;
+
+        energyUsed = -1;
+        energyDisplay.text = energyUsed.ToString();
+        energyDisplay.enabled = true;
+
         yield return new WaitForSeconds(3);
 
         MainUI.Money += prizeValue;
         prizeReward.enabled = false;
+
+        MainUI.Energy += energyUsed;
+        energyDisplay.enabled = false;
+
         plateAnim.SetTrigger("plateDestroy");
         yield return new WaitForSeconds(2);
         Destroy(gameObject);
