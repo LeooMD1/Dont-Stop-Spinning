@@ -38,6 +38,7 @@ public class Row : MonoBehaviour
     public string targetItem;
 
     public bool canSpin;
+    public bool hasMoney;
 
     private void Start()
     {
@@ -49,7 +50,7 @@ public class Row : MonoBehaviour
 
     void OnClick()
     {
-        if (canSpin)
+        if (canSpin && hasMoney && MainUI.Energy > 0)
         {
             //this is the base RNG without any Items
             MainUI.Money -= 3f;
@@ -116,6 +117,9 @@ public class Row : MonoBehaviour
     {
         
         transform.localPosition = new(transform.localPosition.x, Wrap(offset1 + offset2, minYPos, maxYPos), transform.localPosition.z);
+
+        if (MainUI.Money >= 15)
+            hasMoney = true;
         
     }
 

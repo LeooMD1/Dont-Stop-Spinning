@@ -58,7 +58,7 @@ public class SpongeDrap : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        //transform.localPosition = new(300, 35, transform.localPosition.z);
+        transform.localPosition = new(155, 0, transform.localPosition.z);
     }
 
     private IEnumerator WashDish()
