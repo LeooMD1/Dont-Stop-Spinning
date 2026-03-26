@@ -42,7 +42,7 @@ public class PlateDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         currentSprite = dirtyPlates[Random.Range(0, dirtyPlates.Length)];
         Image.sprite = currentSprite;
 
-        plateStartPos = new Vector3(300, -80, 0);
+        plateStartPos = new Vector3(280, -80, 0);
 
         prizeReward.color = Color.green;
     }
