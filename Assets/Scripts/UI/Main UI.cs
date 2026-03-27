@@ -29,7 +29,7 @@ public class MainUI : MonoBehaviour
     {
         energyText.text = (Mathf.RoundToInt(MainUI.Energy).ToString());
         moneyText.text = "$" + (MainUI.Money.ToString());
-        dayText.text = "Day:" + (MainUI.Day.ToString());
+        dayText.text = "Day: " + (MainUI.Day.ToString());
         
         if (MainUI.Money > 0)
             moneyText.color = Color.green;
@@ -81,7 +81,13 @@ public class MainUI : MonoBehaviour
 
     public void Sleep()
     {
+        if (Energy == 0)
+        {
+            //play fade animation or smth like that
+            Energy = 7;
+            Day += 1;
 
+        }
     }
 
     #region Money Things
