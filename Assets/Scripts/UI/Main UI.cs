@@ -81,7 +81,7 @@ public class MainUI : MonoBehaviour
 
     public void Sleep()
     {
-        if (Energy == 0)
+        if (MainUI.Energy < 1)
         {
             //play fade animation or smth like that
             Energy = 7;

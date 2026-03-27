@@ -1750,7 +1750,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneRNG: 0
-  fonts: []
+  fonts:
+  - {fileID: 12800000, guid: 701e687de49b19d46bd9248e28056f1c, type: 3}
   energyText: {fileID: 683521425}
   moneyText: {fileID: 1485832447}
   dayText: {fileID: 892927636}
