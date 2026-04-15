@@ -29,7 +29,6 @@ public class MainUI : MonoBehaviour
     {
         energyText.text = (Mathf.RoundToInt(MainUI.Energy).ToString());
         moneyText.text = "$" + (MainUI.Money.ToString());
-        dayText.text = "Day: " + (MainUI.Day.ToString());
         
         if (MainUI.Money > 0)
             moneyText.color = Color.green;
@@ -37,6 +36,9 @@ public class MainUI : MonoBehaviour
             moneyText.color = Color.red;
         else
             moneyText.color = Color.white;
+        
+        dayText.text = "Day: " + (MainUI.Day.ToString());
+
     }
 
     #region Scene loaders

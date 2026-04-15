@@ -291,6 +291,7 @@ MonoBehaviour:
   fonts: []
   energyText: {fileID: 625985288}
   moneyText: {fileID: 1630846898}
+  dayText: {fileID: 0}
 --- !u!114 &116171134
 MonoBehaviour:
   m_ObjectHideFlags: 0

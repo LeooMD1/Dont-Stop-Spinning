@@ -120,6 +120,8 @@ public class Row : MonoBehaviour
 
         if (MainUI.Money >= 15)
             hasMoney = true;
+        else 
+            hasMoney = false;
         
     }
 
