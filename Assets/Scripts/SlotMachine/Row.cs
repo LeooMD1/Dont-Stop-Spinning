@@ -16,19 +16,19 @@ public class Row : MonoBehaviour
 
     //float[] itemPositions = { -330f, -230f, -155f, -70f, 25f, 110f, 210f, 290f };
     Dictionary<string, float> itemPos = new(){
-        {"Cherry", -330f},
-        {"Banana", -230f},
-        {"Kiwi", -155f},
-        {"Orange", -70f},
-        {"Grape", 25f},
-        {"Mango", 110f},
-        {"7", 210f},
-        {"6", 290f},
+        {"Cherry", -369f},
+        {"Banana", -266f},
+        {"Kiwi", -190f},
+        {"Orange", -100f},
+        {"Grape", 126f},
+        {"Mango", 0f},
+        {"7", 225f},
+        {"6", 330f},
 
     };
 
-    public float minYPos = -340f;
-    public float maxYPos = 333f;
+    public float minYPos = -420f;
+    public float maxYPos = 385f;
     
     public float RNG;
     private static float numberOfSpins;
@@ -42,7 +42,7 @@ public class Row : MonoBehaviour
 
     private void Start()
     {
-        offset1 = -330f;
+        offset1 = -368;
 
         button.onClick.AddListener(OnClick);
         anim = GetComponent<Animator>();

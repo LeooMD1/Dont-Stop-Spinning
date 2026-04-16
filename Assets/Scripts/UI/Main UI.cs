@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -11,6 +12,7 @@ public class MainUI : MonoBehaviour
     public static float Day = 1;
 
     [SerializeField] private float sceneRNG;
+    [SerializeField] private Animator sleepAnim;
 
     public Font[] fonts;
     [SerializeField] private TextMeshProUGUI energyText;
@@ -85,11 +87,16 @@ public class MainUI : MonoBehaviour
     {
         if (MainUI.Energy < 1)
         {
-            //play fade animation or smth like that
-            Energy = 7;
-            Day += 1;
-
+            StartCoroutine(Sleeping());                     
         }
+    }
+
+    private IEnumerator Sleeping()
+    {
+        sleepAnim.SetTrigger("Sleep");
+        yield return new WaitForSeconds(1f);
+        Energy = 7;
+        Day += 1;
     }
 
     #region Money Things
