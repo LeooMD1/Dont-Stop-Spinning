@@ -1425,10 +1425,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneRNG: 0
+  sleepAnim: {fileID: 0}
   fonts:
   - {fileID: 12800000, guid: 701e687de49b19d46bd9248e28056f1c, type: 3}
   energyText: {fileID: 348582638}
   moneyText: {fileID: 7287580393003651656}
+  dayText: {fileID: 0}
 --- !u!114 &1140286307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2467,6 +2469,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plates
       objectReference: {fileID: 0}
+    - target: {fileID: 7961943734511664764, guid: 2b279780183ae1a4d8687c35e844207c, type: 3}
+      propertyPath: leave
+      value: 
+      objectReference: {fileID: 573877887}
     - target: {fileID: 7961943734511664764, guid: 2b279780183ae1a4d8687c35e844207c, type: 3}
       propertyPath: sinkCol
       value: 

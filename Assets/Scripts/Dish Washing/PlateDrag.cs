@@ -13,11 +13,14 @@ public class PlateDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     [SerializeField] private TextMeshProUGUI energyDisplay;
     private float prizeValue;
     private float energyUsed;
+
     
     private BoxCollider2D Collider;
     [SerializeField] private BoxCollider2D sinkCol;
     [SerializeField] private BoxCollider2D spongeCol;
     [SerializeField] private BoxCollider2D cleanPlateCheckCol;
+    [SerializeField] private GameObject leave;
+
 
     [SerializeField] private Transform PlateStuff;
 
@@ -39,6 +42,9 @@ public class PlateDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         plateAnim = GetComponent<Animator>();
         inSink = false;
 
+
+        leave.SetActive(false);
+
         currentSprite = dirtyPlates[Random.Range(0, dirtyPlates.Length)];
         Image.sprite = currentSprite;
 
@@ -49,6 +55,10 @@ public class PlateDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     void Update()
     {
+        if (MainUI.Money >= 15)
+            leave.SetActive(true);
+        else
+            leave.SetActive(false);
         
     }
     

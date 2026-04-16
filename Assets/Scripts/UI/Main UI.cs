@@ -21,6 +21,8 @@ public class MainUI : MonoBehaviour
 
     private void Start()
     {
+        Money = 35;
+        
         for (int i = 0; i < fonts.Length; i++)
         {
             fonts[i].material.mainTexture.filterMode = FilterMode.Point;
