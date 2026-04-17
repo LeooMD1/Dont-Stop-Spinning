@@ -61,7 +61,7 @@ public class Row : MonoBehaviour
 
             if (numberOfSpins <= 5)
             {
-                targetItem = new string[] { "Kiwi", "Banana" }[Random.Range(0, 1)];
+                targetItem = new string[] { "Banana", "Kiwi" }[Random.Range(0, 1)];
             }
 
             else if (numberOfSpins >= 145 && numberOfSpins <= 150)
@@ -82,7 +82,7 @@ public class Row : MonoBehaviour
                     targetItem = new string[] { "Grape", "Banana", "Orange", "6" }[Random.Range(0, 4)];
 
                 else if (RNG > 70 && RNG <= 90)
-                    targetItem = new string[] { "Kiwi", "Kiwi", "Mango", "6" }[Random.Range(0, 4)];
+                    targetItem = new string[] { "Cherry", "Kiwi", "Mango", "6" }[Random.Range(0, 4)];
 
                 else
                     targetItem = new string[] { "7", "6" }[Random.Range(0, 2)];

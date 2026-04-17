@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 
 public class MainUI : MonoBehaviour
 {
-    public static float Money;
+    public static float Money = 35;
     public static float Energy = 7;
     public static float Day = 1;
 
@@ -21,7 +21,7 @@ public class MainUI : MonoBehaviour
 
     private void Start()
     {
-        Money = 35;
+        
         
         for (int i = 0; i < fonts.Length; i++)
         {
