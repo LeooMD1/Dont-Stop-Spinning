@@ -18,6 +18,7 @@ public class SpongeDrap : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     [SerializeField] private Sprite cleanSponge;
     [SerializeField] private Sprite Sponge;
 
+    [SerializeField] private AudioManager audioManager;
     [SerializeField] private Animator soapAnim;
     
 
@@ -26,7 +27,7 @@ public class SpongeDrap : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     public PlateDrag plateDrag;
 
     public bool isCleaning;
-
+    bool isPlayingBubbleSound;
 
     void Start()
     {
@@ -47,11 +48,21 @@ public class SpongeDrap : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         if (Physics2D.IsTouching(spongeCol, soapCol) && Image.sprite == Sponge)
         {
             soapAnim.SetTrigger("Soaped");
+            audioManager.PlaySFX(audioManager.bubbles);
             Image.sprite = cleanSponge;
         }
         
         if (Physics2D.IsTouching(spongeCol, plateCol) && plateDrag.inSink && plateImage.sprite != Soap && plateImage.sprite != cleanPlate && Image.sprite == cleanSponge)
+        {
             StartCoroutine(WashDish());
+            if (!isPlayingBubbleSound)
+            {
+                audioManager.PlaySFX(audioManager.Sponge);
+                isPlayingBubbleSound = true;
+            }
+            
+
+        }
 
         
     }
@@ -63,12 +74,10 @@ public class SpongeDrap : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
     private IEnumerator WashDish()
     {
-        
-        
         yield return new WaitForSeconds(2.5f);
 
         if (isCleaning)
-        plateImage.sprite = Soap;
+            plateImage.sprite = Soap;
 
         yield return new WaitForSeconds(2.5f);
 
@@ -76,6 +85,7 @@ public class SpongeDrap : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         plateImage.sprite = cleanPlate;
 
         Image.sprite = Sponge;
+        isPlayingBubbleSound = false;
     }
 
     void Update()

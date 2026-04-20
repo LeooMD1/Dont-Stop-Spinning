@@ -23,6 +23,7 @@ public class PlateDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
 
     [SerializeField] private Transform PlateStuff;
+    [SerializeField] private AudioManager audioManager;
 
     public bool inSink;
     public bool plateCleaned;
@@ -80,6 +81,7 @@ public class PlateDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
         if (Physics2D.IsTouching(Collider, sinkCol))
         {
+            audioManager.PlaySFX(audioManager.plateInWater);
             transform.localPosition = new(0, -98.1f, transform.localPosition.z);
             print("Sink Teleport works");
             inSink = true;
@@ -127,6 +129,7 @@ public class PlateDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         yield return new WaitForSeconds(3);
 
         MainUI.Money += prizeValue;
+        audioManager.PlaySFX(audioManager.money);
         prizeReward.enabled = false;
 
         MainUI.Energy += energyUsed;

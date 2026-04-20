@@ -13,11 +13,20 @@ public class MainUI : MonoBehaviour
 
     [SerializeField] private float sceneRNG;
     [SerializeField] private Animator sleepAnim;
+    
+    [SerializeField] private AudioManager audioManager;
 
     public Font[] fonts;
     [SerializeField] private TextMeshProUGUI energyText;
     [SerializeField] private TextMeshProUGUI moneyText;
     [SerializeField] private TextMeshProUGUI dayText;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
+
 
     private void Start()
     {
@@ -111,6 +120,15 @@ public class MainUI : MonoBehaviour
     public void DecreaseMoney(float amt)
     {
         Money -= amt;
+    }
+
+    #endregion
+
+    #region Audio Stuff
+
+    public void SpinSound()
+    {
+        audioManager.PlaySFX(audioManager.lever);
     }
 
     #endregion

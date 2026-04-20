@@ -16,6 +16,8 @@ public class SlotMachine : MonoBehaviour
     [SerializeField]
     private Row[] rows;
 
+    [SerializeField] AudioManager audioManager;
+
     public float prizeValue;
 
     public bool resultsChecked = false;
@@ -490,5 +492,10 @@ public class SlotMachine : MonoBehaviour
 
         resultsChecked = true;
         MainUI.Money = MainUI.Money + prizeValue;
+        
+        if (prizeValue > 0)
+        {
+            audioManager.PlaySFX(audioManager.money);
+        }
     }
 }
