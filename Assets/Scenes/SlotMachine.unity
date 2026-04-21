@@ -294,6 +294,7 @@ MonoBehaviour:
   energyText: {fileID: 625985288}
   moneyText: {fileID: 1630846898}
   dayText: {fileID: 0}
+  rows: {fileID: 1741277836}
 --- !u!114 &116171134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2855,6 +2856,7 @@ MonoBehaviour:
   audioManager: {fileID: 373253728}
   prizeValue: 0
   resultsChecked: 0
+  fiveInARow: 0
 --- !u!1 &1266498418
 GameObject:
   m_ObjectHideFlags: 0

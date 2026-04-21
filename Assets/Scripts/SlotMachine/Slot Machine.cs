@@ -21,6 +21,7 @@ public class SlotMachine : MonoBehaviour
     public float prizeValue;
 
     public bool resultsChecked = false;
+    public bool fiveInARow = false;
     #endregion
 
     private void Update()
@@ -30,6 +31,7 @@ public class SlotMachine : MonoBehaviour
             prizeValue = 0;
             prizeText.enabled = false;
             resultsChecked = false;
+            fiveInARow = false;
         }
 
         if (rows[0].canSpin && rows[1].canSpin && rows[2].canSpin && rows[3].canSpin && rows[4].canSpin && !resultsChecked)
@@ -57,56 +59,84 @@ public class SlotMachine : MonoBehaviour
             && rows[2].targetItem == "Cherry"
             && rows[3].targetItem == "Cherry"
             && rows[4].targetItem == "Cherry")
-
+        {
             prizeValue = 500;
+
+            fiveInARow = true;
+        }
+
 
         else if (rows[0].targetItem == "Banana"
             && rows[1].targetItem == "Banana"
             && rows[2].targetItem == "Banana"
             && rows[3].targetItem == "Banana"
             && rows[4].targetItem == "Banana")
+        {
+
 
             prizeValue = 250;
+            fiveInARow = true;
+        }
 
         else if (rows[0].targetItem == "Kiwi"
             && rows[1].targetItem == "Kiwi"
             && rows[2].targetItem == "Kiwi"
             && rows[3].targetItem == "Kiwi"
             && rows[4].targetItem == "Kiwi")
+        {
+
 
             prizeValue = 800;
+            fiveInARow = true;
+        }
 
         else if (rows[0].targetItem == "Orange"
             && rows[1].targetItem == "Orange"
             && rows[2].targetItem == "Orange"
             && rows[3].targetItem == "Orange"
             && rows[4].targetItem == "Orange")
+        {
+
 
             prizeValue = 100;
+            fiveInARow = true;
+        }
 
         else if (rows[0].targetItem == "Grape"
             && rows[1].targetItem == "Grape"
             && rows[2].targetItem == "Grape"
             && rows[3].targetItem == "Grape"
             && rows[4].targetItem == "Grape")
+        {
+
 
             prizeValue = 75;
+            fiveInARow = true;
+        }
 
         else if (rows[0].targetItem == "Mango"
             && rows[1].targetItem == "Mango"
             && rows[2].targetItem == "Mango"
             && rows[3].targetItem == "Mango"
             && rows[4].targetItem == "Mango")
+        {
+
 
             prizeValue = 400;
+            fiveInARow = true;
+        }
 
         else if (rows[0].targetItem == "7"
             && rows[1].targetItem == "7"
             && rows[2].targetItem == "7"
             && rows[3].targetItem == "7"
             && rows[4].targetItem == "7")
+        {
+
 
             prizeValue = 1500;
+            fiveInARow = true;
+        }
 
         else if (rows[0].targetItem == "6"
             && rows[1].targetItem == "6"
@@ -115,6 +145,8 @@ public class SlotMachine : MonoBehaviour
             && rows[4].targetItem == "6")
 
             prizeValue = -1750;
+
+        
         #endregion
 
         #region 3-Row Pattern
@@ -496,6 +528,11 @@ public class SlotMachine : MonoBehaviour
         if (prizeValue > 0)
         {
             audioManager.PlaySFX(audioManager.money);
+        }
+
+        if (fiveInARow)
+        {
+            audioManager.PlaySFX(audioManager.fiveInA_Row);
         }
     }
 }

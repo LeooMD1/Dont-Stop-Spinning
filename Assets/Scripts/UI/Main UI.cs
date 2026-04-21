@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using Unity.VisualScripting;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
@@ -20,6 +21,8 @@ public class MainUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI energyText;
     [SerializeField] private TextMeshProUGUI moneyText;
     [SerializeField] private TextMeshProUGUI dayText;
+    
+    [SerializeField] private Row rows;
 
     private void Awake()
     {
@@ -128,7 +131,9 @@ public class MainUI : MonoBehaviour
 
     public void SpinSound()
     {
-        audioManager.PlaySFX(audioManager.lever);
+        if (rows.canSpin && MainUI.Energy >= 1 && rows.hasMoney)
+            audioManager.PlaySFX(audioManager.lever);
+
     }
 
     #endregion
