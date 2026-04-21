@@ -56,7 +56,7 @@ public class PlateDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     void Update()
     {
-        if (MainUI.Money >= 15)
+        if (MainUI.Money >= 15 || MainUI.Energy < 1)
             leave.SetActive(true);
         else
             leave.SetActive(false);
@@ -65,13 +65,13 @@ public class PlateDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     
     public void OnBeginDrag(PointerEventData eventData)
     {
-        if (!plateCleaned && MainUI.Energy > 0)
+        if (!plateCleaned && MainUI.Energy >= 1)
         Image.color = new Color32(255, 255, 255, 170);
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        if (!plateCleaned && MainUI.Energy > 0)
+        if (!plateCleaned && MainUI.Energy >= 1)
         transform.position = eventData.position; // follow the mouse
     }
 

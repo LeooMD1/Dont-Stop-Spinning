@@ -2199,11 +2199,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneRNG: 0
   sleepAnim: {fileID: 1271661966}
+  button: {fileID: 454796027}
+  audioManager: {fileID: 0}
   fonts:
   - {fileID: 12800000, guid: 701e687de49b19d46bd9248e28056f1c, type: 3}
   energyText: {fileID: 683521425}
   moneyText: {fileID: 1485832447}
   dayText: {fileID: 892927636}
+  rows: {fileID: 0}
 --- !u!1 &1608186193 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8667766794577649712, guid: 6b1ccfd03e7eecb42bcf4d8da717f982, type: 3}

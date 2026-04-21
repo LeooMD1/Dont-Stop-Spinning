@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class MainUI : MonoBehaviour
@@ -14,6 +15,8 @@ public class MainUI : MonoBehaviour
 
     [SerializeField] private float sceneRNG;
     [SerializeField] private Animator sleepAnim;
+    
+    [SerializeField] private GameObject button;
     
     [SerializeField] private AudioManager audioManager;
 
@@ -33,7 +36,7 @@ public class MainUI : MonoBehaviour
 
     private void Start()
     {
-        
+        button.SetActive(true);
         
         for (int i = 0; i < fonts.Length; i++)
         {
@@ -107,6 +110,7 @@ public class MainUI : MonoBehaviour
 
     private IEnumerator Sleeping()
     {
+        button.SetActive(false);
         sleepAnim.SetTrigger("Sleep");
         yield return new WaitForSeconds(1f);
         Energy = 7;

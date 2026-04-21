@@ -79,10 +79,10 @@ public class Row : MonoBehaviour
             else
             {
                 if (RNG <= 70)
-                    targetItem = new string[] { "Grape", "Banana", "Orange", "6" }[Random.Range(0, 4)];
+                    targetItem = new string[] { "Grape", "Banana", "Orange", "6" }[Random.Range(0, 3)];
 
                 else if (RNG > 70 && RNG <= 90)
-                    targetItem = new string[] { "Cherry", "Kiwi", "Mango", "6" }[Random.Range(0, 4)];
+                    targetItem = new string[] { "Cherry", "Kiwi", "Mango", "6" }[Random.Range(0, 3)];
 
                 else
                     targetItem = new string[] { "7", "6" }[Random.Range(0, 2)];
