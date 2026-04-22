@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -7,6 +8,8 @@ public class AdDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
 {
     float mouseX;
     float mouseY;
+
+    [SerializeField] private MainUI mainUI;
 
     Animator anim;
     [SerializeField] private Sprite[] Ads;
@@ -17,13 +20,25 @@ public class AdDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
 
     private Image image;
 
+    public bool invest;
+
+    public float prizeValue;
+    public float energyUsed;
+    public TextMeshProUGUI prizeReward;
+    public TextMeshProUGUI energyDisplay;
+
     Vector2 difference;
     Vector2 randomPosition;
     [SerializeField] private float xRange = 100f;
     [SerializeField] private float yRange = 100f;
 
     public Vector3 mousePosition;
-    
+
+    void Awake()
+    {
+
+    }
+
 
     void Start()
     {
@@ -33,15 +48,31 @@ public class AdDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
 
         anim = GetComponent<Animator>();
 
-        if (currentSprite != Invest || currentSprite != Sell)
+        if (mainUI.investChance == 1)
+        {
+            invest = true;
+            print("true");
+        }
+        else if (mainUI.investChance == 0)
+        {
+            invest = false;
+            print("flase");
+        }
+
+        if (image.sprite != Invest /*|| image.sprite != Sell*/)
         {
             currentSprite = Ads[Random.Range(0, Ads.Length)];
             image.sprite = currentSprite;
         }
 
-        else
+        else if (image.sprite == Invest || image.sprite == Sell)
         {
+            if (invest)
+                currentSprite = Ads[0];    //Ads[Random.Range(0, 1)];
+            else if (!invest)
+                currentSprite = Ads[1];    //Ads[Random.Range(1, 2)];
 
+            image.sprite = currentSprite;
         }
         
 
@@ -55,7 +86,6 @@ public class AdDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
     // Update is called once per frame
     void Update()
     {
-    
     }
     void IBeginDragHandler.OnBeginDrag(PointerEventData eventData)
     {
@@ -85,4 +115,6 @@ public class AdDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
         yield return new WaitForSeconds(0.11f);
         Destroy(gameObject);
     }
+
+   
 }

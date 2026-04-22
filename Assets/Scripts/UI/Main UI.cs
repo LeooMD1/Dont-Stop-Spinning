@@ -13,6 +13,9 @@ public class MainUI : MonoBehaviour
     public static float Energy = 7;
     public static float Day = 1;
 
+    public float investChance;
+    public AdDrag adDrag;
+
     [SerializeField] private float sceneRNG;
     [SerializeField] private Animator sleepAnim;
     
@@ -26,22 +29,27 @@ public class MainUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI dayText;
     
     [SerializeField] private Row rows;
+    
+    [SerializeField] private GameObject Stock;
 
-    private void Awake()
+    public void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        investChance = Random.Range(0, 2);
     }
 
 
 
     private void Start()
     {
-        button.SetActive(true);
-        
+
+
         for (int i = 0; i < fonts.Length; i++)
         {
             fonts[i].material.mainTexture.filterMode = FilterMode.Point;
         }
+        button.SetActive(true);
+        Stock.SetActive(true);
     }
 
     private void Update()
@@ -115,6 +123,63 @@ public class MainUI : MonoBehaviour
         yield return new WaitForSeconds(1f);
         Energy = 7;
         Day += 1;
+    }
+
+    public void Buys()
+    {
+        if (adDrag.invest && MainUI.Energy >= 1)
+        {
+            adDrag.prizeValue = 50;
+            adDrag.energyUsed = -1;
+            Stock.SetActive(false);
+
+        }
+
+        else if (!adDrag.invest && MainUI.Energy >= 1)
+        {
+            adDrag.prizeValue = -200;
+            adDrag.energyUsed = -1;
+            Stock.SetActive(false);
+        }
+
+        StartCoroutine(TextDisplay());
+    }
+
+    public void Sells()
+    {
+        if (!adDrag.invest && MainUI.Energy >= 1)
+        {
+            adDrag.prizeValue = 50;
+            adDrag.energyUsed = -1;
+            Stock.SetActive(false);
+        }
+
+        else if (adDrag.invest && MainUI.Energy >= 1)
+        {
+            adDrag.prizeValue = -200;
+            adDrag.energyUsed = -1;
+            Stock.SetActive(false);
+        }
+
+        StartCoroutine(TextDisplay());
+    }
+
+    private IEnumerator TextDisplay()
+    {
+        adDrag.prizeReward.text = "+$" + (adDrag.prizeValue.ToString());
+        adDrag.prizeReward.enabled = true;
+
+        adDrag.energyDisplay.text = adDrag.energyUsed.ToString();
+        adDrag.energyDisplay.enabled = true;
+
+        yield return new WaitForSeconds(0.5f);
+
+        //audioManager.PlaySFX(audioManager.stock);
+        MainUI.Money += adDrag.prizeValue;
+        adDrag.prizeReward.enabled = false;
+
+        MainUI.Energy += adDrag.energyUsed;
+        adDrag.energyDisplay.enabled = false;
     }
 
     #region Money Things
