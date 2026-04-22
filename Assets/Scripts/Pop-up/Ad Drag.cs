@@ -11,6 +11,10 @@ public class AdDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
     Animator anim;
     [SerializeField] private Sprite[] Ads;
     [SerializeField] private Sprite currentSprite;
+    
+    [SerializeField] private Sprite Invest;
+    [SerializeField] private Sprite Sell;
+
     private Image image;
 
     Vector2 difference;
@@ -29,8 +33,17 @@ public class AdDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
 
         anim = GetComponent<Animator>();
 
-        currentSprite = Ads[Random.Range(0, Ads.Length)];
-        image.sprite = currentSprite;
+        if (currentSprite != Invest || currentSprite != Sell)
+        {
+            currentSprite = Ads[Random.Range(0, Ads.Length)];
+            image.sprite = currentSprite;
+        }
+
+        else
+        {
+
+        }
+        
 
         float xPosition = Random.Range(0 - xRange, 0 + xRange);
         float yPosition = Random.Range(0 - yRange, 0 + yRange);
