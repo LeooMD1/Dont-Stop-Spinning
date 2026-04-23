@@ -119,7 +119,7 @@ public class PlateDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     private IEnumerator DestroyPlate()
     {
         prizeValue = 5;
-        prizeReward.text = "+$" + (prizeValue.ToString());
+        prizeReward.text = "+$" + prizeValue.ToString();
         prizeReward.enabled = true;
 
         energyUsed = -1;

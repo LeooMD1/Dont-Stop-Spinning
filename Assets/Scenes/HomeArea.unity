@@ -995,6 +995,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1604831537}
     m_Modifications:
+    - target: {fileID: 875867411711336459, guid: aa88519a43ea18348ade50983eae6caf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1604831538}
     - target: {fileID: 1375591176643353700, guid: aa88519a43ea18348ade50983eae6caf, type: 3}
       propertyPath: m_Name
       value: Map
@@ -2197,6 +2201,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e340e09a6422b684daed3aa4600c7258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  investChance: 0
+  adDrag: {fileID: 0}
   sceneRNG: 0
   sleepAnim: {fileID: 1271661966}
   button: {fileID: 454796027}
@@ -2207,6 +2213,7 @@ MonoBehaviour:
   moneyText: {fileID: 1485832447}
   dayText: {fileID: 892927636}
   rows: {fileID: 0}
+  Stock: {fileID: 0}
 --- !u!1 &1608186193 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8667766794577649712, guid: 6b1ccfd03e7eecb42bcf4d8da717f982, type: 3}

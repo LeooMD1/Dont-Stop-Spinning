@@ -58,7 +58,6 @@ public class MainUI : MonoBehaviour
 
     private void Update()
     {
-        energyText.text = (Mathf.RoundToInt(MainUI.Energy).ToString());
         moneyText.text = "$" + (MainUI.Money.ToString());
         
         if (MainUI.Money > 0)
@@ -68,6 +67,7 @@ public class MainUI : MonoBehaviour
         else
             moneyText.color = Color.white;
         
+        energyText.text = (Mathf.RoundToInt(MainUI.Energy).ToString());
         dayText.text = "Day: " + (MainUI.Day.ToString());
 
     }

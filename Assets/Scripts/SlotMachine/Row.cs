@@ -35,6 +35,7 @@ public class Row : MonoBehaviour
 
     public float offset1;
     public float offset2;
+    public float newAmount;
     public string targetItem;
 
     public bool canSpin;
@@ -50,51 +51,87 @@ public class Row : MonoBehaviour
 
     void OnClick()
     {
-        if (canSpin && hasMoney && MainUI.Energy > 0)
+        if (MainUI.Money >= newAmount)
         {
-            //this is the base RNG without any Items
-            MainUI.Money -= 3f;
-            MainUI.Energy -= 0.2f;
-            RNG = Random.Range(0, 100);
-            numberOfSpins += 1;
-            print(numberOfSpins);
 
-            if (numberOfSpins <= 5)
+            if (canSpin && hasMoney && MainUI.Energy > 0)
             {
-                targetItem = new string[] { "Banana", "Kiwi" }[Random.Range(0, 1)];
-            }
-
-            else if (numberOfSpins >= 145 && numberOfSpins <= 150)
-            {
-                targetItem = new string[] { "Mango", "6" }[Random.Range(0, 1)];
-                print("holy debt");
-            }
-
-            else if (numberOfSpins >= 500 && numberOfSpins <= 505)
-            {
-                targetItem = new string[] { "7", "Banana" }[Random.Range(0, 1)];
-                print("holy undebt");
-            }
-
-            else
-            {
-                if (RNG <= 70)
-                    targetItem = new string[] { "Grape", "Banana", "Orange", "6" }[Random.Range(0, 3)];
-
-                else if (RNG > 70 && RNG <= 90)
-                    targetItem = new string[] { "Cherry", "Kiwi", "Mango", "6" }[Random.Range(0, 3)];
+                //this is the base RNG without any Items
+                if (MainUI.Item1Bought)
+                {
+                    newAmount = -33f;
+                    MainUI.Money += newAmount;
+                }
 
                 else
-                    targetItem = new string[] { "7", "6" }[Random.Range(0, 2)];
+                {
+                    newAmount = -3f;
+                    MainUI.Money += newAmount;
+                }
+                MainUI.Energy -= 0.2f;
+                RNG = Random.Range(0, 100);
+                numberOfSpins += 1;
+                print(numberOfSpins);
+
+                if (numberOfSpins <= 5)
+                {
+                    targetItem = new string[] { "Banana", "Kiwi" }[Random.Range(0, 1)];
+                }
+
+                else if (numberOfSpins >= 145 && numberOfSpins <= 150)
+                {
+                    targetItem = new string[] { "Mango", "6" }[Random.Range(0, 1)];
+                    print("holy debt");
+                }
+
+                else if (numberOfSpins >= 500 && numberOfSpins <= 505)
+                {
+                    targetItem = new string[] { "7", "Banana" }[Random.Range(0, 1)];
+                    print("holy undebt");
+                }
+
+                else if (MainUI.Item1Bought)
+                {
+                    if (RNG <= 25)
+                        targetItem = new string[] { "Grape", "Banana", "Orange", "6" }[Random.Range(0, 3)];
+
+                    else if (RNG > 25 && RNG <= 90)
+                        targetItem = new string[] { "Cherry", "Kiwi", "Mango", "6" }[Random.Range(0, 3)];
+
+                    else
+                        targetItem = new string[] { "7", "6" }[Random.Range(0, 2)];
+
+
+                }
+
+                else if (MainUI.Item2Bought)
+                {
+                
+                }
+
+                else
+                {
+                    if (RNG <= 70)
+                        targetItem = new string[] { "Grape", "Banana", "Orange", "6" }[Random.Range(0, 3)];
+
+                    else if (RNG > 70 && RNG <= 90)
+                        targetItem = new string[] { "Cherry", "Kiwi", "Mango", "6" }[Random.Range(0, 3)];
+
+                    else
+                        targetItem = new string[] { "7", "6" }[Random.Range(0, 2)];
+                }
+            
+            
+            
+            
+            
+
+                print(offset1);
+
+                StartCoroutine(animStuff());
             }
-            
-            
-            
-
-            print(offset1);
-
-            StartCoroutine(animStuff());
         }
+        
     }
 
     private IEnumerator animStuff()

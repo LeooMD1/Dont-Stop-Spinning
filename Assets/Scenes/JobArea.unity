@@ -743,12 +743,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e340e09a6422b684daed3aa4600c7258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  investChance: 0
+  adDrag: {fileID: 0}
   sceneRNG: 0
   sleepAnim: {fileID: 0}
+  button: {fileID: 0}
+  audioManager: {fileID: 0}
   fonts: []
   energyText: {fileID: 1505667199}
   moneyText: {fileID: 924469011}
   dayText: {fileID: 1172491974}
+  rows: {fileID: 0}
+  Stock: {fileID: 0}
 --- !u!114 &1140286307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1747,6 +1753,14 @@ PrefabInstance:
     - target: {fileID: 151985599243539459, guid: aa88519a43ea18348ade50983eae6caf, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 875867411711336459, guid: aa88519a43ea18348ade50983eae6caf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1140286306}
+    - target: {fileID: 875867411711336459, guid: aa88519a43ea18348ade50983eae6caf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ShopLoad
       objectReference: {fileID: 0}
     - target: {fileID: 1375591176643353700, guid: aa88519a43ea18348ade50983eae6caf, type: 3}
       propertyPath: m_Name

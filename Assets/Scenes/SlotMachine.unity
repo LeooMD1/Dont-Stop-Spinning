@@ -287,14 +287,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e340e09a6422b684daed3aa4600c7258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  investChance: 0
+  adDrag: {fileID: 0}
   sceneRNG: 0
   sleepAnim: {fileID: 0}
+  button: {fileID: 0}
   audioManager: {fileID: 0}
   fonts: []
   energyText: {fileID: 625985288}
   moneyText: {fileID: 1630846898}
   dayText: {fileID: 0}
   rows: {fileID: 1741277836}
+  Stock: {fileID: 0}
 --- !u!114 &116171134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2847,6 +2851,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prizeText: {fileID: 1342255385}
+  Leave: {fileID: 1031923467}
   rows:
   - {fileID: 1741277836}
   - {fileID: 1164034400}
