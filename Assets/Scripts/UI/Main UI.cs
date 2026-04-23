@@ -13,6 +13,10 @@ public class MainUI : MonoBehaviour
     public static float Energy = 7;
     public static float Day = 1;
 
+    public static bool Item1Bought;
+    public static bool Item2Bought;
+    public static bool Item3Bought;
+
     public float investChance;
     public AdDrag adDrag;
 
@@ -106,6 +110,11 @@ public class MainUI : MonoBehaviour
         print("Homeee"); 
         SceneManager.LoadScene("HomeArea");
     }
+
+    public void ShopLoad()
+    {
+        SceneManager.LoadScene("Shop");
+    }
     #endregion
 
     public void Sleep()
@@ -127,17 +136,19 @@ public class MainUI : MonoBehaviour
 
     public void Buys()
     {
-        if (adDrag.invest && MainUI.Energy >= 1)
+        if (adDrag.invest && MainUI.Energy >= 1 && MainUI.Money >= 1)
         {
-            adDrag.prizeValue = 50;
+            adDrag.prizeValue = 25;
+            adDrag.prizeReward.color = Color.green;
             adDrag.energyUsed = -1;
             Stock.SetActive(false);
 
         }
 
-        else if (!adDrag.invest && MainUI.Energy >= 1)
+        else if (!adDrag.invest && MainUI.Energy >= 1 && MainUI.Money >= 1)
         {
-            adDrag.prizeValue = -200;
+            adDrag.prizeValue = -25;
+            adDrag.prizeReward.color = Color.red;
             adDrag.energyUsed = -1;
             Stock.SetActive(false);
         }
@@ -147,16 +158,18 @@ public class MainUI : MonoBehaviour
 
     public void Sells()
     {
-        if (!adDrag.invest && MainUI.Energy >= 1)
+        if (!adDrag.invest && MainUI.Energy >= 1 && MainUI.Money >= 1)
         {
-            adDrag.prizeValue = 50;
+            adDrag.prizeValue = 25;
+            adDrag.prizeReward.color = Color.green;
             adDrag.energyUsed = -1;
             Stock.SetActive(false);
         }
 
-        else if (adDrag.invest && MainUI.Energy >= 1)
+        else if (adDrag.invest && MainUI.Energy >= 1 && MainUI.Money >= 1)
         {
-            adDrag.prizeValue = -200;
+            adDrag.prizeValue = -25;
+            adDrag.prizeReward.color = Color.red;
             adDrag.energyUsed = -1;
             Stock.SetActive(false);
         }
