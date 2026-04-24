@@ -67,6 +67,17 @@ public class SlotMachine : MonoBehaviour
 
             fiveInARow = true;
         }
+        
+        else if (rows[0].targetItem == "Cherry"
+            && rows[1].targetItem == "Cherry"
+            && rows[2].targetItem == "Cherry"
+            && rows[3].targetItem == "Cherry"
+            && rows[4].targetItem == "Cherry" && MainUI.Item3Bought)
+        {
+            prizeValue = 300;
+
+            fiveInARow = true;
+        }
 
 
         else if (rows[0].targetItem == "Banana"
@@ -80,6 +91,16 @@ public class SlotMachine : MonoBehaviour
             prizeValue = 250;
             fiveInARow = true;
         }
+        
+        else if (rows[0].targetItem == "Banana"
+            && rows[1].targetItem == "Banana"
+            && rows[2].targetItem == "Banana"
+            && rows[3].targetItem == "Banana"
+            && rows[4].targetItem == "Banana" && MainUI.Item3Bought)
+        {
+            prizeValue = 100;
+            fiveInARow = true;
+        }
 
         else if (rows[0].targetItem == "Kiwi"
             && rows[1].targetItem == "Kiwi"
@@ -87,9 +108,17 @@ public class SlotMachine : MonoBehaviour
             && rows[3].targetItem == "Kiwi"
             && rows[4].targetItem == "Kiwi")
         {
-
-
             prizeValue = 800;
+            fiveInARow = true;
+        }
+        
+        else if (rows[0].targetItem == "Kiwi"
+            && rows[1].targetItem == "Kiwi"
+            && rows[2].targetItem == "Kiwi"
+            && rows[3].targetItem == "Kiwi"
+            && rows[4].targetItem == "Kiwi" && MainUI.Item3Bought)
+        {
+            prizeValue = 500;
             fiveInARow = true;
         }
 
@@ -102,6 +131,18 @@ public class SlotMachine : MonoBehaviour
 
 
             prizeValue = 100;
+            fiveInARow = true;
+        } 
+        
+        else if (rows[0].targetItem == "Orange"
+            && rows[1].targetItem == "Orange"
+            && rows[2].targetItem == "Orange"
+            && rows[3].targetItem == "Orange"
+            && rows[4].targetItem == "Orange" && MainUI.Item3Bought)
+        {
+
+
+            prizeValue = 20;
             fiveInARow = true;
         }
 
@@ -116,6 +157,18 @@ public class SlotMachine : MonoBehaviour
             prizeValue = 75;
             fiveInARow = true;
         }
+        
+        else if (rows[0].targetItem == "Grape"
+            && rows[1].targetItem == "Grape"
+            && rows[2].targetItem == "Grape"
+            && rows[3].targetItem == "Grape"
+            && rows[4].targetItem == "Grape" && MainUI.Item3Bought)
+        {
+
+
+            prizeValue = 15;
+            fiveInARow = true;
+        }
 
         else if (rows[0].targetItem == "Mango"
             && rows[1].targetItem == "Mango"
@@ -126,6 +179,18 @@ public class SlotMachine : MonoBehaviour
 
 
             prizeValue = 400;
+            fiveInARow = true;
+        } 
+        
+        else if (rows[0].targetItem == "Mango"
+            && rows[1].targetItem == "Mango"
+            && rows[2].targetItem == "Mango"
+            && rows[3].targetItem == "Mango"
+            && rows[4].targetItem == "Mango" && MainUI.Item3Bought)
+        {
+
+
+            prizeValue = 250;
             fiveInARow = true;
         }
 
@@ -139,6 +204,18 @@ public class SlotMachine : MonoBehaviour
 
             prizeValue = 1500;
             fiveInARow = true;
+        } 
+        
+        else if (rows[0].targetItem == "7"
+            && rows[1].targetItem == "7"
+            && rows[2].targetItem == "7"
+            && rows[3].targetItem == "7"
+            && rows[4].targetItem == "7" && MainUI.Item3Bought)
+        {
+
+
+            prizeValue = 750;
+            fiveInARow = true;
         }
 
         else if (rows[0].targetItem == "6"
@@ -147,7 +224,15 @@ public class SlotMachine : MonoBehaviour
             && rows[3].targetItem == "6"
             && rows[4].targetItem == "6" && MainUI.Item2Bought)
 
-            prizeValue = -1800;
+            prizeValue = -1800; 
+        
+        else if (rows[0].targetItem == "6"
+            && rows[1].targetItem == "6"
+            && rows[2].targetItem == "6"
+            && rows[3].targetItem == "6"
+            && rows[4].targetItem == "6" && MainUI.Item3Bought)
+
+            prizeValue = -1000;
 
         else if (rows[0].targetItem == "6"
             && rows[1].targetItem == "6"
@@ -167,20 +252,41 @@ public class SlotMachine : MonoBehaviour
             (rows[4].targetItem == "Cherry"))
 
             prizeValue = 250;
+        
+        else if (
+            (rows[0].targetItem == "Cherry") &&
+            (rows[2].targetItem == "Cherry") &&
+            (rows[4].targetItem == "Cherry") && MainUI.Item3Bought)
+
+            prizeValue = 50;
 
         else if (
             (rows[0].targetItem == "Banana") &&
             (rows[2].targetItem == "Banana") &&
             (rows[4].targetItem == "Banana"))
 
-            prizeValue = 50;
+            prizeValue = 50; 
+        
+        else if (
+            (rows[0].targetItem == "Banana") &&
+            (rows[2].targetItem == "Banana") &&
+            (rows[4].targetItem == "Banana") && MainUI.Item3Bought)
+
+            prizeValue = 5;
 
         else if (
             (rows[0].targetItem == "Kiwi") &&
             (rows[2].targetItem == "Kiwi") &&
             (rows[4].targetItem == "Kiwi"))
 
-            prizeValue = 400;
+            prizeValue = 400; 
+        
+        else if (
+            (rows[0].targetItem == "Kiwi") &&
+            (rows[2].targetItem == "Kiwi") &&
+            (rows[4].targetItem == "Kiwi") && MainUI.Item3Bought)
+
+            prizeValue = 100;
 
         else if (
             (rows[0].targetItem == "Orange") &&
@@ -188,6 +294,13 @@ public class SlotMachine : MonoBehaviour
             (rows[4].targetItem == "Orange"))
 
             prizeValue = 50;
+        
+        else if (
+            (rows[0].targetItem == "Orange") &&
+            (rows[2].targetItem == "Orange") &&
+            (rows[4].targetItem == "Orange") && MainUI.Item3Bought)
+
+            prizeValue = 15;
 
         else if (
             (rows[0].targetItem == "Grape") &&
@@ -195,13 +308,27 @@ public class SlotMachine : MonoBehaviour
             (rows[4].targetItem == "Grape"))
 
             prizeValue = 50;
+        
+        else if (
+            (rows[0].targetItem == "Grape") &&
+            (rows[2].targetItem == "Grape") &&
+            (rows[4].targetItem == "Grape") && MainUI.Item3Bought)
+
+            prizeValue = 20;
 
         else if (
             (rows[0].targetItem == "Mango") &&
             (rows[2].targetItem == "Mango") &&
             (rows[4].targetItem == "Mango"))
 
-            prizeValue = 200;
+            prizeValue = 200; 
+        
+        else if (
+            (rows[0].targetItem == "Mango") &&
+            (rows[2].targetItem == "Mango") &&
+            (rows[4].targetItem == "Mango") && MainUI.Item3Bought)
+
+            prizeValue = 100;
 
         else if (
             (rows[0].targetItem == "7") &&
@@ -209,6 +336,13 @@ public class SlotMachine : MonoBehaviour
             (rows[4].targetItem == "7"))
 
             prizeValue = 750;
+        
+        else if (
+            (rows[0].targetItem == "7") &&
+            (rows[2].targetItem == "7") &&
+            (rows[4].targetItem == "7") && MainUI.Item3Bought)
+
+            prizeValue = 300;
 
         else if (
             (rows[0].targetItem == "6") &&
@@ -216,6 +350,13 @@ public class SlotMachine : MonoBehaviour
             (rows[4].targetItem == "6") && MainUI.Item2Bought)
 
             prizeValue = -850;
+         
+        else if (
+            (rows[0].targetItem == "6") &&
+            (rows[2].targetItem == "6") &&
+            (rows[4].targetItem == "6") && MainUI.Item3Bought)
+
+            prizeValue = -500;
 
         else if (
             (rows[0].targetItem == "6") &&
@@ -229,21 +370,42 @@ public class SlotMachine : MonoBehaviour
             (rows[2].targetItem == "Cherry") &&
             (rows[3].targetItem == "Cherry"))
 
-            prizeValue = 250;
+            prizeValue = 250; 
+        
+        else if (
+            (rows[1].targetItem == "Cherry") &&
+            (rows[2].targetItem == "Cherry") &&
+            (rows[3].targetItem == "Cherry") && MainUI.Item3Bought)
+
+            prizeValue = 50;
 
         else if (
             (rows[1].targetItem == "Banana") &&
             (rows[2].targetItem == "Banana") &&
             (rows[3].targetItem == "Banana"))
 
-            prizeValue = 50;
+            prizeValue = 50; 
+        
+        else if (
+            (rows[1].targetItem == "Banana") &&
+            (rows[2].targetItem == "Banana") &&
+            (rows[3].targetItem == "Banana") && MainUI.Item3Bought)
+
+            prizeValue = 5;
 
         else if (
             (rows[1].targetItem == "Kiwi") &&
             (rows[2].targetItem == "Kiwi") &&
             (rows[3].targetItem == "Kiwi"))
 
-            prizeValue = 400;
+            prizeValue = 400; 
+        
+        else if (
+            (rows[1].targetItem == "Kiwi") &&
+            (rows[2].targetItem == "Kiwi") &&
+            (rows[3].targetItem == "Kiwi") && MainUI.Item3Bought)
+
+            prizeValue = 100;
 
         else if (
             (rows[1].targetItem == "Orange") &&
@@ -251,13 +413,27 @@ public class SlotMachine : MonoBehaviour
             (rows[3].targetItem == "Orange"))
 
             prizeValue = 50;
+        
+        else if (
+            (rows[1].targetItem == "Orange") &&
+            (rows[2].targetItem == "Orange") &&
+            (rows[3].targetItem == "Orange") && MainUI.Item3Bought)
+
+            prizeValue = 15;
 
         else if (
            (rows[1].targetItem == "Grape") &&
            (rows[2].targetItem == "Grape") &&
            (rows[3].targetItem == "Grape"))
 
-            prizeValue = 50;
+            prizeValue = 50; 
+        
+        else if (
+           (rows[1].targetItem == "Grape") &&
+           (rows[2].targetItem == "Grape") &&
+           (rows[3].targetItem == "Grape") && MainUI.Item3Bought)
+
+            prizeValue = 20;
 
         else if (
             (rows[1].targetItem == "Mango") &&
@@ -265,6 +441,13 @@ public class SlotMachine : MonoBehaviour
             (rows[3].targetItem == "Mango"))
 
             prizeValue = 200;
+        
+        else if (
+            (rows[1].targetItem == "Mango") &&
+            (rows[2].targetItem == "Mango") &&
+            (rows[3].targetItem == "Mango") && MainUI.Item3Bought)
+
+            prizeValue = 100;
 
         else if (
            (rows[1].targetItem == "7") &&
@@ -272,6 +455,13 @@ public class SlotMachine : MonoBehaviour
            (rows[3].targetItem == "7"))
 
             prizeValue = 750;
+        
+        else if (
+           (rows[1].targetItem == "7") &&
+           (rows[2].targetItem == "7") &&
+           (rows[3].targetItem == "7") && MainUI.Item3Bought)
+
+            prizeValue = 300;
 
         else if (
             (rows[1].targetItem == "6") &&
@@ -279,6 +469,13 @@ public class SlotMachine : MonoBehaviour
             (rows[3].targetItem == "6") && MainUI.Item2Bought)
 
             prizeValue = -850;
+        
+        else if (
+            (rows[1].targetItem == "6") &&
+            (rows[2].targetItem == "6") &&
+            (rows[3].targetItem == "6") && MainUI.Item3Bought)
+
+            prizeValue = -500;
         
         else if (
             (rows[1].targetItem == "6") &&
@@ -292,7 +489,14 @@ public class SlotMachine : MonoBehaviour
            (rows[1].targetItem == "Cherry") &&
            (rows[2].targetItem == "Cherry"))
 
-            prizeValue = 250;
+            prizeValue = 250; 
+        
+        else if (
+           (rows[0].targetItem == "Cherry") &&
+           (rows[1].targetItem == "Cherry") &&
+           (rows[2].targetItem == "Cherry") && MainUI.Item3Bought)
+
+            prizeValue = 50;
 
         else if (
            (rows[2].targetItem == "Cherry") &&
@@ -300,6 +504,13 @@ public class SlotMachine : MonoBehaviour
            (rows[4].targetItem == "Cherry"))
 
             prizeValue = 250;
+        
+        else if (
+           (rows[2].targetItem == "Cherry") &&
+           (rows[3].targetItem == "Cherry") &&
+           (rows[4].targetItem == "Cherry") && MainUI.Item3Bought)
+
+            prizeValue = 50;
 
         else if (
            (rows[0].targetItem == "Banana") &&
@@ -307,6 +518,13 @@ public class SlotMachine : MonoBehaviour
            (rows[2].targetItem == "Banana"))
 
             prizeValue = 50;
+        
+        else if (
+           (rows[0].targetItem == "Banana") &&
+           (rows[1].targetItem == "Banana") &&
+           (rows[2].targetItem == "Banana") && MainUI.Item3Bought)
+
+            prizeValue = 5;
 
         else if (
            (rows[2].targetItem == "Banana") &&
@@ -314,6 +532,13 @@ public class SlotMachine : MonoBehaviour
            (rows[4].targetItem == "Banana"))
 
             prizeValue = 50;
+        
+        else if (
+           (rows[2].targetItem == "Banana") &&
+           (rows[3].targetItem == "Banana") &&
+           (rows[4].targetItem == "Banana") && MainUI.Item3Bought)
+
+            prizeValue = 5;
 
         else if (
             (rows[0].targetItem == "Kiwi") &&
@@ -321,6 +546,13 @@ public class SlotMachine : MonoBehaviour
             (rows[2].targetItem == "Kiwi"))
 
             prizeValue = 400;
+        
+        else if (
+            (rows[0].targetItem == "Kiwi") &&
+            (rows[1].targetItem == "Kiwi") &&
+            (rows[2].targetItem == "Kiwi") && MainUI.Item3Bought)
+
+            prizeValue = 100;
 
         else if (
             (rows[2].targetItem == "Kiwi") &&
@@ -328,6 +560,13 @@ public class SlotMachine : MonoBehaviour
             (rows[4].targetItem == "Kiwi"))
 
             prizeValue = 400;
+        
+        else if (
+            (rows[2].targetItem == "Kiwi") &&
+            (rows[3].targetItem == "Kiwi") &&
+            (rows[4].targetItem == "Kiwi") && MainUI.Item3Bought)
+
+            prizeValue = 100;
 
         else if (
             (rows[0].targetItem == "Orange") &&
@@ -335,6 +574,27 @@ public class SlotMachine : MonoBehaviour
             (rows[2].targetItem == "Orange"))
 
             prizeValue = 50;
+        
+        else if (
+            (rows[0].targetItem == "Orange") &&
+            (rows[1].targetItem == "Orange") &&
+            (rows[2].targetItem == "Orange") && MainUI.Item3Bought)
+
+            prizeValue = 15;
+        
+        else if (
+            (rows[2].targetItem == "Orange") &&
+            (rows[3].targetItem == "Orange") &&
+            (rows[4].targetItem == "Orange"))
+
+            prizeValue = 50;
+        
+        else if (
+            (rows[2].targetItem == "Orange") &&
+            (rows[3].targetItem == "Orange") &&
+            (rows[4].targetItem == "Orange") && MainUI.Item3Bought)
+
+            prizeValue = 15;
 
         else if (
             (rows[0].targetItem == "Grape") &&
@@ -342,6 +602,13 @@ public class SlotMachine : MonoBehaviour
             (rows[2].targetItem == "Grape"))
 
             prizeValue = 50;
+        
+        else if (
+            (rows[0].targetItem == "Grape") &&
+            (rows[1].targetItem == "Grape") &&
+            (rows[2].targetItem == "Grape") && MainUI.Item3Bought)
+
+            prizeValue = 20;
 
         else if (
             (rows[2].targetItem == "Grape") &&
@@ -349,6 +616,13 @@ public class SlotMachine : MonoBehaviour
             (rows[4].targetItem == "Grape"))
 
             prizeValue = 50;
+        
+        else if (
+            (rows[2].targetItem == "Grape") &&
+            (rows[3].targetItem == "Grape") &&
+            (rows[4].targetItem == "Grape") && MainUI.Item3Bought)
+
+            prizeValue = 20;
 
         else if (
             (rows[0].targetItem == "Mango") &&
@@ -356,13 +630,27 @@ public class SlotMachine : MonoBehaviour
             (rows[2].targetItem == "Mango"))
 
             prizeValue = 200;
+        
+        else if (
+            (rows[0].targetItem == "Mango") &&
+            (rows[1].targetItem == "Mango") &&
+            (rows[2].targetItem == "Mango") && MainUI.Item3Bought)
+
+            prizeValue = 100;
 
         else if (
             (rows[2].targetItem == "Mango") &&
             (rows[3].targetItem == "Mango") &&
             (rows[4].targetItem == "Mango"))
 
-            prizeValue = 200;
+            prizeValue = 200; 
+        
+        else if (
+            (rows[2].targetItem == "Mango") &&
+            (rows[3].targetItem == "Mango") &&
+            (rows[4].targetItem == "Mango") && MainUI.Item3Bought)
+
+            prizeValue = 100;
 
         else if (
            (rows[0].targetItem == "7") &&
@@ -370,6 +658,13 @@ public class SlotMachine : MonoBehaviour
            (rows[2].targetItem == "7"))
 
             prizeValue = 750;
+        
+        else if (
+           (rows[0].targetItem == "7") &&
+           (rows[1].targetItem == "7") &&
+           (rows[2].targetItem == "7") && MainUI.Item3Bought)
+
+            prizeValue = 300;
 
         else if (
           (rows[2].targetItem == "7") &&
@@ -377,6 +672,13 @@ public class SlotMachine : MonoBehaviour
           (rows[4].targetItem == "7"))
 
             prizeValue = 750;
+         
+        else if (
+          (rows[2].targetItem == "7") &&
+          (rows[3].targetItem == "7") &&
+          (rows[4].targetItem == "7") && MainUI.Item3Bought)
+
+            prizeValue = 300;
 
         else if (
            (rows[0].targetItem == "6") &&
@@ -384,6 +686,13 @@ public class SlotMachine : MonoBehaviour
            (rows[2].targetItem == "6") && MainUI.Item2Bought)
 
             prizeValue = -850;
+        
+        else if (
+           (rows[0].targetItem == "6") &&
+           (rows[1].targetItem == "6") &&
+           (rows[2].targetItem == "6") && MainUI.Item3Bought)
+
+            prizeValue = -500;
         
         else if (
            (rows[0].targetItem == "6") &&
@@ -402,6 +711,13 @@ public class SlotMachine : MonoBehaviour
         else if (
            (rows[2].targetItem == "6") &&
            (rows[3].targetItem == "6") &&
+           (rows[4].targetItem == "6") && MainUI.Item3Bought)
+
+            prizeValue = -500;
+        
+        else if (
+           (rows[2].targetItem == "6") &&
+           (rows[3].targetItem == "6") &&
            (rows[4].targetItem == "6"))
 
             prizeValue = -800;
@@ -415,132 +731,264 @@ public class SlotMachine : MonoBehaviour
            (rows[1].targetItem == "Cherry"))
 
             prizeValue = 50;
+        
+        else if (
+           (rows[0].targetItem == "Cherry") &&
+           (rows[1].targetItem == "Cherry") && MainUI.Item3Bought)
+
+            prizeValue = 25;
 
         else if (
            (rows[1].targetItem == "Cherry") &&
            (rows[3].targetItem == "Cherry"))
 
             prizeValue = 50;
+        
+        else if (
+           (rows[1].targetItem == "Cherry") &&
+           (rows[3].targetItem == "Cherry") && MainUI.Item3Bought)
+
+            prizeValue = 25;
 
         else if (
            (rows[3].targetItem == "Cherry") &&
            (rows[4].targetItem == "Cherry"))
 
             prizeValue = 50;
+        
+        else if (
+           (rows[3].targetItem == "Cherry") &&
+           (rows[4].targetItem == "Cherry") && MainUI.Item3Bought)
+
+            prizeValue = 25;
 
         else if (
           (rows[0].targetItem == "Banana") &&
           (rows[1].targetItem == "Banana"))
 
-            prizeValue = 5;
+            prizeValue = 5; 
+        
+        else if (
+          (rows[0].targetItem == "Banana") &&
+          (rows[1].targetItem == "Banana") && MainUI.Item3Bought)
+
+            prizeValue = 3;
 
         else if (
           (rows[1].targetItem == "Banana") &&
           (rows[3].targetItem == "Banana"))
 
             prizeValue = 5;
+        
+        else if (
+          (rows[1].targetItem == "Banana") &&
+          (rows[3].targetItem == "Banana") && MainUI.Item3Bought)
+
+            prizeValue = 3;
 
         else if (
          (rows[3].targetItem == "Banana") &&
          (rows[4].targetItem == "Banana"))
 
             prizeValue = 5;
+        
+        else if (
+         (rows[3].targetItem == "Banana") &&
+         (rows[4].targetItem == "Banana") && MainUI.Item3Bought)
+
+            prizeValue = 3;
 
         else if (
             (rows[0].targetItem == "Kiwi") &&
             (rows[1].targetItem == "Kiwi"))
 
             prizeValue = 50;
+        
+        else if (
+            (rows[0].targetItem == "Kiwi") &&
+            (rows[1].targetItem == "Kiwi") && MainUI.Item3Bought)
+
+            prizeValue = 25;
 
         else if (
             (rows[1].targetItem == "Kiwi") &&
             (rows[3].targetItem == "Kiwi"))
 
             prizeValue = 50;
+        
+        else if (
+            (rows[1].targetItem == "Kiwi") &&
+            (rows[3].targetItem == "Kiwi") && MainUI.Item3Bought)
+
+            prizeValue = 25;
 
         else if (
             (rows[3].targetItem == "Kiwi") &&
             (rows[4].targetItem == "Kiwi"))
 
-            prizeValue = 50;
+            prizeValue = 50; 
+        
+        else if (
+            (rows[3].targetItem == "Kiwi") &&
+            (rows[4].targetItem == "Kiwi") && MainUI.Item3Bought)
+
+            prizeValue = 25;
 
         else if (
             (rows[0].targetItem == "Orange") &&
             (rows[1].targetItem == "Orange"))
 
             prizeValue = 5;
+        
+        else if (
+            (rows[0].targetItem == "Orange") &&
+            (rows[1].targetItem == "Orange") && MainUI.Item3Bought)
+
+            prizeValue = 3;
 
         else if (
             (rows[1].targetItem == "Orange") &&
             (rows[3].targetItem == "Orange"))
 
             prizeValue = 5;
+        
+        else if (
+            (rows[1].targetItem == "Orange") &&
+            (rows[3].targetItem == "Orange") && MainUI.Item3Bought)
+
+            prizeValue = 3;
 
         else if (
             (rows[3].targetItem == "Orange") &&
             (rows[4].targetItem == "Orange"))
 
             prizeValue = 5;
+        
+        else if (
+            (rows[3].targetItem == "Orange") &&
+            (rows[4].targetItem == "Orange") && MainUI.Item3Bought)
+
+            prizeValue = 3;
 
         else if (
             (rows[0].targetItem == "Grape") &&
             (rows[1].targetItem == "Grape"))
 
             prizeValue = 5;
+        
+        else if (
+            (rows[0].targetItem == "Grape") &&
+            (rows[1].targetItem == "Grape") && MainUI.Item3Bought)
+
+            prizeValue = 3;
 
         else if (
             (rows[1].targetItem == "Grape") &&
             (rows[3].targetItem == "Grape"))
 
             prizeValue = 5;
+        
+        else if (
+            (rows[1].targetItem == "Grape") &&
+            (rows[3].targetItem == "Grape") && MainUI.Item3Bought)
+
+            prizeValue = 3;
 
         else if (
            (rows[3].targetItem == "Grape") &&
            (rows[4].targetItem == "Grape"))
 
-            prizeValue = 5;
+            prizeValue = 5; 
+        
+        else if (
+           (rows[3].targetItem == "Grape") &&
+           (rows[4].targetItem == "Grape") && MainUI.Item3Bought)
+
+            prizeValue = 3;
 
         else if (
             (rows[0].targetItem == "Mango") &&
             (rows[1].targetItem == "Mango"))
 
             prizeValue = 45;
+        
+        else if (
+            (rows[0].targetItem == "Mango") &&
+            (rows[1].targetItem == "Mango") && MainUI.Item3Bought)
+
+            prizeValue = 20;
 
         else if (
             (rows[1].targetItem == "Mango") &&
             (rows[3].targetItem == "Mango"))
 
             prizeValue = 45;
+        
+        else if (
+            (rows[1].targetItem == "Mango") &&
+            (rows[3].targetItem == "Mango") && MainUI.Item3Bought)
+
+            prizeValue = 20;
 
         else if (
             (rows[3].targetItem == "Mango") &&
             (rows[4].targetItem == "Mango"))
 
             prizeValue = 45;
+        
+        else if (
+            (rows[3].targetItem == "Mango") &&
+            (rows[4].targetItem == "Mango") && MainUI.Item3Bought)
+
+            prizeValue = 20;
 
         else if (
            (rows[0].targetItem == "7") &&
            (rows[1].targetItem == "7"))
 
             prizeValue = 85;
+        
+        else if (
+           (rows[0].targetItem == "7") &&
+           (rows[1].targetItem == "7") && MainUI.Item3Bought)
+
+            prizeValue = 50;
 
         else if (
            (rows[1].targetItem == "7") &&
            (rows[3].targetItem == "7"))
 
-            prizeValue = 85;
+            prizeValue = 85; 
+        
+        else if (
+           (rows[1].targetItem == "7") &&
+           (rows[3].targetItem == "7") && MainUI.Item3Bought)
+
+            prizeValue = 50;
 
         else if (
            (rows[3].targetItem == "7") &&
            (rows[4].targetItem == "7"))
 
             prizeValue = 85;
+        
+        else if (
+           (rows[3].targetItem == "7") &&
+           (rows[4].targetItem == "7") && MainUI.Item3Bought)
+
+            prizeValue = 50;
 
         else if (
           (rows[0].targetItem == "6") &&
           (rows[1].targetItem == "6") && MainUI.Item2Bought)
 
-            prizeValue = -140;
+            prizeValue = -140; 
+        
+        else if (
+          (rows[0].targetItem == "6") &&
+          (rows[1].targetItem == "6") && MainUI.Item3Bought)
+
+            prizeValue = -75;
         
         else if (
           (rows[0].targetItem == "6") &&
@@ -552,19 +1000,31 @@ public class SlotMachine : MonoBehaviour
           (rows[1].targetItem == "6") &&
           (rows[3].targetItem == "6"))
 
-            prizeValue = -90;
+            prizeValue = -90;  
         
         else if (
           (rows[1].targetItem == "6") &&
           (rows[3].targetItem == "6") && MainUI.Item2Bought)
 
             prizeValue = -140; 
-        
+       
         else if (
           (rows[1].targetItem == "6") &&
-          (rows[3].targetItem == "6") && MainUI.Item2Bought)
+          (rows[3].targetItem == "6") && MainUI.Item3Bought)
+
+            prizeValue = -75;      
+        
+        else if (
+          (rows[3].targetItem == "6") &&
+          (rows[4].targetItem == "6") && MainUI.Item2Bought)
 
             prizeValue = -140;
+        
+        else if (
+          (rows[3].targetItem == "6") &&
+          (rows[4].targetItem == "6") && MainUI.Item3Bought)
+
+            prizeValue = -75;
 
         else if (
           (rows[3].targetItem == "6") &&
@@ -572,6 +1032,18 @@ public class SlotMachine : MonoBehaviour
 
             prizeValue = -90;
 
+        else if (
+          (rows[0].targetItem == "6") &&
+          (rows[1].targetItem == "7"))
+
+            prizeValue = 67;
+        
+        else if (
+          (rows[1].targetItem == "6") &&
+          (rows[3].targetItem == "7"))
+
+            prizeValue = 67;
+        
         else if (
           (rows[3].targetItem == "6") &&
           (rows[4].targetItem == "7"))

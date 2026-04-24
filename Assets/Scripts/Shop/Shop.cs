@@ -8,10 +8,14 @@ public class Shop : MonoBehaviour
     public GameObject Item1;
     public GameObject Item2;
     public GameObject Item3;
+    
+    public GameObject Chamar;
 
     public GameObject Info1;
     public GameObject Info2;
     public GameObject Info3;
+    
+    public GameObject ChamarInfo;
 
     public bool bought = false;
     private float prizeValue;
@@ -28,6 +32,9 @@ public class Shop : MonoBehaviour
 
         if (MainUI.Item3Bought)
             Item3.SetActive(false);
+
+        if(MainUI.ChamarBought)
+            Chamar.SetActive(false);
         
         
         Info1.SetActive(false);       
@@ -40,7 +47,10 @@ public class Shop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (MainUI.Item1Bought && MainUI.Item2Bought && MainUI.Item3Bought)
+        {
+            Chamar.SetActive(true);
+        }
     }
 
     public void ItemPressed(GameObject info)
@@ -113,4 +123,17 @@ public class Shop : MonoBehaviour
             print(MainUI.Item3Bought);
         }
     }
+
+    public void ChamarBought()
+    {
+        if (bought)
+        {
+            Chamar.SetActive(false);
+            ChamarInfo.SetActive(false);
+            MainUI.ChamarBought = true;
+            print(MainUI.ChamarBought);
+        }
+    }
+
+
 }

@@ -63,6 +63,18 @@ public class Row : MonoBehaviour
                     MainUI.Money += newAmount;
                 }
 
+                else if (MainUI.Item1Bought && MainUI.Item3Bought)
+                {
+                    newAmount = -20f;
+                    MainUI.Money += newAmount;
+                }
+
+                else if (MainUI.Item3Bought)
+                {
+                    newAmount = -2f;
+                    MainUI.Money += newAmount;
+                }
+
                 else
                 {
                     newAmount = -3f;

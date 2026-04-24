@@ -16,6 +16,7 @@ public class MainUI : MonoBehaviour
     public static bool Item1Bought;
     public static bool Item2Bought;
     public static bool Item3Bought;
+    public static bool ChamarBought;
 
     public float investChance;
     public AdDrag adDrag;
