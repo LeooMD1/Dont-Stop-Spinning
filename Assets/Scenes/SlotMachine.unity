@@ -211,7 +211,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 4096
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -849,6 +849,8 @@ MonoBehaviour:
   RNG: 0
   offset1: 0
   offset2: 0
+  newAmount: 0
+  newAmountText: 0
   targetItem: 
   canSpin: 0
   hasMoney: 0
@@ -1963,6 +1965,8 @@ MonoBehaviour:
   RNG: 0
   offset1: 0
   offset2: 0
+  newAmount: 0
+  newAmountText: 0
   targetItem: 
   canSpin: 0
   hasMoney: 0
@@ -2679,6 +2683,8 @@ MonoBehaviour:
   RNG: 0
   offset1: 0
   offset2: 0
+  newAmount: 0
+  newAmountText: 0
   targetItem: 
   canSpin: 0
   hasMoney: 0
@@ -2859,6 +2865,7 @@ MonoBehaviour:
   - {fileID: 278822908}
   - {fileID: 763503771}
   audioManager: {fileID: 373253728}
+  cost: {fileID: 76475151}
   prizeValue: 0
   resultsChecked: 0
   fiveInARow: 0
@@ -3680,6 +3687,8 @@ MonoBehaviour:
   RNG: 0
   offset1: 0
   offset2: 0
+  newAmount: 0
+  newAmountText: 0
   targetItem: 
   canSpin: 0
   hasMoney: 0
@@ -4074,6 +4083,8 @@ MonoBehaviour:
   RNG: 0
   offset1: 0
   offset2: 0
+  newAmount: 0
+  newAmountText: 0
   targetItem: 
   canSpin: 0
   hasMoney: 0

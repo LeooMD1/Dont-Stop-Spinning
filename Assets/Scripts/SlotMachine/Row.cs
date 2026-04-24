@@ -36,6 +36,7 @@ public class Row : MonoBehaviour
     public float offset1;
     public float offset2;
     public float newAmount;
+    public float newAmountText;
     public string targetItem;
 
     public bool canSpin;
@@ -45,41 +46,45 @@ public class Row : MonoBehaviour
     {
         offset1 = -368;
 
+
         button.onClick.AddListener(OnClick);
         anim = GetComponent<Animator>();
+        
     }
 
     void OnClick()
     {
-        if (MainUI.Money >= newAmount)
+        newAmountText = newAmount * 5;
+        
+        if (MainUI.Item1Bought)
+        {
+            newAmount = -33f;
+            MainUI.Money += newAmount;
+        }
+
+        else if (MainUI.Item1Bought && MainUI.Item3Bought)
+        {
+            newAmount = -20f;
+            MainUI.Money += newAmount;
+        }
+
+        else if (MainUI.Item3Bought)
+        {
+            newAmount = -2f;
+            MainUI.Money += newAmount;
+        }
+
+        else
+        {
+            newAmount = -3f;
+            MainUI.Money += newAmount;
+        }
+        if (MainUI.Money >= newAmount * -5)
         {
 
             if (canSpin && hasMoney && MainUI.Energy > 0)
             {
                 //this is the base RNG without any Items
-                if (MainUI.Item1Bought)
-                {
-                    newAmount = -33f;
-                    MainUI.Money += newAmount;
-                }
-
-                else if (MainUI.Item1Bought && MainUI.Item3Bought)
-                {
-                    newAmount = -20f;
-                    MainUI.Money += newAmount;
-                }
-
-                else if (MainUI.Item3Bought)
-                {
-                    newAmount = -2f;
-                    MainUI.Money += newAmount;
-                }
-
-                else
-                {
-                    newAmount = -3f;
-                    MainUI.Money += newAmount;
-                }
                 MainUI.Energy -= 0.2f;
                 RNG = Random.Range(0, 100);
                 numberOfSpins += 1;
@@ -104,10 +109,10 @@ public class Row : MonoBehaviour
 
                 else if (MainUI.Item1Bought)
                 {
-                    if (RNG <= 25)
+                    if (RNG <= 5)
                         targetItem = new string[] { "Grape", "Banana", "Orange", "6" }[Random.Range(0, 3)];
 
-                    else if (RNG > 25 && RNG <= 90)
+                    else if (RNG > 5 && RNG <= 85)
                         targetItem = new string[] { "Cherry", "Kiwi", "Mango", "6" }[Random.Range(0, 3)];
 
                     else
@@ -118,7 +123,17 @@ public class Row : MonoBehaviour
 
                 else if (MainUI.Item2Bought)
                 {
-                
+                    if (RNG <= 70)
+                        targetItem = new string[] { "Grape", "Banana", "Orange", "6" }[Random.Range(0, 3)];
+
+                    else if (RNG > 70 && RNG <= 85)
+                        targetItem = new string[] { "Cherry", "Kiwi", "Mango", "6" }[Random.Range(0, 3)];
+
+                    else if (RNG > 85 && RNG <=95)
+                        targetItem = new string[] { "7", "6" }[Random.Range(0, 2)];
+                    else
+                        targetItem = new string[] { "6", "7" }[Random.Range(0, 1)];
+
                 }
 
                 else
@@ -167,7 +182,7 @@ public class Row : MonoBehaviour
         
         transform.localPosition = new(transform.localPosition.x, Wrap(offset1 + offset2, minYPos, maxYPos), transform.localPosition.z);
 
-        if (MainUI.Money >= 15)
+        if (MainUI.Money >= newAmount * -5)
             hasMoney = true;
         else 
             hasMoney = false;
