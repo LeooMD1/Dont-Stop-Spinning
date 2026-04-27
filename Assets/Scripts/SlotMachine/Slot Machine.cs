@@ -28,6 +28,19 @@ public class SlotMachine : MonoBehaviour
 
     private void Update()
     {
+        if (MainUI.Money < rows[0].newAmountText)
+        {
+            gameObject.SetActive(false);
+        }
+
+        else if (MainUI.Energy < 1)
+        {
+            gameObject.SetActive(false);
+        }
+
+        else
+            gameObject.SetActive(true);
+        
         cost.text = rows[0].newAmountText.ToString();
         
         if (!rows[0].canSpin && !rows[1].canSpin && !rows[2].canSpin && !rows[3].canSpin && !rows[4].canSpin && resultsChecked)

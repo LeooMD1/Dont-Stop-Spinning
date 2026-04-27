@@ -54,7 +54,6 @@ public class Row : MonoBehaviour
 
     void OnClick()
     {
-        newAmountText = newAmount * 5;
         
         if (MainUI.Item1Bought)
         {
@@ -179,6 +178,7 @@ public class Row : MonoBehaviour
 
     private void Update()
     {
+        newAmountText = newAmount * 5;
         
         transform.localPosition = new(transform.localPosition.x, Wrap(offset1 + offset2, minYPos, maxYPos), transform.localPosition.z);
 
