@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UIElements.Experimental;
 using UnityEditor.Experimental.GraphView;
+using UnityEngine.UI;
 
 public class SlotMachine : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class SlotMachine : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI prizeText;
     [SerializeField] private GameObject Leave;
+    [SerializeField] private Button button;
 
     [SerializeField]
     private Row[] rows;
@@ -26,21 +28,31 @@ public class SlotMachine : MonoBehaviour
     public bool fiveInARow = false;
     #endregion
 
+    private void Start()
+    {
+        button = GetComponent<Button>();
+    }
+
     private void Update()
     {
         if (MainUI.Money < rows[0].newAmountText)
         {
-            gameObject.SetActive(false);
+            button.interactable = false;
         }
 
         else if (MainUI.Energy < 1)
         {
-            gameObject.SetActive(false);
+            button.interactable = false;
+        }
+
+        else if (!rows[0].canSpin)
+        {
+            button.interactable = false;
         }
 
         else
-            gameObject.SetActive(true);
-        
+            button.interactable = true;
+
         cost.text = rows[0].newAmountText.ToString();
         
         if (!rows[0].canSpin && !rows[1].canSpin && !rows[2].canSpin && !rows[3].canSpin && !rows[4].canSpin && resultsChecked)

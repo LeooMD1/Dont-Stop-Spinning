@@ -12,6 +12,13 @@ public class MainUI : MonoBehaviour
     public static float Money = 35;
     public static float Energy = 7;
     public static float Day = 1;
+    public static float Debt = 0;
+    
+    public static bool  Debt1Payed;
+    public static bool  Debt2Payed;
+    public static bool  Debt3Payed;
+    public static bool  Debt4Payed;
+    public static bool  Debt5Payed;
 
     public static bool Item1Bought;
     public static bool Item2Bought;
@@ -36,6 +43,9 @@ public class MainUI : MonoBehaviour
     [SerializeField] private Row rows;
     
     [SerializeField] private GameObject Stock;
+    
+    [SerializeField] private TextMeshProUGUI Message;
+    [SerializeField] private string messageString;
 
     public void Awake()
     {
@@ -70,6 +80,51 @@ public class MainUI : MonoBehaviour
         
         energyText.text = (Mathf.RoundToInt(MainUI.Energy).ToString());
         dayText.text = "Day: " + (MainUI.Day.ToString());
+
+        if (MainUI.Day == 1)
+        {
+            messageString = "Thanks for coming to me, you've made the BEST decision... However, you do need to repay me so maybe try to look for a job or... <color=red> gamble </color=black> for the deal I am offering. I will provide more detail tommorow.";
+            Message.text = messageString;
+        }
+
+        else if (MainUI.Day == 2)
+        {
+            messageString = "As I said in the previous message, you will need to start paying me back. You can pay me using <color=green> Bouy Bank </color=black>. I want <color=green> $100 </color=black> in 1 day. I WILL get my payment one way or another :)";
+            Message.text = messageString;
+            Debt = 100;
+        }
+        
+        else if (MainUI.Day == 3)
+        {
+            messageString = "Payment dayyyyy. Pay me <color=#53bfed> pleasee </colour=black>";
+            Message.text = messageString;
+        }
+
+        else if (MainUI.Day == 4 && Debt1Payed)
+        {
+            messageString = "Thank you for the payment, I always knew you would be one of my best customers. Next payment is in 3 days, I need <color=green> $250 </colour=black>. I believe you can pay on time.";
+            Message.text = messageString;
+            Debt = 250;
+        }
+
+        else if (MainUI.Day == 4 && !Debt1Payed)
+        {
+            messageString = "You did not pay me. I will collect my money. I know where you are and I will show up.";
+            Message.text = messageString;
+            //start coroutine or function of loan shark spawning in and taking money
+        }
+
+        else if (MainUI.Day == 5)
+        {
+            messageString = "2 days.";
+            Message.text = messageString;
+        }
+        
+        else if (MainUI.Day == 5)
+        {
+            messageString = "2 days.";
+            Message.text = messageString;
+        }
 
     }
 
@@ -133,6 +188,7 @@ public class MainUI : MonoBehaviour
         yield return new WaitForSeconds(1f);
         Energy = 7;
         Day += 1;
+        button.SetActive(true);
     }
 
     public void Buys()
