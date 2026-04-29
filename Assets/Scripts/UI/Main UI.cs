@@ -26,6 +26,9 @@ public class MainUI : MonoBehaviour
     public static bool ChamarBought;
 
     public float investChance;
+    
+    public float pay;
+    
     public AdDrag adDrag;
 
     [SerializeField] private float sceneRNG;
@@ -38,7 +41,10 @@ public class MainUI : MonoBehaviour
     public Font[] fonts;
     [SerializeField] private TextMeshProUGUI energyText;
     [SerializeField] private TextMeshProUGUI moneyText;
+    [SerializeField] private TextMeshProUGUI debtText;
     [SerializeField] private TextMeshProUGUI dayText;
+    
+    [SerializeField] private TextMeshProUGUI payText;
     
     [SerializeField] private Row rows;
     
@@ -79,7 +85,19 @@ public class MainUI : MonoBehaviour
             moneyText.color = Color.white;
         
         energyText.text = (Mathf.RoundToInt(MainUI.Energy).ToString());
+        
+        if (MainUI.Debt == 0)
+            debtText.enabled = false;
+        else
+            debtText.enabled = true;
+        
         dayText.text = "Day: " + (MainUI.Day.ToString());
+        debtText.text = "-$" + (Mathf.RoundToInt(MainUI.Debt).ToString());
+
+        pay = Mathf.Clamp(pay, 0, 500);
+        payText.text = "$" + (Mathf.Round(pay).ToString());
+        
+
 
         if (MainUI.Day == 1)
         {
@@ -256,12 +274,12 @@ public class MainUI : MonoBehaviour
 
     public void IncreaseMoney(float amt)
     {
-        Money += amt;
+        pay += amt;
     }
 
     public void DecreaseMoney(float amt)
     {
-        Money -= amt;
+        pay -= amt;
     }
 
     #endregion
