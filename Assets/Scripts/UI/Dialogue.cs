@@ -28,7 +28,7 @@ public class Dialogue : MonoBehaviour
             {
                 NextLine();
             }
-            else
+            else  
             {
                 StopAllCoroutines();
                 textComponent.text = lines[index];
@@ -59,9 +59,19 @@ public class Dialogue : MonoBehaviour
             textComponent.text = string.Empty;
             StartCoroutine(TypeLine());
         }
-        else
+        else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(1))
         {
             SceneManager.LoadScene("HomeArea");
+        }
+        
+        else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(9))
+        {
+            Application.Quit();
+        }
+        
+        else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(10))
+        {
+            Application.Quit();
         }
     }
 }

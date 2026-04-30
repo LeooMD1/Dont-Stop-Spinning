@@ -285,6 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e340e09a6422b684daed3aa4600c7258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sharkAppeared: 0
   investChance: 0
   pay: 0
   adDrag: {fileID: 0}
@@ -301,6 +302,9 @@ MonoBehaviour:
   payText: {fileID: 0}
   rows: {fileID: 0}
   Stock: {fileID: 0}
+  Map: {fileID: 0}
+  Shark: {fileID: 0}
+  Bank: {fileID: 0}
   Message: {fileID: 0}
   messageString: 
 --- !u!114 &116171134
@@ -378,9 +382,9 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 239249287}
   - {fileID: 563986448}
   - {fileID: 42228632}
-  - {fileID: 239249287}
   - {fileID: 1378514313}
   - {fileID: 1771071525}
   - {fileID: 1795744130}

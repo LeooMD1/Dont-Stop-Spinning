@@ -1,7 +1,6 @@
 using System.Collections;
+using System.Threading.Tasks;
 using TMPro;
-using Unity.VisualScripting;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -15,6 +14,9 @@ public class MainUI : MonoBehaviour
     public static float Debt = 0;
 
     public static bool debtPayed;
+
+    public bool sharkAppeared = false;
+    public static bool canHide = true;
 
     public static bool debt1Payed = false;
     public static bool debt2Payed = false;
@@ -52,6 +54,12 @@ public class MainUI : MonoBehaviour
     
     [SerializeField] private GameObject Stock;
     
+    [SerializeField] private GameObject Map;
+    
+    [SerializeField] private GameObject Shark;
+    
+    [SerializeField] private Button Bank;
+    
     [SerializeField] private TextMeshProUGUI Message;
     [SerializeField] private string messageString;
 
@@ -61,7 +69,7 @@ public class MainUI : MonoBehaviour
         investChance = Random.Range(0, 2);
     }
 
-
+    
 
     private void Start()
     {
@@ -116,7 +124,8 @@ public class MainUI : MonoBehaviour
         else
             debtPayed = false;
 
-
+        if (Day == 21)
+            Map.SetActive(false);
     }
 
     #region Scene loaders
@@ -150,6 +159,16 @@ public class MainUI : MonoBehaviour
             SceneManager.LoadScene("InPersonJob");
         else
             SceneManager.LoadScene("OnlineJob");
+    }
+
+    public void InPersonJob()
+    {
+        SceneManager.LoadScene("InPersonJob");
+    }
+
+    public void OnlineJob()
+    {
+        SceneManager.LoadScene("OnlineJob");
     }
 
     public void HomeLoad()
@@ -197,13 +216,16 @@ public class MainUI : MonoBehaviour
         {
             messageString = "You did not pay me. I will collect my money. I know where you are and I will show up.";
             Message.text = messageString;
+            
+            sharkAppeared = true;
+            SpawnShark();
             //start coroutine or function of loan shark spawning in and taking money
             //allow player to chose to hide (one time use) using static bool and no money will be taken or give them option to pay extra
         }
 
         else if (MainUI.Day == 5)
         {
-            messageString = "2 days.";
+            messageString = "For your next payment, I will be expecting <color=green> $250 </color=black> in the next 2 days.";
             Message.text = messageString;
             Debt = 250;
         }
@@ -243,6 +265,9 @@ public class MainUI : MonoBehaviour
         {
             messageString = "You don't seem to understand how things work around here. <color=#660000> Do I need to teach you </color=black>? ";
             Message.text = messageString;
+
+            sharkAppeared = true;
+            SpawnShark();
             //start coroutine or function of loan shark spawning in and taking money
             //allow player to chose to hide (one time use) using static bool and no money will be taken or give them option to pay extra
         }
@@ -255,7 +280,7 @@ public class MainUI : MonoBehaviour
         
         else if (MainUI.Day == 10)
         {
-            messageString = "You are still in debt to me, I've got you off the hook of your rent, I payed that off for you. It would be very, VERY unfair if you didn't need to pay me back. I want <color=green> $500 </color=black> 5 days.";
+            messageString = "You are still in debt to me, I've got you off the hook of your rent, I payed that rent off for you. It would be very, VERY unfair if you didn't need to pay me back. I want <color=green> $500 </color=black> 5 days.";
             Message.text = messageString;
         }
         
@@ -299,10 +324,71 @@ public class MainUI : MonoBehaviour
         {
             messageString = "I get my money eventually... <color=#660000> Trust me </color=black>.";
             Message.text = messageString;
+
+            sharkAppeared = true;
+            SpawnShark();
             //start coroutine or function of loan shark spawning in and taking money
             //allow player to chose to hide (one time use) using static bool and no money will be taken or give them option to pay extra
         }
+        
+        else if (MainUI.Day == 17)
+        {
+            messageString = "<color=green> $1000</color=black>. 3 More Days. Hurry up otherwise it won't just be you facing the consequences"; 
+           
+                /**/
+            Message.text = messageString;
+        }
+        
+        else if (MainUI.Day == 18)
+        {
+            messageString = "No New Messages...";
+            Message.text = messageString;
+        }
+        
+        else if (MainUI.Day == 19)
+        {
+            messageString = "1 Day.";
+            Message.text = messageString;
+        }
+        
+        else if (MainUI.Day == 20)
+        {
+            messageString = "Send it. I don't have all day.";
+            Message.text = messageString;
+        }
+        
+        else if (MainUI.Day == 21 && debtPayed)
+        {
+            messageString = "I will leave you for now... but I WILL be back. You came to me, I will be here until you pay every. last. penny.";
+            Message.text = messageString;
 
+            StartCoroutine(GoodEnding());
+
+            //goodish ending not really but a ending
+        }               
+        
+        else if (MainUI.Day == 21 && !debtPayed)
+        {
+            messageString = "People like you disgust me. You leech off of others like a helpless dog. <color=#660000> You are pathetic </color=black>. You won't escape me until I have every single penny that I lent you back..";
+            Message.text = messageString;
+
+            sharkAppeared = true;
+            SpawnShark();
+
+            StartCoroutine(BadEnding());
+        }
+
+    }
+
+    private IEnumerator GoodEnding()
+    {
+        yield return new WaitForSeconds(15);
+        SceneManager.LoadScene("Good Ending");
+    }
+    private IEnumerator BadEnding()
+    {
+        yield return new WaitForSeconds(30);
+        SceneManager.LoadScene("Bad Ending");
     }
     
     public void PayShark()
@@ -320,7 +406,36 @@ public class MainUI : MonoBehaviour
 
     public void SpawnShark()
     {
+        if (sharkAppeared)
+        {
+            Bank.enabled = false;
+            Shark.SetActive(true);
+        }
+        
+        else if (!sharkAppeared)
+        {
+            Bank.enabled = true;
+            Shark.SetActive(false); 
+        }
+    }
 
+    public void PayButtonForShark()
+    {
+        Money -= Debt * 1.2f;
+        Shark.SetActive(false);
+        if (Shark.activeInHierarchy)
+            Debt = 0;
+        Map.SetActive(true);       
+    }
+
+    public void HideButtonForShark()
+    {
+        if (canHide)
+        {
+            Shark.SetActive(false);
+            canHide = false;
+            Map.SetActive(true);
+        }
     }
     
     public void Sleep()
@@ -349,6 +464,17 @@ public class MainUI : MonoBehaviour
             Debt = 250;
         else if (Day == 10)
             Debt = 500;
+        #endregion
+        #region Shark Days
+        if (Day == 4 && !debtPayed)
+            Map.SetActive(false);        
+
+        else if (Day == 8 && !debtPayed)
+            Map.SetActive(false);
+
+        else if (Day == 16 && !debtPayed)
+            Map.SetActive(false);
+
         #endregion
     }
 

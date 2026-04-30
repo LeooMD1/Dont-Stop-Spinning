@@ -9,6 +9,13 @@ public class MainMenu : MonoBehaviour
     
     [SerializeField] private Animator anim;
     [SerializeField] private Animator quitAnim;
+    
+    [SerializeField] private GameObject chamarPic;
+
+    private void Start()
+    {
+        chamarPic.SetActive(false);
+    }
 
     public void Play()
     {
@@ -45,5 +52,17 @@ public class MainMenu : MonoBehaviour
         {
             audioManager.PlaySFX(audioManager.ClickUp);
         }
+    }
+
+    public void Chamar()
+    {
+        StartCoroutine(ChamarPopUp());
+    }
+    private IEnumerator ChamarPopUp()
+    {
+        chamarPic.SetActive(true);
+        audioManager.PlaySFX(audioManager.poppinChamar);
+        yield return new WaitForSeconds(12f);
+        chamarPic.SetActive(false);
     }
 }
