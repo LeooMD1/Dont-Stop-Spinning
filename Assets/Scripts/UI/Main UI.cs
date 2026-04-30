@@ -13,12 +13,14 @@ public class MainUI : MonoBehaviour
     public static float Energy = 7;
     public static float Day = 1;
     public static float Debt = 0;
-    
-    public static bool  Debt1Payed;
-    public static bool  Debt2Payed;
-    public static bool  Debt3Payed;
-    public static bool  Debt4Payed;
-    public static bool  Debt5Payed;
+
+    public static bool debtPayed;
+
+    public static bool debt1Payed = false;
+    public static bool debt2Payed = false;
+    public static bool debt3Payed = false;
+    public static bool debt4Payed = false;
+    public static bool debt5Payed = false;
 
     public static bool Item1Bought;
     public static bool Item2Bought;
@@ -86,63 +88,24 @@ public class MainUI : MonoBehaviour
         
         energyText.text = (Mathf.RoundToInt(MainUI.Energy).ToString());
         
+        debtText.text = "-$" + (Mathf.RoundToInt(MainUI.Debt).ToString());
+        
         if (MainUI.Debt == 0)
             debtText.enabled = false;
         else
             debtText.enabled = true;
         
         dayText.text = "Day: " + (MainUI.Day.ToString());
-        debtText.text = "-$" + (Mathf.RoundToInt(MainUI.Debt).ToString());
 
         pay = Mathf.Clamp(pay, 0, 500);
+        Debt = Mathf.Clamp(Debt, 0, 500);
         payText.text = "$" + (Mathf.Round(pay).ToString());
-        
 
+        if (Debt == 0)
+            debtPayed = true;
+        else
+            debtPayed = false;
 
-        if (MainUI.Day == 1)
-        {
-            messageString = "Thanks for coming to me, you've made the BEST decision... However, you do need to repay me so maybe try to look for a job or... <color=red> gamble </color=black> for the deal I am offering. I will provide more detail tommorow.";
-            Message.text = messageString;
-        }
-
-        else if (MainUI.Day == 2)
-        {
-            messageString = "As I said in the previous message, you will need to start paying me back. You can pay me using <color=green> Bouy Bank </color=black>. I want <color=green> $100 </color=black> in 1 day. I WILL get my payment one way or another :)";
-            Message.text = messageString;
-            Debt = 100;
-        }
-        
-        else if (MainUI.Day == 3)
-        {
-            messageString = "Payment dayyyyy. Pay me <color=#53bfed> pleasee </colour=black>";
-            Message.text = messageString;
-        }
-
-        else if (MainUI.Day == 4 && Debt1Payed)
-        {
-            messageString = "Thank you for the payment, I always knew you would be one of my best customers. Next payment is in 3 days, I need <color=green> $250 </colour=black>. I believe you can pay on time.";
-            Message.text = messageString;
-            Debt = 250;
-        }
-
-        else if (MainUI.Day == 4 && !Debt1Payed)
-        {
-            messageString = "You did not pay me. I will collect my money. I know where you are and I will show up.";
-            Message.text = messageString;
-            //start coroutine or function of loan shark spawning in and taking money
-        }
-
-        else if (MainUI.Day == 5)
-        {
-            messageString = "2 days.";
-            Message.text = messageString;
-        }
-        
-        else if (MainUI.Day == 5)
-        {
-            messageString = "2 days.";
-            Message.text = messageString;
-        }
 
     }
 
@@ -191,6 +154,89 @@ public class MainUI : MonoBehaviour
     }
     #endregion
 
+    public void ComputerClickDialogue()
+    {
+        if (MainUI.Day == 1)
+        {
+            messageString = "Thanks for coming to me, you've made the BEST decision... However, you do need to repay me so maybe try to look for a job or... <color=red> gamble </color=black> for the deal I am offering. I will provide more detail tommorow.";
+            Message.text = messageString;
+        }
+
+        else if (MainUI.Day == 2)
+        {
+            messageString = "As I said in the previous message, you will need to start paying me back. You can pay me using <color=green> Bouy Bank </color=black>. I want <color=green> $100 </color=black> in 1 day. I WILL get my payment one way or another :)";
+            Message.text = messageString;
+            Debt = 100;
+        }
+        
+        else if (MainUI.Day == 3)
+        {
+            messageString = "Payment dayyyyy. Pay me <color=#53bfed> pleasee </color=black>";
+            Message.text = messageString;
+        }
+
+        else if (MainUI.Day == 4 && debtPayed)
+        {
+            messageString = "Thank you for the payment, I always knew you would be one of my best customers. Next payment is in 3 days, I will provide you with the amount tomorrow. I believe you can pay on time.";
+            Message.text = messageString;
+            debt1Payed = true;
+            
+        }
+
+        else if (MainUI.Day == 4 && !debtPayed)
+        {
+            messageString = "You did not pay me. I will collect my money. I know where you are and I will show up.";
+            Message.text = messageString;
+            //start coroutine or function of loan shark spawning in and taking money
+            //allow player to chose to hide (one time use) using static bool and no money will be taken or give them option to pay extra
+        }
+
+        else if (MainUI.Day == 5)
+        {
+            messageString = "2 days.";
+            Message.text = messageString;
+            Debt = 250;
+        }
+        
+        else if (MainUI.Day == 6)
+        {
+            messageString = "1 day.";
+            Message.text = messageString;
+        }
+        
+        else if (MainUI.Day == 7 && debt1Payed)
+        {
+            messageString = "You know what day it is, You're' one of the best customers I have ever had. I know you would never miss a deadline as that would be... bad. Anyways I may or may not be in contact with you tomorrow ;)";
+            Message.text = messageString;
+        }
+        
+        else if (MainUI.Day == 7 && !debt1Payed)
+        {
+            messageString = "Pay me. Don't make the same mistake you made last time. My patience is running thin and I could take more then just money from you... <color=#660000>Send. Me. My. Money..</color=black>";
+            Message.text = messageString;
+        }
+
+        else if (MainUI.Day == 8 && debtPayed)
+        {
+            messageString = "";
+            Message.text = messageString;
+        }
+
+    }
+    
+    public void PayShark()
+    {
+        if (debtText.enabled)
+        {
+            if (Money >= pay)
+            {
+                Money -= pay;
+                Debt -= pay;
+
+            }
+        }
+    }
+    
     public void Sleep()
     {
         if (MainUI.Energy < 1)

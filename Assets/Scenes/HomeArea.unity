@@ -376,6 +376,7 @@ RectTransform:
   - {fileID: 386006721}
   - {fileID: 454796028}
   - {fileID: 1887541203}
+  - {fileID: 798482169}
   - {fileID: 6578112}
   m_Father: {fileID: 1604831537}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1388,7 +1389,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 48.1274, y: -60.30005}
+  m_AnchoredPosition: {x: 48.12744, y: -60.30005}
   m_SizeDelta: {x: 27.6549, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &683521425
@@ -1573,7 +1574,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 790892136}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1604831538}
+        m_TargetAssemblyTypeName: MainUI, Assembly-CSharp
+        m_MethodName: PayShark
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &790892136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1618,7 +1631,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1604831537}
+    m_TransformParent: {fileID: 221592425}
     m_Modifications:
     - target: {fileID: 875867411711336459, guid: aa88519a43ea18348ade50983eae6caf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1770,15 +1783,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3654503154340356055, guid: aa88519a43ea18348ade50983eae6caf, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3654503154340356055, guid: aa88519a43ea18348ade50983eae6caf, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3654503154340356055, guid: aa88519a43ea18348ade50983eae6caf, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3654503154340356055, guid: aa88519a43ea18348ade50983eae6caf, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -3312,7 +3325,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 221592425}
-  - {fileID: 798482169}
   - {fileID: 1485832446}
   - {fileID: 683521423}
   - {fileID: 1818208596}
@@ -3990,6 +4002,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1604831538}
+        m_TargetAssemblyTypeName: MainUI, Assembly-CSharp
+        m_MethodName: ComputerClickDialogue
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
