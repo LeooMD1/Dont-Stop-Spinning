@@ -55,7 +55,12 @@ public class Shop : MonoBehaviour
             Chamar.SetActive(false);
      
         
-        if (MainUI.Item1Bought && MainUI.Item2Bought && MainUI.Item3Bought)
+        if (MainUI.Item1Bought && MainUI.Item2Bought)
+        {
+            Chamar.SetActive(true);
+        }
+
+        else if (MainUI.Item2Bought && MainUI.Item3Bought)
         {
             Chamar.SetActive(true);
         }

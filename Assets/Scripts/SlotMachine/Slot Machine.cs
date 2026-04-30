@@ -40,6 +40,7 @@ public class SlotMachine : MonoBehaviour
             button.interactable = false;
         }
 
+
         else if (MainUI.Energy < 1)
         {
             button.interactable = false;
@@ -50,10 +51,15 @@ public class SlotMachine : MonoBehaviour
             button.interactable = false;
         }
 
+        else if (MainUI.Money >= rows[0].newAmountText)
+        {
+            button.interactable = true;
+        }
+        
         else
             button.interactable = true;
 
-        cost.text = rows[0].newAmountText.ToString();
+        cost.text = "-$" + rows[0].newAmountText.ToString();
         
         if (!rows[0].canSpin && !rows[1].canSpin && !rows[2].canSpin && !rows[3].canSpin && !rows[4].canSpin && resultsChecked)
         {

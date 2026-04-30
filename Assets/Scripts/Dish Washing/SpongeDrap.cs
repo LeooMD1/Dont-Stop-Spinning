@@ -59,12 +59,20 @@ public class SpongeDrap : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
             {
                 audioManager.PlaySFX(audioManager.Sponge);
                 isPlayingBubbleSound = true;
-            }
-            
-
+            }          
         }
 
-        
+        else if (Physics2D.IsTouching(spongeCol, plateCol) && plateDrag.inSink && plateImage.sprite == Soap && plateImage.sprite != cleanPlate && Image.sprite == cleanSponge)
+        {
+            StartCoroutine(WashDish());
+            if (!isPlayingBubbleSound)
+            {
+                audioManager.PlaySFX(audioManager.Sponge);
+                isPlayingBubbleSound = true;
+            }
+        }
+
+
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -82,9 +90,11 @@ public class SpongeDrap : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         yield return new WaitForSeconds(2.5f);
 
         if (isCleaning)
-        plateImage.sprite = cleanPlate;
+        {
+            plateImage.sprite = cleanPlate;
+            Image.sprite = Sponge;
+        }
 
-        Image.sprite = Sponge;
         isPlayingBubbleSound = false;
     }
 

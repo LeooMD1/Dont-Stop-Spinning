@@ -57,28 +57,28 @@ public class Row : MonoBehaviour
         
         if (MainUI.Item1Bought)
         {
-            newAmount = -33f;
-            MainUI.Money += newAmount;
+            newAmount = 33f;
+            MainUI.Money -= newAmount;
         }
 
         else if (MainUI.Item1Bought && MainUI.Item3Bought)
         {
-            newAmount = -20f;
-            MainUI.Money += newAmount;
+            newAmount = 20f;
+            MainUI.Money -= newAmount;
         }
 
         else if (MainUI.Item3Bought)
         {
-            newAmount = -2f;
-            MainUI.Money += newAmount;
+            newAmount = 2f;
+            MainUI.Money -= newAmount;
         }
 
         else
         {
-            newAmount = -3f;
-            MainUI.Money += newAmount;
+            newAmount = 3f;
+            MainUI.Money -= newAmount;
         }
-        if (MainUI.Money >= newAmount * -5)
+        if (MainUI.Money >= newAmountText)
         {
 
             if (canSpin && hasMoney && MainUI.Energy > 0)
@@ -182,7 +182,7 @@ public class Row : MonoBehaviour
         
         transform.localPosition = new(transform.localPosition.x, Wrap(offset1 + offset2, minYPos, maxYPos), transform.localPosition.z);
 
-        if (MainUI.Money >= newAmount * -5)
+        if (MainUI.Money >= newAmountText)
             hasMoney = true;
         else 
             hasMoney = false;

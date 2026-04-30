@@ -164,7 +164,7 @@ public class MainUI : MonoBehaviour
 
         else if (MainUI.Day == 2)
         {
-            messageString = "As I said in the previous message, you will need to start paying me back. You can pay me using <color=green> Bouy Bank </color=black>. I want <color=green> $100 </color=black> in 1 day. I WILL get my payment one way or another :)";
+            messageString = "As I said in the previous message, you will need to start paying me back. You can pay me using <color=green> Buoy Bank </color=black>. I want <color=green> $100 </color=black> in 1 day. I WILL get my payment one way or another :)";
             Message.text = messageString;
             Debt = 100;
         }
@@ -216,9 +216,53 @@ public class MainUI : MonoBehaviour
             Message.text = messageString;
         }
 
-        else if (MainUI.Day == 8 && debtPayed)
+        else if (MainUI.Day == 8 && debtPayed && debt1Payed)
         {
-            messageString = "";
+            messageString = "I love how quick you catch onto things, I don't think we will have any <color=#660000> problems.. </color=black> I shall be in contact with you in 2 days discussing the next payment. Thank you.";
+            Message.text = messageString;
+        }
+        
+        else if (MainUI.Day == 8 && debtPayed && !debt1Payed)
+        {
+            messageString = "I'm glad you caught onto how things work around here.<color=#660000> Do not make that mistake again </color=black>. I will contact you again in 2 days about the following payment";
+            Message.text = messageString;
+        }
+
+        else if (MainUI.Day == 8 && !debtPayed && !debt1Payed)
+        {
+            messageString = "You don't seem to understand how things work around here. <color=#660000> Do I need to teach you </color=black>? ";
+            Message.text = messageString;
+            //start coroutine or function of loan shark spawning in and taking money
+            //allow player to chose to hide (one time use) using static bool and no money will be taken or give them option to pay extra
+        }
+
+        else if (MainUI.Day == 9)
+        {
+            messageString = "No New Messages...";
+            Message.text = messageString;
+        }
+        
+        else if (MainUI.Day == 10)
+        {
+            messageString = "You are still in debt to me, I've got you off the hook of your rent, I payed that off for you. It would be very, VERY unfair if you didn't need to pay me back. I want <color=green> $500 </color=black> 5 days.";
+            Message.text = messageString;
+        }
+        
+        else if (MainUI.Day == 11)
+        {
+            messageString = "No New Messages...";
+            Message.text = messageString;
+        }
+        
+        else if (MainUI.Day == 12)
+        {
+            messageString = "No New Messages...";
+            Message.text = messageString;
+        }
+        
+        else if (MainUI.Day == 13)
+        {
+            messageString = "2 More Days. I am expecting my money.";
             Message.text = messageString;
         }
 
@@ -236,6 +280,11 @@ public class MainUI : MonoBehaviour
             }
         }
     }
+
+    public void SpawnShark()
+    {
+
+    }
     
     public void Sleep()
     {
@@ -243,6 +292,8 @@ public class MainUI : MonoBehaviour
         {
             StartCoroutine(Sleeping());                     
         }
+
+        //debt amounts set whenever player goes to sleep else debts can be completely avoided
     }
 
     private IEnumerator Sleeping()
@@ -253,6 +304,15 @@ public class MainUI : MonoBehaviour
         Energy = 7;
         Day += 1;
         button.SetActive(true);
+        #region Debt amounts
+        if (Day == 2)
+            Debt = 100;
+
+        else if (Day == 5)
+            Debt = 250;
+        else if (Day == 10)
+            Debt = 500;
+        #endregion
     }
 
     public void Buys()
