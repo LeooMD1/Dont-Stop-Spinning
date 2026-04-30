@@ -7,6 +7,8 @@ public class SoapDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     private RectTransform rectTransform;
     private Image Image;
 
+    [SerializeField] AudioManager audioManager;
+
     [SerializeField] Image spongeImage;
 
     private BoxCollider2D Collider;
@@ -18,7 +20,10 @@ public class SoapDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     [SerializeField] private Sprite Sponge;
 
 
-
+    public void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     void Start()
     {
@@ -47,6 +52,7 @@ public class SoapDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         {
             anim.SetTrigger("Soaped");
             spongeImage.sprite = cleanSponge;
+            audioManager.PlaySFX(audioManager.bubbles);
         }// follow the mouse
     }
 

@@ -33,6 +33,10 @@ public class PlateDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     [SerializeField] private Sprite currentSprite;
     [SerializeField] private Sprite[] dirtyPlates;
 
+    public void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
 
     void Start()
@@ -81,10 +85,10 @@ public class PlateDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
         if (Physics2D.IsTouching(Collider, sinkCol))
         {
-            audioManager.PlaySFX(audioManager.plateInWater);
             transform.localPosition = new(0, -98.1f, transform.localPosition.z);
             print("Sink Teleport works");
             inSink = true;
+            audioManager.PlaySFX(audioManager.plateInWater);
 
             
 

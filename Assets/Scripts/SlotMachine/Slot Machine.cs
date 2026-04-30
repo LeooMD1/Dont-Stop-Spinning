@@ -28,6 +28,12 @@ public class SlotMachine : MonoBehaviour
     public bool fiveInARow = false;
     #endregion
 
+    public void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
+
     private void Start()
     {
         button = GetComponent<Button>();

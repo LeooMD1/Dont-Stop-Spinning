@@ -13,8 +13,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip lever;
     public AudioClip bubbles;
     public AudioClip fiveInA_Row;
-    //public AudioClip Sponge;
-    //public AudioClip Sponge;
+    public AudioClip ClickDown;
+    public AudioClip ClickUp;
     //public AudioClip Sponge;
     //public AudioClip Sponge;
 

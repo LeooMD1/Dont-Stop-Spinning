@@ -29,6 +29,11 @@ public class SpongeDrap : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     public bool isCleaning;
     bool isPlayingBubbleSound;
 
+    public void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();

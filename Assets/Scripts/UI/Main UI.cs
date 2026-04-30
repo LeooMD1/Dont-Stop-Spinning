@@ -77,6 +77,16 @@ public class MainUI : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            audioManager.PlaySFX(audioManager.ClickDown);
+        }
+
+        else if (Input.GetMouseButtonUp(0))
+        {
+            audioManager.PlaySFX(audioManager.ClickUp);
+        }
+
         moneyText.text = "$" + (MainUI.Money.ToString());
         
         if (MainUI.Money > 0)
@@ -208,6 +218,7 @@ public class MainUI : MonoBehaviour
         {
             messageString = "You know what day it is, You're' one of the best customers I have ever had. I know you would never miss a deadline as that would be... bad. Anyways I may or may not be in contact with you tomorrow ;)";
             Message.text = messageString;
+            debt2Payed = true;
         }
         
         else if (MainUI.Day == 7 && !debt1Payed)
@@ -264,6 +275,32 @@ public class MainUI : MonoBehaviour
         {
             messageString = "2 More Days. I am expecting my money.";
             Message.text = messageString;
+        }
+        
+        else if (MainUI.Day == 14)
+        {
+            messageString = "1 More Day.";
+            Message.text = messageString;
+        }
+        
+        else if (MainUI.Day == 15)
+        {
+            messageString = "Pay day is today. You need to pay me.";
+            Message.text = messageString;
+        }
+        
+        else if (MainUI.Day == 16 && debtPayed)
+        {
+            messageString = "I need <color=green> $1000</color=black> in the next 4 days. I don't care how you get this money but I need it one way or another.";
+            Message.text = messageString;
+        }
+        
+        else if (MainUI.Day == 16 && !debtPayed)
+        {
+            messageString = "I get my money eventually... <color=#660000> Trust me </color=black>.";
+            Message.text = messageString;
+            //start coroutine or function of loan shark spawning in and taking money
+            //allow player to chose to hide (one time use) using static bool and no money will be taken or give them option to pay extra
         }
 
     }
