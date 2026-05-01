@@ -105,6 +105,11 @@ public class MainUI : MonoBehaviour
             moneyText.color = Color.white;
         
         energyText.text = (Mathf.RoundToInt(MainUI.Energy).ToString());
+
+        if (MainUI.Energy == 0)
+            energyText.color = Color.red;
+        else if (MainUI.Energy > 0)
+            energyText.color = new Color (255, 214, 28);
         
         debtText.text = "-$" + (Mathf.RoundToInt(MainUI.Debt).ToString());
         
