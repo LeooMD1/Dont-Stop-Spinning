@@ -9,7 +9,7 @@ public class AdDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
     float mouseX;
     float mouseY;
 
-    public float investChance;
+    public MainUI mainUI;
 
     Animator anim;
     [SerializeField] private Sprite[] Ads;
@@ -36,7 +36,7 @@ public class AdDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
 
     void Awake()
     {
-        investChance = Random.Range(0, 2);
+        
     }
 
 
@@ -48,12 +48,12 @@ public class AdDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
 
         anim = GetComponent<Animator>();
 
-        if (investChance == 1)
+        if (mainUI.investChance == 1)
         {
             invest = true;
             print("true");
         }
-        else if (investChance == 0)
+        else if (mainUI.investChance == 0)
         {
             invest = false;
             print("flase");

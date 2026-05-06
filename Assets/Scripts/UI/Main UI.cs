@@ -29,8 +29,8 @@ public class MainUI : MonoBehaviour
     public static bool Item3Bought;
     public static bool ChamarBought;
 
-    
-    
+    public float investChance;
+
     public float pay;
     
     public AdDrag adDrag;
@@ -59,6 +59,7 @@ public class MainUI : MonoBehaviour
     [SerializeField] private GameObject Shark;
     
     [SerializeField] private Button Bank;
+    [SerializeField] private Animator endAnim;
     
     [SerializeField] private TextMeshProUGUI Message;
     [SerializeField] private string messageString;
@@ -66,7 +67,7 @@ public class MainUI : MonoBehaviour
     public void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
-        
+        investChance = Random.Range(0, 2);
     }
 
     
@@ -95,7 +96,8 @@ public class MainUI : MonoBehaviour
             audioManager.PlaySFX(audioManager.ClickUp);
         }
 
-        moneyText.text = "$" + (MainUI.Money.ToString());
+        moneyText.text = "$" + (Mathf.Round(MainUI.Money).ToString());
+        
         
         if (MainUI.Money > 0)
             moneyText.color = Color.green;
@@ -341,9 +343,9 @@ public class MainUI : MonoBehaviour
         
         else if (MainUI.Day == 17)
         {
-            messageString = "<color=green> $1000</color=black>. 3 More Days. Hurry up otherwise it won't just be you facing the consequences"; 
-           
-                /**/
+            messageString = "<color=green> $1000</color=black>. 3 More Days. Hurry up otherwise it won't just be you facing the consequences";
+
+            Debt = 1000;
             Message.text = messageString;
         }
         
@@ -391,12 +393,16 @@ public class MainUI : MonoBehaviour
 
     private IEnumerator GoodEnding()
     {
-        yield return new WaitForSeconds(15);
+        yield return new WaitForSeconds(5);
+        endAnim.SetTrigger("Start");
+        yield return new WaitForSeconds(1.1f);
         SceneManager.LoadScene("Good Ending");
     }
     private IEnumerator BadEnding()
     {
-        yield return new WaitForSeconds(30);
+        yield return new WaitForSeconds(10);
+        endAnim.SetTrigger("Start");
+        yield return new WaitForSeconds(1.1f);
         SceneManager.LoadScene("Bad Ending");
     }
     
@@ -409,7 +415,6 @@ public class MainUI : MonoBehaviour
                 Money -= pay;
                 Debt -= pay;
 
-                Debt = 0;
             }
         }
     }
@@ -432,10 +437,10 @@ public class MainUI : MonoBehaviour
     public void PayButtonForShark()
     {
         Money -= Debt * 1.2f;
-        Shark.SetActive(false);
-        if (Shark.activeInHierarchy)
-            Debt = 0;
-        Map.SetActive(true);       
+        Shark.SetActive(false); 
+        Map.SetActive(true);
+
+        Debt = 0;
     }
 
     public void HideButtonForShark()

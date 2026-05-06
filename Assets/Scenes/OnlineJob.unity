@@ -6177,6 +6177,7 @@ MonoBehaviour:
   Map: {fileID: 0}
   Shark: {fileID: 0}
   Bank: {fileID: 0}
+  endAnim: {fileID: 0}
   Message: {fileID: 0}
   messageString: 
 --- !u!114 &1140286307
