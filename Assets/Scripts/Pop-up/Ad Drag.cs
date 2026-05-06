@@ -9,7 +9,7 @@ public class AdDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
     float mouseX;
     float mouseY;
 
-    [SerializeField] private MainUI mainUI;
+    public float investChance;
 
     Animator anim;
     [SerializeField] private Sprite[] Ads;
@@ -36,7 +36,7 @@ public class AdDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
 
     void Awake()
     {
-
+        investChance = Random.Range(0, 2);
     }
 
 
@@ -48,12 +48,12 @@ public class AdDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
 
         anim = GetComponent<Animator>();
 
-        if (mainUI.investChance == 1)
+        if (investChance == 1)
         {
             invest = true;
             print("true");
         }
-        else if (mainUI.investChance == 0)
+        else if (investChance == 0)
         {
             invest = false;
             print("flase");
@@ -95,7 +95,13 @@ public class AdDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
 
     void IDragHandler.OnDrag(PointerEventData eventData)
     {
-        transform.position = eventData.position + difference;
+        if (MainUI.Energy >= 1)
+        {
+            transform.position = eventData.position + difference;
+        }
+
+        else
+            transform.position = transform.position;
         
     }
 
@@ -106,7 +112,10 @@ public class AdDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
 
     public void ButtonDestroy()
     {
-        StartCoroutine(AnimationHandler());
+        if (MainUI.Energy >= 1)
+        {
+            StartCoroutine(AnimationHandler());
+        }
     }
 
     IEnumerator AnimationHandler()

@@ -29,7 +29,7 @@ public class MainUI : MonoBehaviour
     public static bool Item3Bought;
     public static bool ChamarBought;
 
-    public float investChance;
+    
     
     public float pay;
     
@@ -66,7 +66,7 @@ public class MainUI : MonoBehaviour
     public void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
-        investChance = Random.Range(0, 2);
+        
     }
 
     
@@ -106,10 +106,10 @@ public class MainUI : MonoBehaviour
         
         energyText.text = (Mathf.RoundToInt(MainUI.Energy).ToString());
 
-        if (MainUI.Energy == 0)
+        if (MainUI.Energy < 0)
             energyText.color = Color.red;
         else if (MainUI.Energy > 0)
-            energyText.color = new Color (255, 214, 28);
+            energyText.color = Color.yellow;
         
         debtText.text = "-$" + (Mathf.RoundToInt(MainUI.Debt).ToString());
         
@@ -223,7 +223,8 @@ public class MainUI : MonoBehaviour
             Message.text = messageString;
             
             sharkAppeared = true;
-            SpawnShark();
+            if(!debtPayed)
+                SpawnShark();
             //start coroutine or function of loan shark spawning in and taking money
             //allow player to chose to hide (one time use) using static bool and no money will be taken or give them option to pay extra
         }
@@ -272,7 +273,8 @@ public class MainUI : MonoBehaviour
             Message.text = messageString;
 
             sharkAppeared = true;
-            SpawnShark();
+            if (!debtPayed)
+                SpawnShark();
             //start coroutine or function of loan shark spawning in and taking money
             //allow player to chose to hide (one time use) using static bool and no money will be taken or give them option to pay extra
         }
@@ -331,7 +333,8 @@ public class MainUI : MonoBehaviour
             Message.text = messageString;
 
             sharkAppeared = true;
-            SpawnShark();
+            if (!debtPayed)
+                SpawnShark();
             //start coroutine or function of loan shark spawning in and taking money
             //allow player to chose to hide (one time use) using static bool and no money will be taken or give them option to pay extra
         }
@@ -378,7 +381,8 @@ public class MainUI : MonoBehaviour
             Message.text = messageString;
 
             sharkAppeared = true;
-            SpawnShark();
+            if (!debtPayed)
+                SpawnShark();
 
             StartCoroutine(BadEnding());
         }
@@ -405,6 +409,7 @@ public class MainUI : MonoBehaviour
                 Money -= pay;
                 Debt -= pay;
 
+                Debt = 0;
             }
         }
     }
@@ -440,6 +445,7 @@ public class MainUI : MonoBehaviour
             Shark.SetActive(false);
             canHide = false;
             Map.SetActive(true);
+            Debt = 0;
         }
     }
     

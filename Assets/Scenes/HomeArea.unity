@@ -376,6 +376,7 @@ RectTransform:
   - {fileID: 386006721}
   - {fileID: 454796028}
   - {fileID: 1887541203}
+  - {fileID: 1818208596}
   - {fileID: 798482169}
   - {fileID: 2033288287}
   - {fileID: 6578112}
@@ -1450,7 +1451,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4278243839
-  m_fontColor: {r: 1, g: 0.8210527, b: 0, a: 1}
+  m_fontColor: {r: 1, g: 0.81960785, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3633,7 +3634,6 @@ RectTransform:
   - {fileID: 221592425}
   - {fileID: 1485832446}
   - {fileID: 683521423}
-  - {fileID: 1818208596}
   - {fileID: 892927635}
   - {fileID: 1271661967}
   m_Father: {fileID: 0}
@@ -3656,7 +3656,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sharkAppeared: 0
-  investChance: 0
   pay: 0
   adDrag: {fileID: 0}
   sceneRNG: 0
@@ -4095,12 +4094,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1818208593}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1604831537}
+  m_Father: {fileID: 221592425}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
