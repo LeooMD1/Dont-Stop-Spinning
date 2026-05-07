@@ -343,7 +343,7 @@ public class MainUI : MonoBehaviour
         
         else if (MainUI.Day == 17)
         {
-            messageString = "<color=green> $1000</color=black>. 3 More Days. Hurry up otherwise it won't just be you facing the consequences";
+            messageString = "<color=green> $1000 </color=black>. 3 More Days. Hurry up otherwise it won't just be you facing the consequences";
 
             Debt = 1000;
             Message.text = messageString;
@@ -400,7 +400,7 @@ public class MainUI : MonoBehaviour
     }
     private IEnumerator BadEnding()
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(7);
         endAnim.SetTrigger("Start");
         yield return new WaitForSeconds(1.1f);
         SceneManager.LoadScene("Bad Ending");

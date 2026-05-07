@@ -130,7 +130,7 @@ public class PlateDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         energyDisplay.text = energyUsed.ToString();
         energyDisplay.enabled = true;
 
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(0.2f);
 
         MainUI.Money += prizeValue;
         audioManager.PlaySFX(audioManager.money);
