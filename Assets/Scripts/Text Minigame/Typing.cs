@@ -11,45 +11,26 @@ using UnityEngine.UIElements;
 
 public class Typing : MonoBehaviour
 {
-    public string InputText;
-    public string LastInputText;
-    public TextMeshProUGUI TypingText;
-    UnityEvent unityEvent = new UnityEvent();
-
-    public TMP_InputField InputField;
+    public string[] targetTextThings;
+    public string targetText;
+    public TextMeshProUGUI displayText;
+    public TMP_InputField inputText;
     
     public string Texts;
-    private KeyCode keyCode;
-    private KeyCode keyPressed;
+
+    public int currentChar = 0;
+    
 
 
     void Start()
     {
-        unityEvent.AddListener(OnKeyPressed);
+        targetText = targetTextThings[Random.Range(0, targetTextThings.Length)];
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-
-
-        if (Input.anyKeyDown && !(Input.GetMouseButtonDown(0)
-            || Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(2)))
-        {
-            InputText = TypingText.text;
-            //print(InputText);  
-
-
-            LastInputText = InputText;
-        }
-
-        //InputSystem.onAnyButtonPress.Call(
-        //    button =>
-        //    {
-        //        if (button is KeyControl key)
-        //            Debug.Log($"Key {key.name} pressed! (text: {key.displayName})");
-        //    });
+        displayText.text = targetText.Substring(0, currentChar) + "<color=grey>" + targetText.Substring(currentChar);
     }
 
     void OnKeyPressed()
@@ -59,7 +40,29 @@ public class Typing : MonoBehaviour
 
     public void Test(string text)
     {
-        print(text);
-        InputField.text = "";
+        if(text == "")return;
+        
+        if (text == targetText[currentChar].ToString())
+        {
+            print("successful type");
+            currentChar++;
+
+            if (currentChar > targetText.Length-1)
+            {
+                //dowtv
+                print("completed");
+                currentChar = 0;
+                targetText = targetTextThings[Random.Range(0, targetTextThings.Length)];
+            }
+        }
+
+        else if (text != targetText[currentChar].ToString())
+        {
+            print("cooked text");
+        }
+
+
+
+        inputText.text = "";
     }
 }

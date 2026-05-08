@@ -1089,7 +1089,7 @@ MonoBehaviour:
   m_ActiveFontFeatures: 6e72656b
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
-  m_isRichText: 0
+  m_isRichText: 1
   m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
@@ -1231,7 +1231,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "sdfgsdfg\u200B"
+  m_text: "\u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fbe8880074d68724e91084f133522b51, type: 2}
   m_sharedMaterial: {fileID: -892781961922217648, guid: fbe8880074d68724e91084f133522b51, type: 2}
@@ -1408,7 +1408,7 @@ MonoBehaviour:
   m_CaretColor: {r: 0, g: 0, b: 0, a: 1}
   m_CustomCaretColor: 1
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  m_Text: sdfgsdfg
+  m_Text: 
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 2
   m_ReadOnly: 0
@@ -1454,8 +1454,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1707974709}
   - {fileID: 1324319814}
+  - {fileID: 1707974709}
   m_Father: {fileID: 15998106}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1513,11 +1513,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5696e986b774d174288253524cd32523, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InputText: 
-  LastInputText: 
-  TypingText: {fileID: 1707974710}
-  InputField: {fileID: 1707974712}
+  targetTextThings:
+  - hello jem
+  - Hi jem
+  - Hello Hem
+  - Hi Hem
+  targetText: 
+  displayText: {fileID: 0}
+  inputText: {fileID: 1707974712}
   Texts: 
+  currentChar: 0
 --- !u!1 &1872751307
 GameObject:
   m_ObjectHideFlags: 0
