@@ -49,7 +49,7 @@ public class Typing : MonoBehaviour
 
             if (currentChar > targetText.Length-1)
             {
-                //dowtv
+                //do wtv
                 print("completed");
                 currentChar = 0;
                 targetText = targetTextThings[Random.Range(0, targetTextThings.Length)];

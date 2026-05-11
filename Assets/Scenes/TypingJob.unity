@@ -1405,7 +1405,7 @@ MonoBehaviour:
   m_OnTouchScreenKeyboardStatusChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_CaretColor: {r: 0, g: 0, b: 0, a: 1}
+  m_CaretColor: {r: 0, g: 0, b: 0, a: 0}
   m_CustomCaretColor: 1
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
   m_Text: 
@@ -1519,7 +1519,7 @@ MonoBehaviour:
   - Hello Hem
   - Hi Hem
   targetText: 
-  displayText: {fileID: 0}
+  displayText: {fileID: 1324319815}
   inputText: {fileID: 1707974712}
   Texts: 
   currentChar: 0
