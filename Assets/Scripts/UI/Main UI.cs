@@ -168,6 +168,11 @@ public class MainUI : MonoBehaviour
             SceneManager.LoadScene("OnlineJob");
     }
 
+    public void JobPick(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
     public void InPersonJob()
     {
         SceneManager.LoadScene("InPersonJob");

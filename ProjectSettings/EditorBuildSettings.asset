@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/Scenes/OnlineJob.unity
     guid: 4dc8f54a3d1f5b2489594e2e85029a4e
   - enabled: 1
+    path: Assets/Scenes/TypingJob.unity
+    guid: af4610726c291464f8705d8b837ae95f
+  - enabled: 1
     path: Assets/Scenes/Shop.unity
     guid: 88bc87e4fc968f74787c552cbfeda984
   - enabled: 1
