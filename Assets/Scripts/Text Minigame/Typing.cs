@@ -1,12 +1,7 @@
-using Mono.Cecil.Cil;
+using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Controls;
-using UnityEngine.InputSystem.Utilities;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
 
 
 public class Typing : MonoBehaviour
@@ -18,24 +13,32 @@ public class Typing : MonoBehaviour
     
     public string Texts;
 
+    [SerializeField] private float amountEarned;
+
     public int currentChar = 0;
+
+    [SerializeField] private Button sendButton;
     
 
 
     void Start()
     {
+        sendButton.enabled = false;
         targetText = targetTextThings[Random.Range(0, targetTextThings.Length)];
+
+        amountEarned = 100;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (MainUI.Energy >= 1)
+            inputText.enabled = true;
+        else if (MainUI.Energy < 1)
+            inputText.enabled = false;
+        
         displayText.text = targetText.Substring(0, currentChar) + "<color=grey>" + targetText.Substring(currentChar);
-    }
-
-    void OnKeyPressed()
-    {
-        print("bruh");
+        amountEarned = Mathf.Clamp(amountEarned,0, 1000);
     }
 
     public void Test(string text)
@@ -49,20 +52,32 @@ public class Typing : MonoBehaviour
 
             if (currentChar > targetText.Length-1)
             {
-                //do wtv
+                sendButton.enabled = true;
                 print("completed");
-                currentChar = 0;
-                targetText = targetTextThings[Random.Range(0, targetTextThings.Length)];
+                
             }
         }
 
         else if (text != targetText[currentChar].ToString())
         {
             print("cooked text");
+            amountEarned -= 10;
+            //start shake
         }
-
-
 
         inputText.text = "";
     }
+
+    public void NewEmailGenerator()
+    {
+        currentChar = 0;
+        targetText = targetTextThings[Random.Range(0, targetTextThings.Length)];
+        sendButton.enabled = false;
+
+        MainUI.Money += amountEarned;
+    }
+
+    
+
+    
 }
