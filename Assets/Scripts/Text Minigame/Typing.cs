@@ -10,7 +10,7 @@ public class Typing : MonoBehaviour
     public string targetText;
     public TextMeshProUGUI displayText;
     public TMP_InputField inputText;
-    
+
     public string Texts;
 
     [SerializeField] private float amountEarned;
@@ -18,6 +18,10 @@ public class Typing : MonoBehaviour
     public int currentChar = 0;
 
     [SerializeField] private Button sendButton;
+    [SerializeField] private Shake shake;
+
+    [SerializeField] private GameObject Carat;
+
     
 
 
@@ -39,6 +43,11 @@ public class Typing : MonoBehaviour
         
         displayText.text = targetText.Substring(0, currentChar) + "<color=grey>" + targetText.Substring(currentChar);
         amountEarned = Mathf.Clamp(amountEarned,0, 1000);
+
+        var currentCharInfo = displayText.textInfo.characterInfo[currentChar];
+        Debug.DrawLine(displayText.transform.TransformPoint(currentCharInfo.topLeft), displayText.transform.TransformPoint(currentCharInfo.bottomLeft), Color.red);
+        Carat.transform.position = (displayText.transform.TransformPoint(currentCharInfo.bottomLeft));
+
     }
 
     public void Test(string text)
@@ -63,6 +72,7 @@ public class Typing : MonoBehaviour
             print("cooked text");
             amountEarned -= 10;
             //start shake
+            StartCoroutine(shake.Shaking());
         }
 
         inputText.text = "";
