@@ -585,7 +585,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f7b7b202e0f72fc4c9fb8db65664cf5d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 23ef960c92c77af41bf096d288b25242, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3600,6 +3600,7 @@ GameObject:
   - component: {fileID: 1604831535}
   - component: {fileID: 1604831534}
   - component: {fileID: 1604831538}
+  - component: {fileID: 1604831539}
   m_Layer: 5
   m_Name: Main UI
   m_TagString: Untagged
@@ -3709,6 +3710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sharkAppeared: 0
+  investChance: 0
   pay: 0
   adDrag: {fileID: 0}
   sceneRNG: 0
@@ -3730,6 +3732,21 @@ MonoBehaviour:
   endAnim: {fileID: 1725495455}
   Message: {fileID: 1582949510}
   messageString: 
+--- !u!114 &1604831539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1604831533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 631788c047ddd644d840736c374674f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundImage: {fileID: 386006722}
+  Day: {fileID: 21300000, guid: 23ef960c92c77af41bf096d288b25242, type: 3}
+  Night: {fileID: 21300000, guid: 4e8ba8d606c97aa47896282abe52f176, type: 3}
 --- !u!1 &1608186193 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8667766794577649712, guid: 6b1ccfd03e7eecb42bcf4d8da717f982, type: 3}

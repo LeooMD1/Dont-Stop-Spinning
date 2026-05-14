@@ -1081,6 +1081,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c3c32c7d0253e84aa715fcbb30d6a04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
   spongeImage: {fileID: 552411896}
   spongeCol: {fileID: 552411895}
   cleanSponge: {fileID: 21300000, guid: 9df7bd1339e3fa645be32514daa3ff14, type: 3}
@@ -1425,6 +1426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e340e09a6422b684daed3aa4600c7258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sharkAppeared: 0
   investChance: 0
   pay: 0
   adDrag: {fileID: 0}
@@ -1441,6 +1443,10 @@ MonoBehaviour:
   payText: {fileID: 0}
   rows: {fileID: 0}
   Stock: {fileID: 0}
+  Map: {fileID: 0}
+  Shark: {fileID: 0}
+  Bank: {fileID: 0}
+  endAnim: {fileID: 0}
   Message: {fileID: 0}
   messageString: 
 --- !u!114 &1140286307
@@ -1519,14 +1525,14 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 562586005}
+  - {fileID: 620007223}
+  - {fileID: 1323211293}
   - {fileID: 348582636}
   - {fileID: 7287580393003651655}
   - {fileID: 914921059}
   - {fileID: 1447139961}
   - {fileID: 1721957497}
   - {fileID: 573877888}
-  - {fileID: 620007223}
-  - {fileID: 1323211293}
   m_Father: {fileID: 2109902355}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

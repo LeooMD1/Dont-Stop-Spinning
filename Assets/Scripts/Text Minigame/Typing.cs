@@ -29,6 +29,12 @@ public class Typing : MonoBehaviour
     
     [SerializeField] private AudioManager audioManager;
 
+    [SerializeField] private float timer = 30;
+    [SerializeField] private float timerCooldown = 30;
+    [SerializeField] private float timeMoneyDeduct;
+    
+    [SerializeField] private TextMeshProUGUI timerText;
+
     
 
 
@@ -37,7 +43,7 @@ public class Typing : MonoBehaviour
         sendButton.enabled = false;
         targetText = targetTextThings[Random.Range(0, targetTextThings.Length)];
 
-        amountEarned = 150;
+        amountEarned = 200;
         energyUsed = 1;
     }
 
@@ -53,12 +59,22 @@ public class Typing : MonoBehaviour
             Carat.SetActive(true);
         else
             Carat.SetActive(false);
+
+        if (timer <= 0.5)
+        {
+            amountEarned -= timeMoneyDeduct;
+            timer = timerCooldown;
+            StartCoroutine(shake.Shaking());
+        }
+        
+        timer -= Time.deltaTime;
         
         displayText.text = targetText.Substring(0, currentChar) + "<color=grey>" + targetText.Substring(currentChar);
         amountEarned = Mathf.Clamp(amountEarned,0, 1000);
 
         amountText.text = "+$" + amountEarned.ToString();
         energyText.text = "-" + energyUsed.ToString();
+        timerText.text = Mathf.RoundToInt(timer).ToString() + "s"; 
 
         var currentCharInfo = displayText.textInfo.characterInfo[currentChar];
         Debug.DrawLine(displayText.transform.TransformPoint(currentCharInfo.topLeft), displayText.transform.TransformPoint(currentCharInfo.bottomLeft), Color.red);
@@ -116,7 +132,7 @@ public class Typing : MonoBehaviour
         MainUI.Energy -= energyUsed;
         
         sendButton.enabled = false;
-        amountEarned = 250;
+        amountEarned = 200;
 
     }
 

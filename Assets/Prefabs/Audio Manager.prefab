@@ -186,6 +186,7 @@ MonoBehaviour:
   ClickDown: {fileID: 8300000, guid: 6d29b4190d4600c4b983d2fb8dfc01a8, type: 3}
   ClickUp: {fileID: 8300000, guid: eb2eb46e0f8f71945a519cfbcc01f0b4, type: 3}
   poppinChamar: {fileID: 8300000, guid: 13935055606e1b04ca9ea58d76d16390, type: 3}
+  Keyboard: {fileID: 8300000, guid: 0e925fdbf40ae5f40a3445e229b08ca2, type: 3}
 --- !u!1 &4498825868224504161
 GameObject:
   m_ObjectHideFlags: 0
