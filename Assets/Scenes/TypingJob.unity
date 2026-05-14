@@ -373,6 +373,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 127376414}
   m_CullTransparentMesh: 1
+--- !u!1 &394979084
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 394979085}
+  - component: {fileID: 394979087}
+  - component: {fileID: 394979086}
+  m_Layer: 5
+  m_Name: Lightning
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &394979085
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394979084}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1661811860}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.46, y: 0.46}
+  m_SizeDelta: {x: 12.8229, y: 17.858}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &394979086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394979084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 1147a9c6e031e07468c2e873af2d73ed, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &394979087
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394979084}
+  m_CullTransparentMesh: 1
 --- !u!1 &484699515
 GameObject:
   m_ObjectHideFlags: 0
@@ -963,6 +1038,7 @@ RectTransform:
   m_Children:
   - {fileID: 1949554019}
   - {fileID: 2075136195}
+  - {fileID: 2052230585}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1243,6 +1319,281 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1324319813}
   m_CullTransparentMesh: 1
+--- !u!1 &1339383724
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1339383725}
+  - component: {fileID: 1339383727}
+  - component: {fileID: 1339383726}
+  m_Layer: 5
+  m_Name: 'Energy amount '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1339383725
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1339383724}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1661811860}
+  m_Father: {fileID: 1398439290}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -29.8, y: -214.42}
+  m_SizeDelta: {x: 35.2981, y: 19.292}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1339383726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1339383724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: '0
+
+'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: fbe8880074d68724e91084f133522b51, type: 2}
+  m_sharedMaterial: {fileID: -892781961922217648, guid: fbe8880074d68724e91084f133522b51, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4280080127
+  m_fontColor: {r: 1, g: 0.8404668, b: 0.10849059, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 20
+  m_fontSizeBase: 20
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 8192
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1339383727
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1339383724}
+  m_CullTransparentMesh: 1
+--- !u!1 &1359797574
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1359797575}
+  - component: {fileID: 1359797577}
+  - component: {fileID: 1359797576}
+  m_Layer: 5
+  m_Name: Pay amount text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1359797575
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359797574}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1398439290}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -69.89462, y: -93.613945}
+  m_SizeDelta: {x: 98.6621, y: 19.2983}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1359797576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359797574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: +$250
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: fbe8880074d68724e91084f133522b51, type: 2}
+  m_sharedMaterial: {fileID: -892781961922217648, guid: fbe8880074d68724e91084f133522b51, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278255365
+  m_fontColor: {r: 0.018116832, g: 1, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 20
+  m_fontSizeBase: 20
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 4096
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1359797577
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359797574}
+  m_CullTransparentMesh: 1
 --- !u!1 &1398439289
 GameObject:
   m_ObjectHideFlags: 0
@@ -1275,6 +1626,8 @@ RectTransform:
   - {fileID: 1704803466}
   - {fileID: 1707974709}
   - {fileID: 1182252171}
+  - {fileID: 1359797575}
+  - {fileID: 1339383725}
   m_Father: {fileID: 1773176543}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1290,6 +1643,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2516159884221881907, guid: 39535c249111c584eb21f1e6a394fcf2, type: 3}
+      propertyPath: Keyboard
+      value: 
+      objectReference: {fileID: 8300000, guid: 699578ae63222f94680decd5cf47a311, type: 3}
     - target: {fileID: 4037640019695659737, guid: 39535c249111c584eb21f1e6a394fcf2, type: 3}
       propertyPath: m_Name
       value: Audio Manager
@@ -1339,6 +1696,82 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39535c249111c584eb21f1e6a394fcf2, type: 3}
+--- !u!1 &1661811859
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1661811860}
+  - component: {fileID: 1661811862}
+  - component: {fileID: 1661811861}
+  m_Layer: 5
+  m_Name: Lightning Drop Shadow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1661811860
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661811859}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 394979085}
+  m_Father: {fileID: 1339383725}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -13.5, y: -1.3}
+  m_SizeDelta: {x: 12.9496, y: 18.034}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1661811861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661811859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.9647059}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 1147a9c6e031e07468c2e873af2d73ed, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1661811862
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661811859}
+  m_CullTransparentMesh: 1
 --- !u!1 &1704803463
 GameObject:
   m_ObjectHideFlags: 0
@@ -1356,7 +1789,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1704803464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1370,7 +1803,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1664,6 +2097,17 @@ MonoBehaviour:
   isAlert: 0
   m_InputValidator: {fileID: 0}
   m_ShouldActivateOnSelect: 1
+--- !u!114 &1736324249 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2516159884221881907, guid: 39535c249111c584eb21f1e6a394fcf2, type: 3}
+  m_PrefabInstance: {fileID: 1605906938}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea409f75f6bcbc34fbb4cb8a82956d01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1773176542
 GameObject:
   m_ObjectHideFlags: 0
@@ -1762,32 +2206,32 @@ MonoBehaviour:
     I have just started on making the presentation. I would really appreciate it
     if you could start to work on making the documentation. Could you also print
     out some extra information please. Thanks.
-  - "I am in trouble, I was in debt and I went to this fishy guy who told me he could
+  - I am in trouble, I was in debt and I went to this fishy guy who told me he could
     remove the debt and all I would need to do is pay him back, but I am in a really
-    bad situation. I am in so much debt and I don\u2019t know what to do. I am only
-    going deeper into this pit and I can\u2019t get out."
-  - "I was doing some research on these things called \u201Cloan sharks\u201D and
-    man they are really dangerous\u2026 not that I know any\u2026 They charge really
-    high interest rates and often turn to some form of violence if they do not receive
-    money. I would call the police\u2026 he knows my family."
-  - "Hello Dizzy Dishes, I am writing to thank you for taking the time to accept
-    my application. I am honoured to start working for you. This is such a great
-    opportunity for me. I will work my hardest as a way to repay my thanks to you.
-    I don\u2019t think you understand how grateful I am for this chance. Thank you."
-  - "Hey fih, I found this casino that has this pretty cool slot machine, and it
-    has pretty good odds, you could probably earn more from it then actually working
+    bad situation. I am in so much debt and I dont know what to do. I am only going
+    deeper into this pit and I can not get out.
+  - I was doing some research on these things called loan sharks and man they are
+    really dangerous, not that I know any. They charge really high interest rates
+    and often turn to some form of violence if they do not receive money. I would
+    call the police but, he knows my family.
+  - Hello Dizzy Dishes, I am writing to thank you for taking the time to accept my
+    application. I am honoured to start working for you. This is such a great opportunity
+    for me. I will work my hardest as a way to repay my thanks to you. I dont think
+    you understand how grateful I am for this chance. Thank you.
+  - Hey fih, I found this casino that has this pretty cool slot machine, and it has
+    pretty good odds, you could probably earn more from it then actually working
     in these jobs, but there is this weird 6 symbol, not too sure what it does but
-    my guess is that you don\u2019t want to land on it otherwise it could probably
-    be quite bad."
-  - "Hello Kelpy, Head management has informed me that you have just been employed
-    into the stock market section. I need to tell you how to do it. It\u2019s quite
-    simple, all you have to do is choose whether to sell or invest in stock. You
-    will know what to do based on those annoying pop ups, pay attention to some of
-    them before spamming the close button. Goodluck!"
-  - "This place doesn\u2019t feel real, I feel like I am in a game being controlled,
-    being forced to type this out, this specific email is going nowhere, it\u2019s
-    weird, it is like whenever I want to make a decision myself, I can\u2019t. I
-    feel like a puppet in some sort of way."
+    my guess is that you do not want to land on it otherwise it could probably be
+    quite bad.
+  - Hello Kelpy, Head management has informed me that you have just been employed
+    into the stock market section. I need to tell you how to do it. It is quite simple,
+    all you have to do is choose whether to sell or invest in stock. You will know
+    what to do based on those annoying pop ups, pay attention to some of them before
+    spamming the close button. Goodluck.
+  - This place does not feel real, I feel like I am in a game being controlled, being
+    forced to type this out, this specific email is going nowhere, it is weird, it
+    is like whenever I want to make a decision myself, I can not. I feel like a puppet
+    in some sort of way.
   - "This email is getting sent to nobody, you will type it out, press send and earn
     me money, I really appreciate it. You are trying to help me and sure it will
     work at first, but I represent the fraction of society that can\u2019t escape
@@ -1803,10 +2247,11 @@ MonoBehaviour:
     exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
     irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
     nulla pariatur.
-  - She considered the fish to be her friends. She'd put out food for them each morning
-    and then she'd watch as they swam to the food to fulfil themselves for the day.
-    She wondered what they would do if something ever happened to her. Would they
-    miss the meals she provided if she failed to put out the food one morning?
+  - She considered the fish to be her friends. She would put out food for them each
+    morning and then she wouldd watch as they swam to the food to fulfil themselves
+    for the day. She wondered what they would do if something ever happened to her.
+    Would they miss the meals she provided if she failed to put out the food one
+    morning?
   - 'Cake or pie? I can tell a lot about you by which one you pick. It may seem silly,
     but cake people and pie people are really different. I know which one I hope
     you are, but that''s not for me to decide. So, what is it? Cake or pie? '
@@ -1815,10 +2260,15 @@ MonoBehaviour:
   inputText: {fileID: 1707974712}
   Texts: 
   amountEarned: 0
+  energyUsed: 0
   currentChar: 0
   sendButton: {fileID: 1182252172}
+  sendImage: {fileID: 1182252173}
   shake: {fileID: 2075136196}
   Carat: {fileID: 1704803463}
+  amountText: {fileID: 1359797576}
+  energyText: {fileID: 1339383726}
+  audioManager: {fileID: 1736324249}
 --- !u!1 &1872751307
 GameObject:
   m_ObjectHideFlags: 0
@@ -2393,11 +2843,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2044276686}
-  m_Father: {fileID: 2075136195}
+  m_Father: {fileID: 1140286310}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 21.921755, y: -15}
+  m_AnchoredPosition: {x: 21.922, y: -15}
   m_SizeDelta: {x: 43.843506, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2052230586
@@ -2528,7 +2978,6 @@ RectTransform:
   - {fileID: 1872751308}
   - {fileID: 2041063599}
   - {fileID: 15998106}
-  - {fileID: 2052230585}
   - {fileID: 127376415}
   m_Father: {fileID: 1140286310}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

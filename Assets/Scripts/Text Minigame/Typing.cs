@@ -14,13 +14,20 @@ public class Typing : MonoBehaviour
     public string Texts;
 
     [SerializeField] private float amountEarned;
+    [SerializeField] private float energyUsed;
 
     public int currentChar = 0;
 
     [SerializeField] private Button sendButton;
+    [SerializeField] private Image sendImage;
     [SerializeField] private Shake shake;
 
     [SerializeField] private GameObject Carat;
+    
+    [SerializeField] private TextMeshProUGUI amountText;
+    [SerializeField] private TextMeshProUGUI energyText;
+    
+    [SerializeField] private AudioManager audioManager;
 
     
 
@@ -30,7 +37,8 @@ public class Typing : MonoBehaviour
         sendButton.enabled = false;
         targetText = targetTextThings[Random.Range(0, targetTextThings.Length)];
 
-        amountEarned = 100;
+        amountEarned = 150;
+        energyUsed = 1;
     }
 
     // Update is called once per frame
@@ -40,9 +48,17 @@ public class Typing : MonoBehaviour
             inputText.enabled = true;
         else if (MainUI.Energy < 1)
             inputText.enabled = false;
+
+        if (inputText.isFocused)
+            Carat.SetActive(true);
+        else
+            Carat.SetActive(false);
         
         displayText.text = targetText.Substring(0, currentChar) + "<color=grey>" + targetText.Substring(currentChar);
         amountEarned = Mathf.Clamp(amountEarned,0, 1000);
+
+        amountText.text = "+$" + amountEarned.ToString();
+        energyText.text = "-" + energyUsed.ToString();
 
         var currentCharInfo = displayText.textInfo.characterInfo[currentChar];
         Debug.DrawLine(displayText.transform.TransformPoint(currentCharInfo.topLeft), displayText.transform.TransformPoint(currentCharInfo.bottomLeft), Color.red);
@@ -56,14 +72,26 @@ public class Typing : MonoBehaviour
         
         if (text == targetText[currentChar].ToString())
         {
+            audioManager.PlaySFX(audioManager.Keyboard);
             print("successful type");
             currentChar++;
 
             if (currentChar > targetText.Length-1)
             {
                 sendButton.enabled = true;
+                Carat.SetActive(false);
                 print("completed");
+                sendImage.color = Color.green;
                 
+
+
+            }
+
+            else
+            {
+                Carat.SetActive(true);
+                sendImage.color = Color.white;
+
             }
         }
 
@@ -73,18 +101,23 @@ public class Typing : MonoBehaviour
             amountEarned -= 10;
             //start shake
             StartCoroutine(shake.Shaking());
+            
         }
 
         inputText.text = "";
     }
-
+    
     public void NewEmailGenerator()
     {
+        sendImage.color = Color.white;
         currentChar = 0;
         targetText = targetTextThings[Random.Range(0, targetTextThings.Length)];
-        sendButton.enabled = false;
-
         MainUI.Money += amountEarned;
+        MainUI.Energy -= energyUsed;
+        
+        sendButton.enabled = false;
+        amountEarned = 250;
+
     }
 
     
