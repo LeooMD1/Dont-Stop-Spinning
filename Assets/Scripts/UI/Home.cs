@@ -5,6 +5,7 @@ public class Home : MonoBehaviour
 {
     [SerializeField] private Image backgroundImage;
     [SerializeField] private Sprite Day;
+    [SerializeField] private Sprite Midday;
     [SerializeField] private Sprite Night;
 
 
@@ -16,12 +17,17 @@ public class Home : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (MainUI.Energy >= 3)
+        if (MainUI.Energy >= 5)
         {
             backgroundImage.sprite = Day;
         }
 
-        else if (MainUI.Energy < 3)
+        if (MainUI.Energy < 5 && MainUI.Energy > 2)
+        {
+            backgroundImage.sprite = Midday;
+        }
+
+        else if (MainUI.Energy < 2)
         {
             backgroundImage.sprite = Night;
         }

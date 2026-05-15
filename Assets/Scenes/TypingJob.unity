@@ -1240,6 +1240,14 @@ PrefabInstance:
       propertyPath: audioManager
       value: 
       objectReference: {fileID: 1736324249}
+    - target: {fileID: 4164782738126256487, guid: 76729b93201f1c846a26a259bb6f7dbb, type: 3}
+      propertyPath: 'targetTextThings.Array.data[8]'
+      value: This email is getting sent to nobody, you will type it out, press send
+        and earn me money, I really appreciate it. You are trying to help me and
+        sure it will work at first, but I represent the fraction of society that
+        ca not escape debt and end up tying themselves into a contract they can not
+        get out of without the threat of harm.
+      objectReference: {fileID: 0}
     - target: {fileID: 4499633338711143170, guid: 76729b93201f1c846a26a259bb6f7dbb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

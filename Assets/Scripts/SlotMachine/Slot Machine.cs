@@ -1,9 +1,6 @@
 using System;
-using System.Collections;
 using UnityEngine;
 using TMPro;
-using UnityEngine.UIElements.Experimental;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine.UI;
 
 public class SlotMachine : MonoBehaviour

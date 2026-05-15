@@ -1339,7 +1339,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 330.6, y: -99}
+  m_AnchoredPosition: {x: 264.9, y: -98.1}
   m_SizeDelta: {x: 294.3476, y: 395.2854}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &607034711
@@ -1362,7 +1362,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 80de33814e44c074abd46fb15fb37c62, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 260e78d9a9aee2147985a791861ff277, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3817,6 +3817,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backgroundImage: {fileID: 386006722}
   Day: {fileID: 21300000, guid: 23ef960c92c77af41bf096d288b25242, type: 3}
+  Midday: {fileID: 21300000, guid: 7747647a69d8bed4bb416aaa5c3d1fff, type: 3}
   Night: {fileID: 21300000, guid: 4e8ba8d606c97aa47896282abe52f176, type: 3}
 --- !u!1 &1608186193 stripped
 GameObject:
