@@ -50,7 +50,7 @@ public class Typing : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (MainUI.Energy >= 1)
+        if (MainUI.Energy > 0)
             inputText.enabled = true;
         else if (MainUI.Energy < 1)
             inputText.enabled = false;

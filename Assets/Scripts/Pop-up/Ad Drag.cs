@@ -32,6 +32,9 @@ public class AdDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
     [SerializeField] private float xRange = 100f;
     [SerializeField] private float yRange = 100f;
 
+    
+    
+
     public Vector3 mousePosition;
 
     void Awake()
@@ -95,7 +98,7 @@ public class AdDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
 
     void IDragHandler.OnDrag(PointerEventData eventData)
     {
-        if (MainUI.Energy >= 1)
+        if (MainUI.Energy > 0)
         {
             transform.position = eventData.position + difference;
         }
@@ -112,7 +115,7 @@ public class AdDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
 
     public void ButtonDestroy()
     {
-        if (MainUI.Energy >= 1)
+        if (MainUI.Energy > 0)
         {
             StartCoroutine(AnimationHandler());
         }

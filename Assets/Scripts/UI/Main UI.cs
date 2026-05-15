@@ -63,6 +63,10 @@ public class MainUI : MonoBehaviour
     
     [SerializeField] private TextMeshProUGUI Message;
     [SerializeField] private string messageString;
+    
+    
+    [SerializeField] private Shake shake;
+    [SerializeField] private Image Hide;
 
     public void Awake()
     {
@@ -130,6 +134,9 @@ public class MainUI : MonoBehaviour
             debtPayed = true;
         else
             debtPayed = false;
+
+        if (debtPayed)
+            Map.SetActive(true);
 
         if (Day == 21)
             Map.SetActive(false);
@@ -452,10 +459,17 @@ public class MainUI : MonoBehaviour
     {
         if (canHide)
         {
+            Hide.enabled = true;
             Shark.SetActive(false);
             canHide = false;
             Map.SetActive(true);
             Debt = 0;
+        }
+
+        else if (!canHide)
+        {
+            Hide.enabled = false;
+            StartCoroutine(shake.Shaking());
         }
     }
     

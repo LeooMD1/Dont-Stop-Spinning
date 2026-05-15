@@ -46,14 +46,18 @@ public class SoapDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
     public void OnDrag(PointerEventData eventData)
     {
-        transform.position = eventData.position;
-
-        if (Physics2D.IsTouching(Collider, spongeCol) && spongeImage.sprite == Sponge)
+        if (MainUI.Energy > 0)
         {
-            anim.SetTrigger("Soaped");
-            spongeImage.sprite = cleanSponge;
-            audioManager.PlaySFX(audioManager.bubbles);
-        }// follow the mouse
+            transform.position = eventData.position;
+
+            if (Physics2D.IsTouching(Collider, spongeCol) && spongeImage.sprite == Sponge)
+            {
+                anim.SetTrigger("Soaped");
+                spongeImage.sprite = cleanSponge;
+                audioManager.PlaySFX(audioManager.bubbles);
+            }// follow the mouse
+
+        }
     }
 
     public void OnEndDrag(PointerEventData eventData)

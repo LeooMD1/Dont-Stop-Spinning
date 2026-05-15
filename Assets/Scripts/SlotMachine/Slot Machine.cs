@@ -57,7 +57,7 @@ public class SlotMachine : MonoBehaviour
             button.interactable = false;
         }
 
-        else if (MainUI.Money >= rows[0].newAmountText)
+        else if (MainUI.Money > rows[0].newAmountText - 1)
         {
             button.interactable = true;
         }

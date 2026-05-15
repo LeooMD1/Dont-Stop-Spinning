@@ -48,32 +48,36 @@ public class SpongeDrap : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
     public void OnDrag(PointerEventData eventData)
     {
-        transform.position = eventData.position; // follow the mouse
-        
-        if (Physics2D.IsTouching(spongeCol, soapCol) && Image.sprite == Sponge)
+        if (MainUI.Energy > 0)
         {
-            soapAnim.SetTrigger("Soaped");
-            audioManager.PlaySFX(audioManager.bubbles);
-            Image.sprite = cleanSponge;
-        }
-        
-        if (Physics2D.IsTouching(spongeCol, plateCol) && plateDrag.inSink && plateImage.sprite != Soap && plateImage.sprite != cleanPlate && Image.sprite == cleanSponge)
-        {
-            StartCoroutine(WashDish());
-            if (!isPlayingBubbleSound)
-            {
-                audioManager.PlaySFX(audioManager.Sponge);
-                isPlayingBubbleSound = true;
-            }          
-        }
 
-        else if (Physics2D.IsTouching(spongeCol, plateCol) && plateDrag.inSink && plateImage.sprite == Soap && plateImage.sprite != cleanPlate && Image.sprite == cleanSponge)
-        {
-            StartCoroutine(WashDish());
-            if (!isPlayingBubbleSound)
+            transform.position = eventData.position; // follow the mouse
+        
+            if (Physics2D.IsTouching(spongeCol, soapCol) && Image.sprite == Sponge)
             {
-                audioManager.PlaySFX(audioManager.Sponge);
-                isPlayingBubbleSound = true;
+                soapAnim.SetTrigger("Soaped");
+                audioManager.PlaySFX(audioManager.bubbles);
+                Image.sprite = cleanSponge;
+            }
+        
+            if (Physics2D.IsTouching(spongeCol, plateCol) && plateDrag.inSink && plateImage.sprite != Soap && plateImage.sprite != cleanPlate && Image.sprite == cleanSponge)
+            {
+                StartCoroutine(WashDish());
+                if (!isPlayingBubbleSound)
+                {
+                    audioManager.PlaySFX(audioManager.Sponge);
+                    isPlayingBubbleSound = true;
+                }          
+            }
+
+            else if (Physics2D.IsTouching(spongeCol, plateCol) && plateDrag.inSink && plateImage.sprite == Soap && plateImage.sprite != cleanPlate && Image.sprite == cleanSponge)
+            {
+                StartCoroutine(WashDish());
+                if (!isPlayingBubbleSound)
+                {
+                    audioManager.PlaySFX(audioManager.Sponge);
+                    isPlayingBubbleSound = true;
+                }
             }
         }
 

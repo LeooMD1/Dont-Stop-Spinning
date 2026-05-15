@@ -75,7 +75,7 @@ public class PlateDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     public void OnDrag(PointerEventData eventData)
     {
-        if (!plateCleaned && MainUI.Energy >= 1)
+        if (!plateCleaned && MainUI.Energy > 0)
         transform.position = eventData.position; // follow the mouse
     }
 
